@@ -238,3 +238,11 @@ C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\obj\Debug\net10.0\
 C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\obj\Debug\net10.0\GESTION_S_E.pdb
 C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\obj\Debug\net10.0\GESTION_S_E.genruntimeconfig.cache
 C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\obj\Debug\net10.0\ref\GESTION_S_E.dll
+C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\bin\Debug\net10.0\GESTION_S_E.staticwebassets.runtime.json
+C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\obj\Debug\net10.0\GESTION_S_E.RazorAssemblyInfo.cache
+C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\obj\Debug\net10.0\GESTION_S_E.RazorAssemblyInfo.cs
+C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\obj\Debug\net10.0\compressed\is6acqqwnk-{0}-5ipweew5fc-5ipweew5fc.gz
+C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\obj\Debug\net10.0\compressed\o5yy2utgzl-{0}-5ipweew5fc-5ipweew5fc.gz
+C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\obj\Debug\net10.0\compressed\o7hc5hqwxi-{0}-5ipweew5fc-5ipweew5fc.gz
+C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\obj\Debug\net10.0\compressed\8n9jobgudk-{0}-5ipweew5fc-5ipweew5fc.gz
+C:\Users\Manou\Desktop\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\obj\Debug\net10.0\compressed\aggmsw7ap5-{0}-5ipweew5fc-5ipweew5fc.gz
