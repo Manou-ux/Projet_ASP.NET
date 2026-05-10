@@ -1,0 +1,47 @@
+@model GESTION_S_E.Models.Salle
+
+@{
+    ViewData["Title"] = "Supprimer la salle";
+}
+
+<h1>Supprimer la salle</h1>
+
+<div style="background-color: #ffcccc; padding: 20px; border: 1px solid red; border-radius: 5px;">
+    <h3 style="color: red;">Êtes-vous sûr de vouloir supprimer cette salle ?</h3>
+    
+    <table border="0" cellpadding="5">
+        <tr>
+            <td><strong>ID:</strong></td>
+            <td>@Model.IdSalle</td>
+        </tr>
+        <tr>
+            <td><strong>Nom:</strong></td>
+            <td>@Model.NomSalle</td>
+        </tr>
+        <tr>
+            <td><strong>Capacité:</strong></td>
+            <td>@Model.Capacite</td>
+        </tr>
+        <tr>
+            <td><strong>Type:</strong></td>
+            <td>@Model.Type</td>
+        </tr>
+        <tr>
+            <td><strong>Localisation:</strong></td>
+            <td>@Model.Localisation</td>
+        </tr>
+        <tr>
+            <td><strong>Disponible:</strong></td>
+            <td>@(Model.Disponible ? "Oui" : "Non")</td>
+        </tr>
+    </table>
+    
+    <br />
+    
+    <form method="post" action="/Salles/DeleteConfirmed">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id" value="@Model.IdSalle" />
+        <button type="submit" style="background-color: red; color: white; padding: 5px 10px;">Oui, supprimer</button>
+        <a href="/Salles/Index" style="margin-left: 10px;">Non, annuler</a>
+    </form>
+</div>

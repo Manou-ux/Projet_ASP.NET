@@ -1,0 +1,53 @@
+@model GESTION_S_E.Models.Salle
+
+@{
+    ViewData["Title"] = "Modifier la salle";
+}
+
+<h1>Modifier la salle</h1>
+
+<form method="post" action="/Salles/Edit">
+    @Html.AntiForgeryToken()
+    
+    <input type="hidden" name="id" value="@Model.IdSalle" />
+
+    <div>
+        <label>Nom salle</label>
+        <input type="text" name="NomSalle" value="@Model.NomSalle" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Capacité</label>
+        <input type="number" name="Capacite" value="@Model.Capacite" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Type</label>
+        <select name="Type" required>
+            <option value="">-- Sélectionner --</option>
+            <option value="amphi" @(Model.Type == "amphi" ? "selected" : "")>Amphi</option>
+            <option value="cours" @(Model.Type == "cours" ? "selected" : "")>Cours</option>
+            <option value="TP" @(Model.Type == "TP" ? "selected" : "")>TP</option>
+            <option value="reunion" @(Model.Type == "reunion" ? "selected" : "")>Réunion</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Localisation</label>
+        <input type="text" name="Localisation" value="@Model.Localisation" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Disponible</label>
+        <input type="checkbox" name="Disponible" value="true" @(Model.Disponible ? "checked" : "") />
+        <input type="hidden" name="Disponible" value="false" />
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer les modifications</button>
+    <a href="/Salles/Index">Annuler</a>
+</form>

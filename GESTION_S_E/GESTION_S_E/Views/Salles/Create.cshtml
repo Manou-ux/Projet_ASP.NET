@@ -1,0 +1,48 @@
+@model GESTION_S_E.Models.Salle
+
+<h1>Ajouter une salle</h1>
+
+<form method="post" action="/Salles/Create">
+    @Html.AntiForgeryToken()
+
+    <div>
+        <label>Nom salle</label>
+        <input type="text" name="NomSalle" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Capacité</label>
+        <input type="number" name="Capacite" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Type</label>
+        <select name="Type" required>
+            <option value="">-- Sélectionner --</option>
+            <option value="amphi">Amphi</option>
+            <option value="cours">Cours</option>
+            <option value="TP">TP</option>
+            <option value="reunion">Réunion</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Localisation</label>
+        <input type="text" name="Localisation" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Disponible</label>
+        <input type="checkbox" name="Disponible" value="true" />
+        <input type="hidden" name="Disponible" value="false" />
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer</button>
+</form>
+
+<a href="/Salles/Index">Retour</a>

@@ -1,36 +1,38 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GESTION_S_E.Models
 {
-    [Table("classes")] // Nom de la table dans PostgreSQL
+    [Table("classes")]
     public class Classe
     {
         [Key]
         [Column("id_classe")]
         public int IdClasse { get; set; }
 
-        [Required]
-        [MaxLength(100)]
         [Column("nom_classe")]
-        public string NomClasse { get; set; }
-
         [Required]
-        [MaxLength(20)]
-        public string Niveau { get; set; } // L1, L2, L3, M1, M2
+        public string NomClasse { get; set; } = string.Empty;
 
+        [Column("Niveau")]
         [Required]
-        [MaxLength(100)]
-        public string Filiere { get; set; }
+        public string Niveau { get; set; } = string.Empty;
 
-        public int Effectif { get; set; } = 0;
-
+        [Column("Filiere")]
         [Required]
-        [MaxLength(20)]
+        public string Filiere { get; set; } = string.Empty;
+
+        [Column("Effectif")]
+        public int Effectif { get; set; }
+
         [Column("annee_academique")]
-        public string AnneeAcademique { get; set; }
+        [Required]
+        public string AnneeAcademique { get; set; } = string.Empty;
 
-        public virtual ICollection<Groupe> Groupes { get; set; } = new List<Groupe>();
+        // Navigation properties
+        public virtual ICollection<Eleve>? Eleves { get; set; }
+        public virtual ICollection<Groupe>? Groupes { get; set; }
+        public virtual ICollection<MatiereClasse>? MatiereClasses { get; set; }
+        public virtual ICollection<EmploiDuTemps>? EmploisDuTemps { get; set; }
     }
 }

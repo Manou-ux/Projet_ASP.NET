@@ -1,0 +1,43 @@
+﻿@model List<GESTION_S_E.Models.Salle>
+
+<h1>Liste des salles</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+        @TempData["Success"]
+    </div>
+}
+
+<a href="/Salles/Create">Ajouter une salle</a>
+
+<br /><br />
+
+<table border="1" cellpadding="10" style="border-collapse: collapse;">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Capacité</th>
+        <th>Type</th>
+        <th>Localisation</th>
+        <th>Disponible</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var salle in Model)
+    {
+        <tr>
+            <td>@salle.IdSalle</td>
+            <td>@salle.NomSalle</td>
+            <td>@salle.Capacite</td>
+            <td>@salle.Type</td>
+            <td>@salle.Localisation</td>
+            <td>@salle.Disponible</td>
+            <td>
+                <a href="/Salles/Edit/@salle.IdSalle">Modifier</a>
+                |
+                <a href="/Salles/Delete/@salle.IdSalle">Supprimer</a>
+            </td>
+        </tr>
+    }
+</table>

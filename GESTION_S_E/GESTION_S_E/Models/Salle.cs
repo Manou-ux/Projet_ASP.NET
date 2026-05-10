@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GESTION_S_E.Models
@@ -10,25 +10,23 @@ namespace GESTION_S_E.Models
         [Column("id_salle")]
         public int IdSalle { get; set; }
 
-        [Required]
-        [MaxLength(100)]
         [Column("nom_salle")]
-        public string NomSalle { get; set; }
+        [Required(ErrorMessage = "Le nom est requis")]
+        public string? NomSalle { get; set; }
 
-        [Required]
         [Column("capacite")]
+        [Required(ErrorMessage = "La capacité est requise")]
         public int Capacite { get; set; }
 
-        [Required]
-        [MaxLength(10)]
         [Column("type")]
-        public string Type { get; set; } = "cours";
+        [Required(ErrorMessage = "Le type est requis")]
+        public string? Type { get; set; }
 
-        [MaxLength(100)]
         [Column("localisation")]
-        public string Localisation { get; set; }
+        [Required(ErrorMessage = "La localisation est requise")]
+        public string? Localisation { get; set; }
 
         [Column("disponible")]
-        public bool Disponible { get; set; } = true;
+        public bool Disponible { get; set; }
     }
 }

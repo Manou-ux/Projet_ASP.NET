@@ -1,0 +1,90 @@
+@{
+    ViewData["Title"] = $"Disponibilités - {((GESTION_S_E.Models.Salle)ViewBag.Salle)?.NomSalle}";
+    var salle = ViewBag.Salle as GESTION_S_E.Models.Salle;
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-info text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">
+                    <i class="fas fa-calendar-alt"></i> Disponibilités - @salle?.NomSalle
+                </h4>
+                <a asp-action="Index" class="btn btn-light btn-sm">
+                    <i class="fas fa-arrow-left"></i> Retour
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Sélection de date -->
+            <div class="row mb-4">
+                <div class="col-md-6 mx-auto">
+                    <label class="form-label fw-bold">Date :</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
+                        <input type="date" id="selectedDate" class="form-control" value="@ViewBag.SelectedDate.ToString("yyyy-MM-dd")" />
+                        <button id="btnRefresh" class="btn btn-primary">
+                            <i class="fas fa-sync-alt"></i> Actualiser
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tableau des disponibilités -->
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th style="width: 100px">Horaire</th>
+                            <th>Événements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var horaire in ViewBag.PlageHoraire)
+                        {
+                            <tr>
+                                <td class="fw-bold align-middle">@horaire - @(int.Parse(horaire.Split(':')[0]) + 1):00</td>
+                                <td>
+                                    @{
+                                        var evenements = ViewBag.Evenements as List<dynamic>;
+                                        var evenement = evenements?.FirstOrDefault(e => 
+                                            e.Debut.ToString().Contains(horaire.Split(':')[0]));
+                                    }
+                                    @if (evenement != null)
+                                    {
+                                        <div class="alert alert-@(evenement.Type == "Cours" ? "primary" : "warning") mb-0">
+                                            <i class="fas fa-@(evenement.Type == "Cours" ? "book" : "handshake")"></i>
+                                            <strong>@evenement.Type :</strong> @evenement.Description
+                                            <br />
+                                            <small>De @evenement.Debut à @evenement.Fin</small>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="alert alert-success mb-0">
+                                            <i class="fas fa-check-circle"></i>
+                                            <strong>Disponible</strong>
+                                            <br />
+                                            <small>Aucune réservation ou cours à cet horaire</small>
+                                        </div>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#btnRefresh').click(function() {
+                var date = $('#selectedDate').val();
+                window.location.href = '@Url.Action("Disponibilite", "Salles")?id=@salle?.IdSalle&date=' + date;
+            });
+        });
+    </script>
+}
