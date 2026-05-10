@@ -1,0 +1,107 @@
+@model GESTION_S_E.Models.ReservationSalle
+
+@{
+    ViewData["Title"] = "Modifier une réservation";
+}
+
+<h1>Modifier une réservation</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
+        @TempData["Success"]
+    </div>
+}
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="IdReservation" value="@Model.IdReservation" />
+
+    <div>
+        <label>Salle *</label><br />
+        <select name="IdSalle" required style="width: 300px;">
+            <option value="">-- Choisir une salle --</option>
+            @if (ViewBag.Salles != null)
+            {
+                foreach (var salle in ViewBag.Salles)
+                {
+                    <option value="@salle.IdSalle" @(Model.IdSalle == salle.IdSalle ? "selected" : "")>
+                        @salle.NomSalle (Capacité: @salle.Capacite, Type: @salle.Type)
+                    </option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Utilisateur (demandeur) *</label><br />
+        <select name="IdUtilisateur" required style="width: 300px;">
+            <option value="">-- Choisir un utilisateur --</option>
+            @if (ViewBag.Utilisateurs != null)
+            {
+                foreach (var user in ViewBag.Utilisateurs)
+                {
+                    <option value="@user.IdUtilisateur" @(Model.IdUtilisateur == user.IdUtilisateur ? "selected" : "")>
+                        @user.Email (@user.Role)
+                    </option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Club (optionnel)</label><br />
+        <select name="IdClub" style="width: 300px;">
+            <option value="">-- Aucun club --</option>
+            @if (ViewBag.Clubs != null)
+            {
+                foreach (var club in ViewBag.Clubs)
+                {
+                    <option value="@club.IdClub" @(Model.IdClub == club.IdClub ? "selected" : "")>
+                        @club.NomClub
+                    </option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Date *</label><br />
+        <input type="date" name="DateReservation" value="@Model.DateReservation.ToString("yyyy-MM-dd")" required style="width: 200px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Heure début *</label><br />
+        <input type="time" name="HeureDebut" value="@Model.HeureDebut.ToString(@"hh\:mm")" required style="width: 150px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Heure fin *</label><br />
+        <input type="time" name="HeureFin" value="@Model.HeureFin.ToString(@"hh\:mm")" required style="width: 150px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Motif *</label><br />
+        <textarea name="Motif" rows="3" style="width: 300px;" required>@Model.Motif</textarea>
+    </div>
+    <br />
+
+    <div>
+        <label>Statut</label><br />
+        <select name="Statut" style="width: 200px;">
+            <option value="en_attente" @(Model.Statut == "en_attente" ? "selected" : "")> En attente</option>
+            <option value="validee" @(Model.Statut == "validee" ? "selected" : "")> Validée</option>
+            <option value="annulee" @(Model.Statut == "annulee" ? "selected" : "")> Annulée</option>
+        </select>
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer</button>
+    <a href="/Reservations/Index">Annuler</a>
+</form>

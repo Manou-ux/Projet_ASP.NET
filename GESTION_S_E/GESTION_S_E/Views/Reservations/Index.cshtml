@@ -1,0 +1,75 @@
+@model List<GESTION_S_E.Models.ReservationSalle>
+
+@{
+    ViewData["Title"] = "Gestion des réservations";
+}
+
+<h1>Liste des réservations</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
+        @TempData["Success"]
+    </div>
+}
+
+<a href="/Reservations/Create">Ajouter une réservation</a>
+<br />
+<br />
+
+<table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Horaire</th>
+            <th>Salle</th>
+            <th>Demandeur</th>
+            <th>Motif</th>
+            <th>Statut</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in Model)
+        {
+            <tr>
+                <td>@reservation.IdReservation</td>
+                <td>@reservation.DateReservation.ToString("dd/MM/yyyy")</td>
+                <td>@reservation.HeureDebut.ToString(@"hh\:mm") - @reservation.HeureFin.ToString(@"hh\:mm")</td>
+                <td>@(reservation.Salle?.NomSalle ?? "-")</td>
+                <td>@(reservation.Utilisateur?.Email ?? "-")</td>
+                <td>@reservation.Motif</td>
+                <td>
+                    @if (reservation.Statut == "en_attente")
+                    {
+                        <span style="background-color: orange; color: white; padding: 3px 8px;"> En attente</span>
+                    }
+                    else if (reservation.Statut == "validee")
+                    {
+                        <span style="background-color: green; color: white; padding: 3px 8px;"> Validée</span>
+                    }
+                    else
+                    {
+                        <span style="background-color: red; color: white; padding: 3px 8px;"> Annulée</span>
+                    }
+                 </td>
+                <td>
+                    <a href="/Reservations/Edit/@reservation.IdReservation">Modifier</a> |
+                    <a href="/Reservations/Delete/@reservation.IdReservation">Supprimer</a> |
+                    <a href="/Reservations/Details/@reservation.IdReservation">Détails</a>
+                    @if (reservation.Statut == "en_attente")
+                    {
+                        <text>|</text>
+                        <a href="/Reservations/Valider/@reservation.IdReservation">Valider</a>
+                        <text>|</text>
+                        <a href="/Reservations/Annuler/@reservation.IdReservation">Annuler</a>
+                    }
+                 </td>
+             </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<a href="/Reservations/Calendar"> Vue calendrier</a>

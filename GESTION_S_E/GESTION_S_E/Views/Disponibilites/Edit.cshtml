@@ -1,0 +1,84 @@
+@model GESTION_S_E.Models.DisponibiliteEnseignant
+
+@{
+    ViewData["Title"] = "Modifier une disponibilité";
+}
+
+<h1>Modifier une disponibilité</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
+        @TempData["Success"]
+    </div>
+}
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="IdDispo" value="@Model.IdDispo" />
+
+    <div>
+        <label>Enseignant *</label><br />
+        <select name="IdEnseignant" required style="width: 300px;">
+            <option value="">-- Choisir un enseignant --</option>
+            @if (ViewBag.Enseignants != null)
+            {
+                foreach (var enseignant in ViewBag.Enseignants)
+                {
+                    <option value="@enseignant.IdEnseignant" @(Model.IdEnseignant == enseignant.IdEnseignant ? "selected" : "")>
+                        @enseignant.NomEnseignant @enseignant.PrenomEnseignant - @enseignant.Specialite
+                    </option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Jour *</label><br />
+        <select name="Jour" required style="width: 200px;">
+            <option value="">-- Choisir un jour --</option>
+            <option value="Lundi" @(Model.Jour == "Lundi" ? "selected" : "")>Lundi</option>
+            <option value="Mardi" @(Model.Jour == "Mardi" ? "selected" : "")>Mardi</option>
+            <option value="Mercredi" @(Model.Jour == "Mercredi" ? "selected" : "")>Mercredi</option>
+            <option value="Jeudi" @(Model.Jour == "Jeudi" ? "selected" : "")>Jeudi</option>
+            <option value="Vendredi" @(Model.Jour == "Vendredi" ? "selected" : "")>Vendredi</option>
+            <option value="Samedi" @(Model.Jour == "Samedi" ? "selected" : "")>Samedi</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Heure début *</label><br />
+        <input type="time" name="HeureDebut" value="@Model.HeureDebut.ToString(@"hh\:mm")" required style="width: 150px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Heure fin *</label><br />
+        <input type="time" name="HeureFin" value="@Model.HeureFin.ToString(@"hh\:mm")" required style="width: 150px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Type de disponibilité *</label><br />
+        <select name="TypeDispo" required style="width: 200px;">
+            <option value="">-- Choisir un type --</option>
+            <option value="cours" @(Model.TypeDispo == "cours" ? "selected" : "")>📚 Cours</option>
+            <option value="td" @(Model.TypeDispo == "td" ? "selected" : "")>📝 TD</option>
+            <option value="tp" @(Model.TypeDispo == "tp" ? "selected" : "")>🔬 TP</option>
+            <option value="reunion" @(Model.TypeDispo == "reunion" ? "selected" : "")>📅 Réunion</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Date spécifique (optionnel)</label><br />
+        <input type="date" name="DateSpecifique" value="@(Model.DateSpecifique?.ToString("yyyy-MM-dd"))" style="width: 200px;" />
+        <small>(Laisser vide pour une disponibilité hebdomadaire)</small>
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer</button>
+    <a href="/Disponibilites/Index">Annuler</a>
+</form>

@@ -1,0 +1,47 @@
+@model GESTION_S_E.Models.ReservationSalle
+
+@{
+    ViewData["Title"] = "Détails de la réservation";
+}
+
+<h1>Détails de la réservation</h1>
+
+<div>
+    <div><strong>ID:</strong> @Model?.IdReservation</div>
+    <div><strong>Date de réservation:</strong> @Model?.DateReservation.ToString("dd/MM/yyyy")</div>
+    <div><strong>Horaire:</strong> @Model?.HeureDebut - @Model?.HeureFin</div>
+    <div><strong>Salle:</strong> @(Model?.Salle?.NomSalle ?? "-")</div>
+    <div><strong>Capacité de la salle:</strong> @(Model?.Salle?.Capacite ?? 0)</div>
+    <div><strong>Type de salle:</strong> @(Model?.Salle?.Type ?? "-")</div>
+    <div><strong>Demandeur:</strong> @(Model?.Utilisateur?.Email ?? "-")</div>
+    <div><strong>Rôle demandeur:</strong> @(Model?.Utilisateur?.Role ?? "-")</div>
+    <div><strong>Club:</strong> @(Model?.Club?.NomClub ?? "Aucun club")</div>
+    <div><strong>Motif:</strong> @Model?.Motif</div>
+    <div>
+        <strong>Statut:</strong>
+        @if (Model?.Statut == "en_attente")
+        {
+            <span style="background-color: orange; color: white; padding: 3px 8px;"> En attente</span>
+        }
+        else if (Model?.Statut == "validee")
+        {
+            <span style="background-color: green; color: white; padding: 3px 8px;"> Validée</span>
+        }
+        else
+        {
+            <span style="background-color: red; color: white; padding: 3px 8px;"> Annulée</span>
+        }
+    </div>
+
+    <br />
+
+    <a href="/Reservations/Edit/@Model?.IdReservation">Modifier</a> |
+    @if (Model?.Statut == "en_attente")
+    {
+        <a href="/Reservations/Valider/@Model?.IdReservation">Valider</a>
+        <text>|</text>
+        <a href="/Reservations/Annuler/@Model?.IdReservation">Annuler</a>
+        <text>|</text>
+    }
+    <a href="/Reservations/Index">Retour à la liste</a>
+</div>

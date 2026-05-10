@@ -1,0 +1,42 @@
+@model GESTION_S_E.Models.ReservationSalle
+
+@{
+    ViewData["Title"] = "Supprimer une réservation";
+}
+
+<h1>Supprimer une réservation</h1>
+
+<div style="background-color: #ffcccc; padding: 15px; border-radius: 5px;">
+    <p>Êtes-vous sûr de vouloir supprimer cette réservation ?</p>
+
+    <div><strong>ID:</strong> @Model?.IdReservation</div>
+    <div><strong>Date:</strong> @Model?.DateReservation.ToString("dd/MM/yyyy")</div>
+    <div><strong>Horaire:</strong> @Model?.HeureDebut - @Model?.HeureFin</div>
+    <div><strong>Salle:</strong> @(Model?.Salle?.NomSalle ?? "-")</div>
+    <div><strong>Demandeur:</strong> @(Model?.Utilisateur?.Email ?? "-")</div>
+    <div><strong>Club:</strong> @(Model?.Club?.NomClub ?? "-")</div>
+    <div><strong>Motif:</strong> @Model?.Motif</div>
+    <div>
+        <strong>Statut:</strong>
+        @if (Model?.Statut == "en_attente")
+        {
+            <span> En attente</span>
+        }
+        else if (Model?.Statut == "validee")
+        {
+            <span> Validée</span>
+        }
+        else
+        {
+            <span> Annulée</span>
+        }
+    </div>
+
+    <br />
+
+    <form method="post">
+        @Html.AntiForgeryToken()
+        <button type="submit" style="background-color: red; color: white;">Confirmer la suppression</button>
+        <a href="/Reservations/Index">Annuler</a>
+    </form>
+</div>

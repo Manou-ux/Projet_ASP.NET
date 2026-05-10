@@ -1,0 +1,42 @@
+@model GESTION_S_E.Models.DisponibiliteEnseignant
+
+@{
+    ViewData["Title"] = "Détails de la disponibilité";
+}
+
+<h1>Détails de la disponibilité</h1>
+
+<div>
+    <div><strong>ID:</strong> @Model?.IdDispo</div>
+    <div><strong>Enseignant:</strong> @(Model?.Enseignant?.NomEnseignant ?? "-") @(Model?.Enseignant?.PrenomEnseignant ?? "-")</div>
+    <div><strong>Spécialité:</strong> @(Model?.Enseignant?.Specialite ?? "-")</div>
+    <div><strong>Email pro:</strong> @(Model?.Enseignant?.EmailPro ?? "-")</div>
+    <div><strong>Jour:</strong> @Model?.Jour</div>
+    <div><strong>Heure début:</strong> @Model?.HeureDebut</div>
+    <div><strong>Heure fin:</strong> @Model?.HeureFin</div>
+    <div>
+        <strong>Type:</strong>
+        @if (Model?.TypeDispo == "cours")
+        {
+            <span>📚 Cours</span>
+        }
+        else if (Model?.TypeDispo == "td")
+        {
+            <span>📝 TD</span>
+        }
+        else if (Model?.TypeDispo == "tp")
+        {
+            <span>🔬 TP</span>
+        }
+        else
+        {
+            <span>📅 Réunion</span>
+        }
+    </div>
+    <div><strong>Date spécifique:</strong> @(Model?.DateSpecifique?.ToString("dd/MM/yyyy") ?? "Hebdomadaire")</div>
+
+    <br />
+
+    <a href="/Disponibilites/Edit/@Model?.IdDispo">Modifier</a> |
+    <a href="/Disponibilites/Index">Retour à la liste</a>
+</div>
