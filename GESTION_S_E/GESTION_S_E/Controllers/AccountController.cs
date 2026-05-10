@@ -50,7 +50,7 @@ namespace GESTION_S_E.Controllers
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
-                return RedirectToAction("Index", "Classes");
+                return RedirectToAction("Index", "Dashboard");
             }
             else if (email == "enseignant@emit.sn" && password == "enseignant123")
             {
@@ -68,7 +68,7 @@ namespace GESTION_S_E.Controllers
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
-                return RedirectToAction("Index", "Classes");
+                return RedirectToAction("Index", "Dashboard");
             }
             else if (email == "eleve@emit.sn" && password == "eleve123")
             {
@@ -86,7 +86,7 @@ namespace GESTION_S_E.Controllers
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
-                return RedirectToAction("Index", "Classes");
+                return RedirectToAction("Index", "Dashboard");
             }
 
             // Vérifier dans la base de données
@@ -109,7 +109,7 @@ namespace GESTION_S_E.Controllers
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
-                return RedirectToAction("Index", "Classes");
+                return RedirectToAction("Index", "Dashboard");
             }
 
             ViewBag.Error = "Email ou mot de passe incorrect";

@@ -2216,33 +2216,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MADISTOR\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Manou\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
+      "projectUniqueName": "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
       "projectName": "GESTION_S_E",
-      "projectPath": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
-      "packagesPath": "C:\\Users\\MADISTOR\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\obj\\",
+      "projectPath": "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
+      "packagesPath": "C:\\Users\\Manou\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\MADISTOR\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Manou\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://nuget.org/api/v2/": {}
       },
       "frameworks": {
         "net10.0": {
