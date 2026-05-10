@@ -1,27 +1,43 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using GESTION_S_E.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// MVC
+// 1. Ajouter MVC
 builder.Services.AddControllersWithViews();
 
-// DbContext PostgreSQL
+// 2. Ajouter l'authentification (Cookies)
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login";
+        options.LogoutPath = "/Account/Logout";
+        options.AccessDeniedPath = "/Account/AccessDenied";
+        options.ExpireTimeSpan = TimeSpan.FromHours(8);
+        options.SlidingExpiration = true;
+    });
+
+// 3. Ajouter l'autorisation
+builder.Services.AddAuthorization();
+
+// 4. DbContext PostgreSQL
 builder.Services.AddDbContext<MonDbContext>(options =>
-    options.UseNpgsql(
-        builder.Configuration.GetConnectionString("MaConnexion")
-    )
-);
+    options.UseNpgsql(builder.Configuration.GetConnectionString("MaConnexion")));
 
 var app = builder.Build();
 
+// 5. Middleware (ordre important)
 app.UseStaticFiles();
-
 app.UseRouting();
 
+// ⚠️ OBLIGATOIRE : Authentification et Autorisation
+app.UseAuthentication();  // ← Doit être avant UseAuthorization
+app.UseAuthorization();   // ← Doit être après UseAuthentication
+
+// 6. Routes
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Dashboard}/{action=Index}/{id?}"
-);
+    pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();

@@ -28,6 +28,6 @@ namespace GESTION_S_E.Models
         public bool Actif { get; set; } = true;
 
         [Column("date_creation")]
-        public DateTime DateCreation { get; set; } = DateTime.Now;
+        public DateTime DateCreation { get; set; } = DateTime.UtcNow;
     }
 }
