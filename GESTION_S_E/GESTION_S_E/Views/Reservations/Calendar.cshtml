@@ -1,0 +1,68 @@
+@model List<GESTION_S_E.Models.ReservationSalle>
+
+@{
+    ViewData["Title"] = "Calendrier des réservations";
+}
+
+<h1>Calendrier des réservations</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
+        @TempData["Success"]
+    </div>
+}
+
+<a href="/Reservations/Index"> Vue liste</a>
+<br />
+<br />
+
+@{
+    var today = DateTime.Today;
+    var startOfWeek = today.AddDays(-(int)today.DayOfWeek + (int)DayOfWeek.Monday);
+    if (today.DayOfWeek == DayOfWeek.Sunday)
+        startOfWeek = today.AddDays(-6);
+}
+
+<table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%; text-align: center; vertical-align: top;">
+    <thead>
+        <tr>
+            <th style="background-color: #f0f0f0;">Lundi</th>
+            <th style="background-color: #f0f0f0;">Mardi</th>
+            <th style="background-color: #f0f0f0;">Mercredi</th>
+            <th style="background-color: #f0f0f0;">Jeudi</th>
+            <th style="background-color: #f0f0f0;">Vendredi</th>
+            <th style="background-color: #f0f0f0;">Samedi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @for (int i = 0; i < 6; i++)
+            {
+                var currentDay = startOfWeek.AddDays(i);
+                var dayReservations = Model.Where(r => r.DateReservation.Date == currentDay).ToList();
+                
+                <td style="width: 16.6%; vertical-align: top; height: 150px;">
+                    <strong>@currentDay.ToString("dd/MM")</strong>
+                    <hr style="margin: 5px 0;" />
+                    @foreach (var res in dayReservations)
+                    {
+                        <div style="margin-bottom: 8px; font-size: 12px; text-align: left;">
+                            <div style="background-color: @(res.Statut == "validee" ? "#d4edda" : res.Statut == "en_attente" ? "#fff3cd" : "#f8d7da"); padding: 4px; border-radius: 3px;">
+                                <strong>@res.HeureDebut.ToString(@"hh\:mm") - @res.HeureFin.ToString(@"hh\:mm")</strong><br />
+                                📍 @(res.Salle?.NomSalle ?? "-")<br />
+                                @(res.Motif?.Length > 20 ? res.Motif.Substring(0, 20) + "..." : res.Motif)
+                                <div style="margin-top: 4px;">
+                                    <a href="/Reservations/Details/@res.IdReservation" style="font-size: 10px;">Voir</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </td>
+            }
+        </tr>
+    </tbody>
+</table>
+
+<br />
+<a href="/Reservations/Create" style="background-color: green; color: white; padding: 5px 10px; text-decoration: none;">➕ Nouvelle réservation</a>

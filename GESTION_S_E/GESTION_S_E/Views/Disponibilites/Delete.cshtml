@@ -1,0 +1,44 @@
+@model GESTION_S_E.Models.DisponibiliteEnseignant
+
+@{
+    ViewData["Title"] = "Supprimer une disponibilité";
+}
+
+<h1>Supprimer une disponibilité</h1>
+
+<div style="background-color: #ffcccc; padding: 15px; border-radius: 5px;">
+    <p>Êtes-vous sûr de vouloir supprimer cette disponibilité ?</p>
+
+    <div><strong>ID:</strong> @Model?.IdDispo</div>
+    <div><strong>Enseignant:</strong> @(Model?.Enseignant?.NomEnseignant ?? "-") @(Model?.Enseignant?.PrenomEnseignant ?? "-")</div>
+    <div><strong>Jour:</strong> @Model?.Jour</div>
+    <div><strong>Horaire:</strong> @Model?.HeureDebut - @Model?.HeureFin</div>
+    <div>
+        <strong>Type:</strong>
+        @if (Model?.TypeDispo == "cours")
+        {
+            <span>📚 Cours</span>
+        }
+        else if (Model?.TypeDispo == "td")
+        {
+            <span>📝 TD</span>
+        }
+        else if (Model?.TypeDispo == "tp")
+        {
+            <span>🔬 TP</span>
+        }
+        else
+        {
+            <span>📅 Réunion</span>
+        }
+    </div>
+    <div><strong>Date spécifique:</strong> @(Model?.DateSpecifique?.ToString("dd/MM/yyyy") ?? "-")</div>
+
+    <br />
+
+    <form method="post">
+        @Html.AntiForgeryToken()
+        <button type="submit" style="background-color: red; color: white;">Confirmer la suppression</button>
+        <a href="/Disponibilites/Index">Annuler</a>
+    </form>
+</div>

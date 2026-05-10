@@ -1,0 +1,76 @@
+@model GESTION_S_E.Models.DisponibiliteEnseignant
+
+@{
+    ViewData["Title"] = "Ajouter une disponibilité";
+}
+
+<h1>Ajouter une disponibilité</h1>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+
+    <div>
+        <label>Enseignant *</label><br />
+        <select name="IdEnseignant" required style="width: 300px;">
+            <option value="">-- Choisir un enseignant --</option>
+            @if (ViewBag.Enseignants != null)
+            {
+                foreach (var enseignant in ViewBag.Enseignants)
+                {
+                    <option value="@enseignant.IdEnseignant">
+                        @enseignant.NomEnseignant @enseignant.PrenomEnseignant - @enseignant.Specialite
+                    </option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Jour *</label><br />
+        <select name="Jour" required style="width: 200px;">
+            <option value="">-- Choisir un jour --</option>
+            <option value="Lundi">Lundi</option>
+            <option value="Mardi">Mardi</option>
+            <option value="Mercredi">Mercredi</option>
+            <option value="Jeudi">Jeudi</option>
+            <option value="Vendredi">Vendredi</option>
+            <option value="Samedi">Samedi</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Heure début *</label><br />
+        <input type="time" name="HeureDebut" required style="width: 150px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Heure fin *</label><br />
+        <input type="time" name="HeureFin" required style="width: 150px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Type de disponibilité *</label><br />
+        <select name="TypeDispo" required style="width: 200px;">
+            <option value="">-- Choisir un type --</option>
+            <option value="cours">📚 Cours</option>
+            <option value="td">📝 TD</option>
+            <option value="tp">🔬 TP</option>
+            <option value="reunion">📅 Réunion</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Date spécifique (optionnel)</label><br />
+        <input type="date" name="DateSpecifique" style="width: 200px;" />
+        <small>(Laisser vide pour une disponibilité hebdomadaire)</small>
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer</button>
+    <a href="/Disponibilites/Index">Annuler</a>
+</form>

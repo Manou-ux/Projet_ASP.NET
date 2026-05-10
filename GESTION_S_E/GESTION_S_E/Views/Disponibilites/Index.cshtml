@@ -1,0 +1,70 @@
+@model List<GESTION_S_E.Models.DisponibiliteEnseignant>
+
+@{
+    ViewData["Title"] = "Gestion des disponibilités";
+}
+
+<h1>Liste des disponibilités des enseignants</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
+        @TempData["Success"]
+    </div>
+}
+
+<a href="/Disponibilites/Create">Ajouter une disponibilité</a>
+
+<br />
+<br />
+
+<table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Enseignant</th>
+            <th>Jour</th>
+            <th>Heure début</th>
+            <th>Heure fin</th>
+            <th>Type</th>
+            <th>Date spécifique</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dispo in Model)
+        {
+            <tr>
+                <td>@dispo.IdDispo</td>
+                <td>@(dispo.Enseignant?.NomEnseignant ?? "-") @(dispo.Enseignant?.PrenomEnseignant ?? "-")</td>
+                <td>@dispo.Jour</td>
+                <td>@dispo.HeureDebut.ToString(@"hh\:mm")</td>
+                <td>@dispo.HeureFin.ToString(@"hh\:mm")</td>
+                <td>
+                    @if (dispo.TypeDispo == "cours")
+                    {
+                        <span>📚 Cours</span>
+                    }
+                    else if (dispo.TypeDispo == "td")
+                    {
+                        <span>📝 TD</span>
+                    }
+                    else if (dispo.TypeDispo == "tp")
+                    {
+                        <span>🔬 TP</span>
+                    }
+                    else
+                    {
+                        <span>📅 Réunion</span>
+                    }
+                 </td>
+                <td>@(dispo.DateSpecifique?.ToString("dd/MM/yyyy") ?? "-")</td>
+                <td>
+                    <a href="/Disponibilites/Edit/@dispo.IdDispo">Modifier</a> |
+                    <a href="/Disponibilites/Delete/@dispo.IdDispo">Supprimer</a> |
+                    <a href="/Disponibilites/Details/@dispo.IdDispo">Détails</a>
+                 </td>
+            </tr>
+        }
+    </tbody>
+</table>
