@@ -48,9 +48,15 @@
     <br />
 
     <div>
-        <label>Classe (ID)</label>
-        <input type="number" name="IdClasse" value="@Model.IdClasse" required />
-        <small>ID de la classe (exemple: 1)</small>
+        <label>Classe</label>
+        <select name="IdClasse" required>
+            @foreach (SelectListItem item in ViewBag.Classes)
+            {
+                <option value="@item.Value" @(item.Selected ? "selected" : "")>
+                    @item.Text
+                </option>
+            }
+        </select>
     </div>
     <br />
 

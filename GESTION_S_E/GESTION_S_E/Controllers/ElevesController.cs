@@ -61,6 +61,7 @@ namespace GESTION_S_E.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Classes = new SelectList(_context.Classes, "IdClasse", "NomClasse", eleve.IdClasse);
 
             return View(eleve);
         }
@@ -99,7 +100,7 @@ namespace GESTION_S_E.Controllers
                     ModelState.AddModelError("", $"Erreur: {ex.Message}");
                 }
             }
-
+            ViewBag.Classes = new SelectList(_context.Classes, "IdClasse", "NomClasse", eleve.IdClasse);
             return View(eleve);
         }
         // GET: Eleves/Delete/5
