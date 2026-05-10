@@ -98,6 +98,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Manou/Desktop/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9uaWJpbGl0ZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Manou/Desktop/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9uaWJpbGl0ZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Manou/Desktop/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9uaWJpbGl0ZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Manou/Desktop/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9uaWJpbGl0ZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Manou/Desktop/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9uaWJpbGl0ZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Manou/Desktop/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Eleves/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -208,6 +228,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Manou/Desktop/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Manou/Desktop/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Manou/Desktop/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Manou/Desktop/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Manou/Desktop/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Index.cshtml]
