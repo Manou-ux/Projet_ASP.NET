@@ -1,0 +1,221 @@
+@{
+    Layout = null;
+    ViewData["Title"] = "Connexion - Gestion Salles EMIT";
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+            body {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                height: 100vh;
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .login-container {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .login-card {
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                overflow: hidden;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .login-header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 30px;
+                text-align: center;
+            }
+
+                .login-header h2 {
+                    margin: 0;
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+
+                .login-header p {
+                    margin: 10px 0 0;
+                    opacity: 0.9;
+                }
+
+            .login-body {
+                padding: 40px 30px;
+            }
+
+            .form-group {
+                margin-bottom: 25px;
+            }
+
+                .form-group label {
+                    display: block;
+                    margin-bottom: 8px;
+                    font-weight: 600;
+                    color: #333;
+                }
+
+            .input-group {
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            }
+
+            .input-group-text {
+                background: #f8f9fa;
+                border: 1px solid #dee2e6;
+                border-right: none;
+            }
+
+            .form-control {
+                border: 1px solid #dee2e6;
+                padding: 12px;
+                font-size: 14px;
+            }
+
+                .form-control:focus {
+                    box-shadow: none;
+                    border-color: #667eea;
+                }
+
+            .btn-login {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border: none;
+                padding: 12px;
+                font-size: 16px;
+                font-weight: 600;
+                border-radius: 8px;
+                width: 100%;
+                color: white;
+                cursor: pointer;
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
+
+                .btn-login:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+                }
+
+            .btn-register {
+                background: none;
+                border: none;
+                color: #667eea;
+                text-decoration: none;
+                font-size: 14px;
+            }
+
+            .alert {
+                border-radius: 8px;
+                margin-bottom: 20px;
+            }
+
+            .test-accounts {
+                margin-top: 20px;
+                padding: 15px;
+                background: #f8f9fa;
+                border-radius: 8px;
+                font-size: 12px;
+            }
+
+                .test-accounts strong {
+                    color: #667eea;
+                }
+
+            .footer {
+                text-align: center;
+                padding: 20px;
+                background: #f8f9fa;
+                font-size: 12px;
+                color: #666;
+            }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <i class="fas fa-chalkboard-user fa-3x mb-3"></i>
+                <h2>Gestion des Salles et EDT</h2>
+                <p>École Marocaine des Technologies de l'Information</p>
+            </div>
+            
+            <div class="login-body">
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger">
+                        <i class="fas fa-exclamation-triangle"></i> @ViewBag.Error
+                    </div>
+                }
+                
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle"></i> @TempData["Success"]
+                    </div>
+                }
+                
+                <form method="post" action="/Account/Login">
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" class="form-control" id="email" name="email" required autofocus>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Mot de passe</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">
+                        <i class="fas fa-sign-in-alt"></i> Se connecter
+                    </button>
+                </form>
+
+                <div class="text-center mt-3">
+                    <a href="/Account/Register" class="btn-register">
+                        <i class="fas fa-user-plus"></i> Pas encore de compte ? S'inscrire
+                    </a>
+                </div>
+                
+                <div class="test-accounts">
+                    <strong><i class="fas fa-info-circle"></i> Comptes de test :</strong><br>
+                    <small>admin@emit.sn / admin123</small><br>
+                    <small>enseignant@emit.sn / enseignant123</small><br>
+                    <small>eleve@emit.sn / eleve123</small>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <i class="fas fa-calendar-alt"></i> Gestion des Emplois du Temps & Salles<br>
+                &copy; 2025 EMIT - Tous droits réservés
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

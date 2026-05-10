@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2DJsWz1k9MA=",
+  "dgSpecHash": "bwPwWHdeYAY=",
   "success": true,
   "projectFilePath": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\MADISTOR\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
     "C:\\Users\\MADISTOR\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\MADISTOR\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",
     "C:\\Users\\MADISTOR\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.11.0\\microsoft.codeanalysis.analyzers.3.11.0.nupkg.sha512",

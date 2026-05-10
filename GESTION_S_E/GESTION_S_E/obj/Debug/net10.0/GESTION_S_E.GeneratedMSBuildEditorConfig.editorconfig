@@ -98,6 +98,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Eleves/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Eleves/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Eleves/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Eleves/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Eleves/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/Calendar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG9pRHVUZW1wc1xDYWxlbmRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -126,6 +146,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Enseignants/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Enseignants/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Enseignants/Disponibilites.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudHNcRGlzcG9uaWJpbGl0ZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -142,12 +170,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Groupes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Groupes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Groupes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Groupes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Matieres/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aWVyZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Matieres/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aWVyZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Matieres/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aWVyZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Matieres/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aWVyZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Reservations/Calendar.cshtml]
@@ -180,6 +232,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Salles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsbGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Scolarites/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvbGFyaXRlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Scolarites/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvbGFyaXRlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Scolarites/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvbGFyaXRlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Scolarites/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvbGFyaXRlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Scolarites/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvbGFyaXRlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Shared/Error.cshtml]

@@ -1,0 +1,287 @@
+@{
+    Layout = null;
+    ViewData["Title"] = "Inscription - Gestion Salles EMIT";
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+            body {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                padding: 20px 0;
+            }
+
+            .register-container {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .register-card {
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                overflow: hidden;
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .register-header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 25px;
+                text-align: center;
+            }
+
+                .register-header h2 {
+                    margin: 0;
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+
+                .register-header p {
+                    margin: 10px 0 0;
+                    opacity: 0.9;
+                    font-size: 14px;
+                }
+
+            .register-body {
+                padding: 30px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+                .form-group label {
+                    display: block;
+                    margin-bottom: 8px;
+                    font-weight: 600;
+                    color: #333;
+                    font-size: 14px;
+                }
+
+            .form-control, .form-select {
+                border: 1px solid #dee2e6;
+                padding: 10px;
+                font-size: 14px;
+                border-radius: 8px;
+            }
+
+                .form-control:focus, .form-select:focus {
+                    box-shadow: none;
+                    border-color: #667eea;
+                }
+
+            .btn-register {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border: none;
+                padding: 12px;
+                font-size: 16px;
+                font-weight: 600;
+                border-radius: 8px;
+                width: 100%;
+                color: white;
+                cursor: pointer;
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
+
+                .btn-register:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+                }
+
+            .btn-secondary {
+                background: #6c757d;
+                border: none;
+                padding: 12px;
+                font-size: 14px;
+                border-radius: 8px;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .alert {
+                border-radius: 8px;
+                margin-bottom: 20px;
+                font-size: 14px;
+            }
+
+            .text-danger {
+                font-size: 12px;
+                margin-top: 5px;
+            }
+
+            .conditional-field {
+                display: none;
+            }
+
+            .footer {
+                text-align: center;
+                padding: 20px;
+                background: #f8f9fa;
+                font-size: 12px;
+                color: #666;
+            }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-card">
+            <div class="register-header">
+                <i class="fas fa-user-plus fa-3x mb-2"></i>
+                <h2>Créer un compte</h2>
+                <p>Inscrivez-vous pour accéder à la plateforme</p>
+            </div>
+            
+            <div class="register-body">
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger">@ViewBag.Error</div>
+                }
+                
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success">@TempData["Success"]</div>
+                }
+
+                <form method="post" action="/Account/Register">
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Nom</label>
+                                <input type="text" name="nom" class="form-control" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Prénom</label>
+                                <input type="text" name="prenom" class="form-control" required />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" required />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Téléphone</label>
+                        <input type="text" name="telephone" class="form-control" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rôle</label>
+                        <select name="role" class="form-select" id="RoleSelect" required>
+                            <option value="">Choisir un rôle</option>
+                            <option value="eleve">📚 Élève</option>
+                            <option value="enseignant">👨‍🏫 Enseignant</option>
+                            <option value="scolarite">📋 Scolarité</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Champs pour Élève -->
+                    <div id="EleveFields" class="conditional-field">
+                        <div class="form-group">
+                            <label>Matricule</label>
+                            <input type="text" name="matricule" class="form-control" placeholder="Ex: EMIT2024001" />
+                        </div>
+                        <div class="form-group">
+                            <label>Classe</label>
+                            <select name="idClasse" class="form-select">
+                                <option value="">Sélectionner une classe</option>
+                                @foreach (var classe in ViewBag.Classes)
+                                {
+                                    <option value="@classe.Value">@classe.Text</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Champs pour Enseignant -->
+                    <div id="EnseignantFields" class="conditional-field">
+                        <div class="form-group">
+                            <label>Spécialité</label>
+                            <input type="text" name="specialite" class="form-control" placeholder="Ex: Mathématiques" />
+                        </div>
+                    </div>
+                    
+                    <!-- Champs pour Scolarité -->
+                    <div id="ScolariteFields" class="conditional-field">
+                        <div class="form-group">
+                            <label>Fonction</label>
+                            <input type="text" name="fonction" class="form-control" placeholder="Ex: Agent de scolarité" />
+                        </div>
+                        <div class="form-group">
+                            <label>Bureau</label>
+                            <input type="text" name="bureau" class="form-control" placeholder="Ex: B201" />
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Mot de passe</label>
+                        <input type="password" name="password" class="form-control" required />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Confirmer le mot de passe</label>
+                        <input type="password" name="confirmPassword" class="form-control" required />
+                    </div>
+                    
+                    <button type="submit" class="btn-register">
+                        <i class="fas fa-user-plus"></i> S'inscrire
+                    </button>
+                    
+                    <a href="@Url.Action("Login", "Account")" class="btn btn-secondary">
+                        <i class="fas fa-sign-in-alt"></i> Déjà inscrit ? Se connecter
+                    </a>
+                </form>
+            </div>
+            
+            <div class="footer">
+                <i class="fas fa-calendar-alt"></i> Gestion des Emplois du Temps & Salles<br>
+                &copy; 2025 EMIT - Tous droits réservés
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const roleSelect = document.getElementById('RoleSelect');
+        const eleveFields = document.getElementById('EleveFields');
+        const enseignantFields = document.getElementById('EnseignantFields');
+        const scolariteFields = document.getElementById('ScolariteFields');
+        
+        function toggleFields() {
+        eleveFields.style.display = 'none';
+        enseignantFields.style.display = 'none';
+        scolariteFields.style.display = 'none';
+            
+        if (roleSelect.value === 'eleve') {
+        eleveFields.style.display = 'block';
+        } else if (roleSelect.value === 'enseignant') {
+        enseignantFields.style.display = 'block';
+        } else if (roleSelect.value === 'scolarite') {
+        scolariteFields.style.display = 'block';
+        }
+        }
+        
+        roleSelect.addEventListener('change', toggleFields);
+        toggleFields();
+    </script>
+</body>
+</html>

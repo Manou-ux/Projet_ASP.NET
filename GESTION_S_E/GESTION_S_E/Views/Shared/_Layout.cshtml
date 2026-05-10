@@ -15,6 +15,7 @@
     <style>
             body {
                 background-color: #f8f9fa;
+                padding-bottom: 60px;
             }
         
             .navbar-brand {
@@ -38,10 +39,21 @@
                 text-align: center;
                 padding: 10px;
                 font-size: 14px;
+                z-index: 1000;
             }
         
             .main-content {
                 margin-bottom: 60px;
+                min-height: calc(100vh - 120px);
+            }
+        
+            .user-info {
+                color: white;
+                margin-right: 15px;
+            }
+        
+            .dropdown-menu {
+                min-width: 200px;
             }
     </style>
 </head>
@@ -49,8 +61,8 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" asp-controller="Salles" asp-action="Index">
-                <i class="fas fa-school"></i> Gestion Scolaire
+            <a class="navbar-brand" href="/Classes/Index">
+                <i class="fas fa-school"></i> Gestion Scolaire EMIT
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -58,30 +70,84 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Salles" asp-action="Index">
-                            <i class="fas fa-door-open"></i> Salles
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Classes" asp-action="Index">
+                        <a class="nav-link" href="/Classes/Index">
                             <i class="fas fa-users"></i> Classes
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="EmploiDuTemps" asp-action="Index">
+                        <a class="nav-link" href="/Eleves/Index">
+                            <i class="fas fa-user-graduate"></i> Élèves
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Salles/Index">
+                            <i class="fas fa-door-open"></i> Salles
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Enseignants/Index">
+                            <i class="fas fa-chalkboard-user"></i> Enseignants
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Matieres/Index">
+                            <i class="fas fa-book"></i> Matières
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/EmploiDuTemps/Index">
                             <i class="fas fa-calendar-alt"></i> Emploi du temps
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Reservations" asp-action="Index">
-                            <i class="fas fa-bookmark"></i> Réservations
+                        <a class="nav-link" href="/Groupes/Index">
+                            <i class="fas fa-layer-group"></i> Groupes
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Enseignants" asp-action="Index">
-                            <i class="fas fa-chalkboard-user"></i> Enseignants
+                        <a class="nav-link" href="/Scolarites/Index">
+                            <i class="fas fa-building"></i> Scolarité
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Reservations/Index">
+                            <i class="fas fa-bookmark"></i> Réservations
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Section utilisateur et déconnexion -->
+                <ul class="navbar-nav ms-auto">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-user-circle"></i> @User.Identity.Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="/Account/Profile">
+                                        <i class="fas fa-id-card"></i> Mon profil
+                                    </a>
+                                </li>
+                                
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item text-danger" href="/Account/Logout">
+                                        <i class="fas fa-sign-out-alt"></i> Déconnexion
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white" href="/Account/Login">
+                                <i class="fas fa-sign-in-alt"></i> Connexion
+                            </a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
@@ -97,7 +163,8 @@
     <!-- Footer -->
     <footer class="footer border-top">
         <div class="container">
-            &copy; 2026 - Gestion Scolaire - Tous droits réservés
+            <i class="fas fa-calendar-alt"></i> Gestion des Emplois du Temps & Salles
+            &copy; 2025 EMIT - Tous droits réservés
         </div>
     </footer>
 

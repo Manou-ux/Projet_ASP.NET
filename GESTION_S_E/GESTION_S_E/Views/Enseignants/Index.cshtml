@@ -1,0 +1,53 @@
+@model List<GESTION_S_E.Models.Enseignant>
+
+@{
+    ViewData["Title"] = "Gestion des enseignants";
+}
+
+<h1>Liste des enseignants</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
+        @TempData["Success"]
+    </div>
+}
+
+<a href="/Enseignants/Create" class="btn btn-primary">Ajouter un enseignant</a>
+
+<br />
+<br />
+
+<table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Spécialité</th>
+            <th>Téléphone</th>
+            <th>Email pro</th>
+            <th>ID Utilisateur</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var enseignant in Model)
+        {
+            <tr>
+                <td>@enseignant.IdEnseignant</td>
+                <td>@enseignant.NomEnseignant</td>
+                <td>@enseignant.PrenomEnseignant</td>
+                <td>@enseignant.Specialite</td>
+                <td>@enseignant.TelephoneEnseignant</td>
+                <td>@enseignant.EmailPro</td>
+                <td>@enseignant.IdUtilisateur</td>
+                <td>
+                    <a href="/Enseignants/Edit/@enseignant.IdEnseignant">Modifier</a> |
+                    <a href="/Enseignants/Delete/@enseignant.IdEnseignant">Supprimer</a> |
+                    <a href="/Enseignants/Details/@enseignant.IdEnseignant">Détails</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -3,12 +3,164 @@
   "WorkspaceRootPath": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\classes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\classes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\matieres\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\matieres\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\controllers\\matierescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\controllers\\matierescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\scolarites\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\scolarites\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\scolarites\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\scolarites\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\scolarites\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\scolarites\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\scolarites\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\scolarites\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\controllers\\scolaritescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\controllers\\scolaritescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\scolarites\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\scolarites\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\scolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\scolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\mondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\mondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\controllers\\groupescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\controllers\\groupescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\enseignants\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\enseignants\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\enseignants\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\enseignants\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\enseignants\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\enseignants\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\enseignants\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\enseignants\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\enseignants\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\enseignants\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\controllers\\enseignantscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\controllers\\enseignantscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\controllers\\elevescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\controllers\\elevescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\eleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\eleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\eleves\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\eleves\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\classe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\classe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\controllers\\classescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\controllers\\classescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\eleves\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\eleves\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\eleves\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\eleves\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\eleves\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\eleves\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\eleves\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\eleves\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\controllers\\clubscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\controllers\\clubscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\classes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\classes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\classes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\classes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\classes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -23,18 +175,6 @@
       "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\salles\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\controllers\\classescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\controllers\\classescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\classes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\classes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -47,24 +187,8 @@
       "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\salles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\classe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\classe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\mondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\mondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\membreclub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\membreclub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -172,22 +296,10 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\scolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\scolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\eleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\eleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -206,60 +318,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 13,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Index.cshtml",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Index.cshtml",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Index.cshtml",
-              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Index.cshtml",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAowC4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-10T01:54:45.291Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Index.cshtml",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Salles\\Index.cshtml",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Index.cshtml",
-              "RelativeToolTip": "GESTION_S_E\\Views\\Salles\\Index.cshtml",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAowCsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-10T01:53:01.311Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Edit.cshtml",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Salles\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Edit.cshtml",
-              "RelativeToolTip": "GESTION_S_E\\Views\\Salles\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-10T01:53:00.398Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Delete.cshtml",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Delete.cshtml",
-              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-10T01:44:05.194Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -270,84 +330,479 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Edit.cshtml",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Edit.cshtml",
-              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Matieres\\Index.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Matieres\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Matieres\\Index.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Matieres\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-10T01:43:42.765Z",
+              "WhenOpened": "2026-05-10T15:07:57.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MatieresController.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\MatieresController.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Controllers\\MatieresController.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\MatieresController.cs",
+              "RelativeToolTip": "GESTION_S_E\\Controllers\\MatieresController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T15:06:13.659Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Create.cshtml",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Create.cshtml",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Create.cshtml",
-              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-10T01:43:19.357Z",
+              "WhenOpened": "2026-05-10T14:36:58.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ClassesController.cs",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ClassesController.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Controllers\\ClassesController.cs",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ClassesController.cs",
-              "RelativeToolTip": "GESTION_S_E\\Controllers\\ClassesController.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAowEwAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T01:34:55.662Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Utilisateur.cs",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Utilisateur.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Utilisateur.cs",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Utilisateur.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Utilisateur.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T21:42:11.855Z"
+              "DocumentIndex": 6,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Scolarites\\Edit.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Scolarites\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Scolarites\\Edit.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Scolarites\\Edit.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowDkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T14:35:34.737Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Scolarites\\Create.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Scolarites\\Create.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Scolarites\\Create.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Scolarites\\Create.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAowDEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T14:34:39.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Scolarites\\Index.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Scolarites\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Scolarites\\Index.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Scolarites\\Index.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowDQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T14:34:12.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GroupesController.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\GroupesController.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Controllers\\GroupesController.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\GroupesController.cs",
+              "RelativeToolTip": "GESTION_S_E\\Controllers\\GroupesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwCAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T14:12:57.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ScolaritesController.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ScolaritesController.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Controllers\\ScolaritesController.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ScolaritesController.cs",
+              "RelativeToolTip": "GESTION_S_E\\Controllers\\ScolaritesController.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAowIoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T14:31:39.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Enseignants\\Index.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Enseignants\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Enseignants\\Index.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Enseignants\\Index.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowDQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T13:36:23.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Eleves\\Edit.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Eleves\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Eleves\\Edit.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Eleves\\Edit.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAowC8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T10:57:21.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ElevesController.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ElevesController.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Controllers\\ElevesController.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ElevesController.cs",
+              "RelativeToolTip": "GESTION_S_E\\Controllers\\ElevesController.cs",
+              "ViewState": "AgIAAG8AAABAMzMzMzMpwIQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T10:52:12.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "GESTION_S_E\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAAAFwAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAUwF4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-05-10T00:51:24.295Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Scolarites\\Delete.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Scolarites\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Scolarites\\Delete.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Scolarites\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T14:36:04.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Scolarites\\Details.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Scolarites\\Details.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Scolarites\\Details.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Scolarites\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T14:36:31.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Enseignants\\Create.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Enseignants\\Create.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Enseignants\\Create.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Enseignants\\Create.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAowDEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T13:36:33.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Enseignants\\Edit.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Enseignants\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Enseignants\\Edit.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Enseignants\\Edit.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowDkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T13:36:50.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAJ0AAAAANDMzMzMrwLIAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T11:14:48.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Program.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Program.cs",
               "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Program.cs",
               "RelativeToolTip": "GESTION_S_E\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowAcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T21:17:18.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-08T21:17:18.299Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 31,
+              "Title": "Utilisateur.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Utilisateur.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Utilisateur.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Utilisateur.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Utilisateur.cs",
+              "ViewState": "AgIAAA4AAADAzMzMzMwowCAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T21:42:11.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Account\\Profile.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Account\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Account\\Profile.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Account\\Profile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T11:13:14.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MonDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MonDbContext.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\MonDbContext.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MonDbContext.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\MonDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T21:22:27.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Scolarite.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Scolarite.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Scolarite.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Scolarite.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Scolarite.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwvysAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T14:59:48.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Enseignants\\Delete.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Enseignants\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Enseignants\\Delete.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Enseignants\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T13:37:25.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Enseignants\\Details.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Enseignants\\Details.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Enseignants\\Details.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Enseignants\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T13:38:17.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ClassesController.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ClassesController.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Controllers\\ClassesController.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ClassesController.cs",
+              "RelativeToolTip": "GESTION_S_E\\Controllers\\ClassesController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAQwHAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T01:34:55.662Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ClubsController.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ClubsController.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Controllers\\ClubsController.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ClubsController.cs",
+              "RelativeToolTip": "GESTION_S_E\\Controllers\\ClubsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T10:50:36.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Classe.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Classe.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Classe.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Classe.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Classe.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAYwCUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T14:35:27.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Eleve.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Eleve.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Eleve.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Eleve.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Eleve.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowDIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T14:48:18.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Enseignant.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Enseignant.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Enseignant.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Enseignant.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Enseignant.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAADwvywAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T14:54:23.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EnseignantsController.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\EnseignantsController.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Controllers\\EnseignantsController.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\EnseignantsController.cs",
+              "RelativeToolTip": "GESTION_S_E\\Controllers\\EnseignantsController.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAowIsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T10:50:38.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "GESTION_S_E\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAcBAAAAaGZmZmYewPsAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T10:50:33.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Eleves\\Index.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Eleves\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Eleves\\Index.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Eleves\\Index.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAADQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T10:55:55.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Eleves\\Create.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Eleves\\Create.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Eleves\\Create.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Eleves\\Create.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAAAowD0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T10:56:28.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Eleves\\Delete.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Eleves\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Eleves\\Delete.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Eleves\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T10:57:50.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Eleves\\Details.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Eleves\\Details.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Eleves\\Details.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Eleves\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T10:58:31.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAALYAAAAAAAAAAAAowNwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T11:13:15.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Delete.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Delete.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:44:05.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Services\\NotificationService.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Services\\NotificationService.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Services\\NotificationService.cs",
+              "RelativeToolTip": "GESTION_S_E\\Services\\NotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T10:36:50.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Edit.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Edit.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:43:42.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Create.cshtml",
               "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Salles\\Create.cshtml",
@@ -355,12 +810,11 @@
               "RelativeToolTip": "GESTION_S_E\\Views\\Salles\\Create.cshtml",
               "ViewState": "AgIAAAcAAABAMzMzMzMrwCYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-10T00:51:35.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-10T00:51:35.028Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 51,
               "Title": "_LayoutEnseignant.cshtml",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LayoutEnseignant.cshtml",
               "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_LayoutEnseignant.cshtml",
@@ -372,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 41,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Delete.cshtml",
               "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Salles\\Delete.cshtml",
@@ -380,12 +834,71 @@
               "RelativeToolTip": "GESTION_S_E\\Views\\Salles\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-10T00:51:36.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-10T00:51:36.425Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 36,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\appsettings.json",
+              "RelativeDocumentMoniker": "GESTION_S_E\\appsettings.json",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\appsettings.json",
+              "RelativeToolTip": "GESTION_S_E\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-08T21:14:32.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Create.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Create.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Create.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:43:19.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Edit.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Salles\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Edit.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Salles\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:53:00.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Index.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Salles\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Index.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Salles\\Index.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAowCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:53:01.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Index.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Index.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Index.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAowC4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:54:45.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_LoginPartial.cshtml",
@@ -397,7 +910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 50,
               "Title": "_LayoutEleve.cshtml",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LayoutEleve.cshtml",
               "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_LayoutEleve.cshtml",
@@ -409,7 +922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 49,
               "Title": "_LayoutAdmin.cshtml",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LayoutAdmin.cshtml",
               "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_LayoutAdmin.cshtml",
@@ -421,7 +934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 46,
               "Title": "MembreClub.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MembreClub.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\MembreClub.cs",
@@ -433,46 +946,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MonDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MonDbContext.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\MonDbContext.cs",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MonDbContext.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\MonDbContext.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T21:22:27.89Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Classe.cs",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Classe.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Classe.cs",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Classe.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Classe.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T14:35:27.6Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\appsettings.json",
-              "RelativeDocumentMoniker": "GESTION_S_E\\appsettings.json",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\appsettings.json",
-              "RelativeToolTip": "GESTION_S_E\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-08T21:14:32.7Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 48,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Services\\AuthService.cs",
@@ -484,7 +958,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 47,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Services\\IAuthService.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Services\\IAuthService.cs",
@@ -496,7 +970,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 53,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -508,7 +982,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 55,
               "Title": "20260510004826_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260510004826_InitialCreate.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260510004826_InitialCreate.cs",
@@ -520,7 +994,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 54,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Notification.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Notification.cs",
@@ -532,7 +1006,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 56,
               "Title": "20260509153916_AjoutTableReservationSalle.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs",
@@ -543,7 +1017,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 57,
               "Title": "20260509153050_AjoutTableClub.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs",
@@ -554,7 +1028,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 60,
               "Title": "Club.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Club.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Club.cs",
@@ -566,7 +1040,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 61,
               "Title": "20260509152751_AjoutTableDisponibiliteEnseignant.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs",
@@ -578,7 +1052,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 62,
               "Title": "DisponibiliteEnseignant.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\DisponibiliteEnseignant.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\DisponibiliteEnseignant.cs",
@@ -590,7 +1064,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 58,
               "Title": "20260509153452_AjoutTableMembreClub.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs",
@@ -601,7 +1075,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 59,
               "Title": "ReservationSalle.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\ReservationSalle.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\ReservationSalle.cs",
@@ -613,7 +1087,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 63,
               "Title": "20260509152436_AjoutTableEmploiDuTemps.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs",
@@ -625,7 +1099,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 64,
               "Title": "EmploiDuTemps.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\EmploiDuTemps.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\EmploiDuTemps.cs",
@@ -637,7 +1111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 65,
               "Title": "20260509152116_AjoutTableSalle.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs",
@@ -649,7 +1123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 66,
               "Title": "Salle.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Salle.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Salle.cs",
@@ -661,7 +1135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 67,
               "Title": "20260509151618_AjoutTableMatiereClasse.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs",
@@ -673,7 +1147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 68,
               "Title": "MatiereClasse.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MatiereClasse.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\MatiereClasse.cs",
@@ -685,7 +1159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 69,
               "Title": "20260509151304_AjoutTableMatiere.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs",
@@ -697,7 +1171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 70,
               "Title": "Matiere.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Matiere.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Matiere.cs",
@@ -709,7 +1183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 71,
               "Title": "20260509151020_AjoutTableEleveGroupe.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs",
@@ -721,7 +1195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 72,
               "Title": "EleveGroupe.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\EleveGroupe.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\EleveGroupe.cs",
@@ -733,7 +1207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 73,
               "Title": "20260509150427_AjoutTableGroupe.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs",
@@ -745,7 +1219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 74,
               "Title": "Groupe.cs",
               "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Groupe.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Groupe.cs",
@@ -757,7 +1231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 75,
               "Title": "20260509150126_AjoutTableScolarite.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs",
@@ -769,19 +1243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "Scolarite.cs",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Scolarite.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Scolarite.cs",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Scolarite.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Scolarite.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T14:59:48.003Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 76,
               "Title": "20260509145709_AjoutTableEnseignant.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs",
@@ -793,19 +1255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "Enseignant.cs",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Enseignant.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Enseignant.cs",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Enseignant.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Enseignant.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwCkAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T14:54:23.262Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 77,
               "Title": "20260509145233_AjoutTableEleve.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs",
@@ -817,19 +1267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "Eleve.cs",
-              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Eleve.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Eleve.cs",
-              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Eleve.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Eleve.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAswDMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T14:48:18.326Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 78,
               "Title": "20260509144449_AjoutTableClasseCorrige.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs",
@@ -841,7 +1279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 79,
               "Title": "20260509144106_AjoutTableClasse.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs",
@@ -853,7 +1291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 80,
               "Title": "20260508214553_AjoutTableUtilisateur.cs",
               "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260508214553_AjoutTableUtilisateur.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260508214553_AjoutTableUtilisateur.cs",
