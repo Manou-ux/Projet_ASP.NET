@@ -11,211 +11,300 @@
     <title>@ViewData["Title"]</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-            body {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                height: 100vh;
-                margin: 0;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            }
+        *, *::before, *::after { box-sizing: border-box; }
 
-            .login-container {
-                min-height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+        body {
+            background-color: #f0f2f5;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            .login-card {
-                background: white;
-                border-radius: 15px;
-                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-                overflow: hidden;
-                width: 100%;
-                max-width: 400px;
-            }
+        .login-wrapper {
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+        }
 
-            .login-header {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                padding: 30px;
-                text-align: center;
-            }
+        /* Logo / Brand */
+        .brand {
+            text-align: center;
+            margin-bottom: 32px;
+        }
 
-                .login-header h2 {
-                    margin: 0;
-                    font-size: 28px;
-                    font-weight: bold;
-                }
+        .brand-icon {
+            width: 52px;
+            height: 52px;
+            background: #1a1a2e;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
 
-                .login-header p {
-                    margin: 10px 0 0;
-                    opacity: 0.9;
-                }
+        .brand-icon i {
+            color: #fff;
+            font-size: 22px;
+        }
 
-            .login-body {
-                padding: 40px 30px;
-            }
+        .brand h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin: 0 0 4px;
+            letter-spacing: -0.3px;
+        }
 
-            .form-group {
-                margin-bottom: 25px;
-            }
+        .brand p {
+            font-size: 13px;
+            color: #8a8fa8;
+            margin: 0;
+            font-weight: 400;
+        }
 
-                .form-group label {
-                    display: block;
-                    margin-bottom: 8px;
-                    font-weight: 600;
-                    color: #333;
-                }
+        /* Card */
+        .login-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 36px 32px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        }
 
-            .input-group {
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            }
+        /* Form */
+        .field-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 6px;
+            display: block;
+        }
 
-            .input-group-text {
-                background: #f8f9fa;
-                border: 1px solid #dee2e6;
-                border-right: none;
-            }
+        .field-wrap {
+            position: relative;
+            margin-bottom: 18px;
+        }
 
-            .form-control {
-                border: 1px solid #dee2e6;
-                padding: 12px;
-                font-size: 14px;
-            }
+        .field-wrap i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #bbb;
+            font-size: 14px;
+            pointer-events: none;
+        }
 
-                .form-control:focus {
-                    box-shadow: none;
-                    border-color: #667eea;
-                }
+        .field-wrap input {
+            width: 100%;
+            padding: 11px 14px 11px 38px;
+            border: 1.5px solid #e4e6ef;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: inherit;
+            color: #1a1a2e;
+            background: #fafafa;
+            transition: border-color 0.2s, background 0.2s;
+            outline: none;
+        }
 
-            .btn-login {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                border: none;
-                padding: 12px;
-                font-size: 16px;
-                font-weight: 600;
-                border-radius: 8px;
-                width: 100%;
-                color: white;
-                cursor: pointer;
-                transition: transform 0.2s, box-shadow 0.2s;
-            }
+        .field-wrap input:focus {
+            border-color: #1a1a2e;
+            background: #fff;
+        }
 
-                .btn-login:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-                }
+        .remember-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 22px;
+        }
 
-            .btn-register {
-                background: none;
-                border: none;
-                color: #667eea;
-                text-decoration: none;
-                font-size: 14px;
-            }
+        .remember-row input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #1a1a2e;
+            cursor: pointer;
+        }
 
-            .alert {
-                border-radius: 8px;
-                margin-bottom: 20px;
-            }
+        .remember-row label {
+            font-size: 13px;
+            color: #666;
+            cursor: pointer;
+            user-select: none;
+        }
 
-            .test-accounts {
-                margin-top: 20px;
-                padding: 15px;
-                background: #f8f9fa;
-                border-radius: 8px;
-                font-size: 12px;
-            }
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: #1a1a2e;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            letter-spacing: 0.2px;
+        }
 
-                .test-accounts strong {
-                    color: #667eea;
-                }
+        .btn-login:hover {
+            background: #2d2d50;
+            transform: translateY(-1px);
+        }
 
-            .footer {
-                text-align: center;
-                padding: 20px;
-                background: #f8f9fa;
-                font-size: 12px;
-                color: #666;
-            }
+        .btn-login:active {
+            transform: translateY(0);
+        }
+
+        /* Register link */
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #8a8fa8;
+        }
+
+        .register-link a {
+            color: #1a1a2e;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Alerts */
+        .alert {
+            border-radius: 10px;
+            font-size: 13px;
+            padding: 10px 14px;
+            margin-bottom: 18px;
+            border: none;
+        }
+
+        .alert-danger  { background: #fff0f0; color: #c0392b; }
+        .alert-success { background: #f0fff4; color: #27ae60; }
+
+        /* Test accounts */
+        .test-accounts {
+            margin-top: 28px;
+            padding: 14px 16px;
+            background: #f7f8fa;
+            border-radius: 10px;
+            border: 1px dashed #e0e2ea;
+        }
+
+        .test-accounts .title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #8a8fa8;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 8px;
+        }
+
+        .test-accounts .account-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #555;
+            padding: 3px 0;
+        }
+
+        .test-accounts .account-row span:first-child {
+            color: #8a8fa8;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .page-footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 12px;
+            color: #b0b4c4;
+        }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-card">
-            <div class="login-header">
-                <i class="fas fa-chalkboard-user fa-3x mb-3"></i>
-                <h2>Gestion des Salles et EDT</h2>
-                <p>École Marocaine des Technologies de l'Information</p>
-            </div>
-            
-            <div class="login-body">
-                @if (ViewBag.Error != null)
-                {
-                    <div class="alert alert-danger">
-                        <i class="fas fa-exclamation-triangle"></i> @ViewBag.Error
-                    </div>
-                }
-                
-                @if (TempData["Success"] != null)
-                {
-                    <div class="alert alert-success">
-                        <i class="fas fa-check-circle"></i> @TempData["Success"]
-                    </div>
-                }
-                
-                <form method="post" action="/Account/Login">
-                    @Html.AntiForgeryToken()
-                    
-                    <div class="form-group">
-                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                            <input type="email" class="form-control" id="email" name="email" required autofocus>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="password"><i class="fas fa-lock"></i> Mot de passe</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
-                    </div>
-                    
-                    <button type="submit" class="btn-login">
-                        <i class="fas fa-sign-in-alt"></i> Se connecter
-                    </button>
-                </form>
+    <div class="login-wrapper">
 
-                <div class="text-center mt-3">
-                    <a href="/Account/Register" class="btn-register">
-                        <i class="fas fa-user-plus"></i> Pas encore de compte ? S'inscrire
-                    </a>
-                </div>
-                
-                <div class="test-accounts">
-                    <strong><i class="fas fa-info-circle"></i> Comptes de test :</strong><br>
-                    <small>admin@emit.sn / admin123</small><br>
-                    <small>enseignant@emit.sn / enseignant123</small><br>
-                    <small>eleve@emit.sn / eleve123</small>
-                </div>
+        <!-- Brand -->
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fas fa-chalkboard-user"></i>
             </div>
-            
-            <div class="footer">
-                <i class="fas fa-calendar-alt"></i> Gestion des Emplois du Temps & Salles<br>
-                &copy; 2025 EMIT - Tous droits réservés
+            <h1>Gestion des Salles & EDT</h1>
+            <p>École Marocaine des Technologies de l'Information</p>
+        </div>
+
+        <!-- Card -->
+        <div class="login-card">
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle"></i> @ViewBag.Error
+                </div>
+            }
+
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> @TempData["Success"]
+                </div>
+            }
+
+            <form method="post" action="/Account/Login">
+                @Html.AntiForgeryToken()
+
+                <label class="field-label" for="email">Adresse email</label>
+                <div class="field-wrap">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="vous@emit.sn" required autofocus>
+                </div>
+
+                <label class="field-label" for="password">Mot de passe</label>
+                <div class="field-wrap">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="remember-row">
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                    <label for="rememberMe">Se souvenir de moi</label>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    <i class="fas fa-arrow-right-to-bracket"></i> Se connecter
+                </button>
+            </form>
+
+            <div class="register-link">
+                Pas encore de compte ? <a href="/Account/Register">S'inscrire</a>
+            </div>
+
+            <!-- Comptes de test -->
+            <div class="test-accounts">
+                <div class="title"><i class="fas fa-circle-info"></i> Comptes de test</div>
+                <div class="account-row"><span>Admin</span> <span>admin@emit.sn / admin123</span></div>
+                <div class="account-row"><span>Enseignant</span> <span>enseignant@emit.sn / enseignant123</span></div>
+                <div class="account-row"><span>Élève</span> <span>eleve@emit.sn / eleve123</span></div>
             </div>
         </div>
+
+        <div class="page-footer">
+            &copy; 2025 EMIT — Tous droits réservés
+        </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

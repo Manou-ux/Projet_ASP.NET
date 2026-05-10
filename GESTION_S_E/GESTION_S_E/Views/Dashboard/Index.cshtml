@@ -1,14 +1,354 @@
-<h1>Dashboard EMIT</h1>
+<!-- GESTION_S_E\GESTION_S_E\Views\Dashboard\Index.cshtml -->
+@{
+    ViewData["Title"] = "Dashboard - Gestion EMIT";
+}
 
-<p>Bienvenue dans le système de gestion des salles et emplois du temps</p>
+<style>
+    body {
+        font-family: 'DM Sans', sans-serif;
+        background-color: #f0f2f5;
+    }
 
-<hr>
+    /* Header */
+    .dash-header {
+        background: #1a1a2e;
+        border-radius: 16px;
+        padding: 28px 32px;
+        margin-bottom: 28px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
 
-<ul>
-    <h2>BROUILLON FOTSINY REO LISTE REO FA TSY AIKO OE ZAO VE MO LE GERENA SA INONA AVY</h2>
-    <li><a href="/Salles">Gestion des salles</a></li>
-    <li><a href="/EmploiDuTemps">Emploi du temps</a></li>
-    <li><a href="/Classes">Classes</a></li>
-    <li><a href="/Enseignants">Enseignants</a></li>
-    <li><a href="/Reservations">Réservations</a></li>
-</ul>
+    .dash-header-icon {
+        width: 52px;
+        height: 52px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .dash-header-icon i { color: #fff; font-size: 22px; }
+
+    .dash-header h1 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #fff;
+        margin: 0 0 4px;
+        letter-spacing: -0.3px;
+    }
+
+    .dash-header p {
+        font-size: 13px;
+        color: rgba(255,255,255,0.55);
+        margin: 0;
+    }
+
+    /* Section label */
+    .section-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: #b0b4c4;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        margin-bottom: 14px;
+    }
+
+    /* Stat cards */
+    .stat-card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 22px 24px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: transform 0.2s, box-shadow 0.2s;
+        text-decoration: none;
+        color: inherit;
+        height: 100%;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+        color: inherit;
+    }
+
+    .stat-card-left h5 {
+        font-size: 12px;
+        font-weight: 500;
+        color: #8a8fa8;
+        margin: 0 0 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .stat-card-left h2 {
+        font-size: 32px;
+        font-weight: 600;
+        color: #1a1a2e;
+        margin: 0 0 10px;
+        letter-spacing: -1px;
+    }
+
+    .stat-card-left .stat-link {
+        font-size: 12px;
+        color: #8a8fa8;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+    .stat-card-left .stat-link:hover { color: #1a1a2e; }
+
+    .stat-card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .stat-card-icon i { font-size: 20px; }
+
+    .icon-blue   { background: #eef2ff; } .icon-blue i   { color: #4f6ef7; }
+    .icon-green  { background: #edfaf4; } .icon-green i  { color: #2ecc8f; }
+    .icon-amber  { background: #fff8eb; } .icon-amber i  { color: #f5a623; }
+    .icon-red    { background: #fff0f0; } .icon-red i    { color: #e05c5c; }
+
+    /* Admin cards */
+    .admin-card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 24px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .admin-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    }
+
+    .admin-card-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        flex-shrink: 0;
+    }
+
+    .admin-card-icon i { font-size: 20px; }
+
+    .admin-card h5 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1a1a2e;
+        margin: 0 0 6px;
+    }
+
+    .admin-card p {
+        font-size: 13px;
+        color: #8a8fa8;
+        margin: 0 0 20px;
+        flex-grow: 1;
+    }
+
+    .btn-access {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 9px 16px;
+        background: #1a1a2e;
+        color: #fff;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 500;
+        font-family: inherit;
+        text-decoration: none;
+        transition: background 0.2s;
+    }
+
+    .btn-access:hover { background: #2d2d50; color: #fff; }
+
+    /* Quick nav */
+    .quick-nav-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+
+    .quick-link {
+        background: #fff;
+        border-radius: 12px;
+        padding: 16px;
+        text-align: center;
+        text-decoration: none;
+        color: #1a1a2e;
+        font-size: 13px;
+        font-weight: 500;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        border: 1.5px solid #e4e6ef;
+        transition: border-color 0.2s, background 0.2s, transform 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .quick-link i {
+        font-size: 20px;
+        color: #8a8fa8;
+        transition: color 0.2s;
+    }
+
+    .quick-link:hover {
+        border-color: #1a1a2e;
+        background: #f7f8fa;
+        transform: translateY(-2px);
+        color: #1a1a2e;
+    }
+
+    .quick-link:hover i { color: #1a1a2e; }
+
+    @@media (max-width: 768px) {
+        .quick-nav-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<div class="dash-header">
+    <div class="dash-header-icon">
+        <i class="fas fa-school"></i>
+    </div>
+    <div>
+        <h1>Dashboard EMIT</h1>
+        <p>Système de gestion des salles et emplois du temps</p>
+    </div>
+</div>
+
+<!-- Statistiques -->
+<p class="section-label">Vue d'ensemble</p>
+<div class="row g-3 mb-4">
+    <div class="col-md-3 col-6">
+        <div class="stat-card">
+            <div class="stat-card-left">
+                <h5>Salles</h5>
+                <h2>@ViewBag.TotalSalles</h2>
+                <a href="/Salles/Index" class="stat-link">Voir détails <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="stat-card-icon icon-blue">
+                <i class="fas fa-door-open"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="stat-card">
+            <div class="stat-card-left">
+                <h5>Classes</h5>
+                <h2>@ViewBag.TotalClasses</h2>
+                <a href="/Classes/Index" class="stat-link">Voir détails <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="stat-card-icon icon-green">
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="stat-card">
+            <div class="stat-card-left">
+                <h5>Matières</h5>
+                <h2>@ViewBag.TotalMatieres</h2>
+                <a href="/Matieres/Index" class="stat-link">Voir détails <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="stat-card-icon icon-amber">
+                <i class="fas fa-book"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="stat-card">
+            <div class="stat-card-left">
+                <h5>Réservations</h5>
+                <h2>@ViewBag.TotalReservations</h2>
+                <a href="/Reservations/Index" class="stat-link">Voir détails <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="stat-card-icon icon-red">
+                <i class="fas fa-bookmark"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Administration -->
+<p class="section-label">Administration des utilisateurs</p>
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="admin-card">
+            <div class="admin-card-icon icon-blue">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <h5>Gestion des Élèves</h5>
+            <p>Consulter, ajouter, modifier ou supprimer les élèves</p>
+            <a href="/Eleves/Index" class="btn-access">
+                <i class="fas fa-arrow-right"></i> Accéder
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="admin-card">
+            <div class="admin-card-icon icon-green">
+                <i class="fas fa-chalkboard-user"></i>
+            </div>
+            <h5>Gestion des Enseignants</h5>
+            <p>Consulter, ajouter, modifier ou supprimer les enseignants</p>
+            <a href="/Enseignants/Index" class="btn-access">
+                <i class="fas fa-arrow-right"></i> Accéder
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="admin-card">
+            <div class="admin-card-icon icon-blue" style="background:#edf6ff;">
+                <i class="fas fa-building" style="color:#3b82f6;"></i>
+            </div>
+            <h5>Gestion Scolarité</h5>
+            <p>Consulter, ajouter, modifier ou supprimer le personnel scolarité</p>
+            <a href="/Scolarites/Index" class="btn-access">
+                <i class="fas fa-arrow-right"></i> Accéder
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation rapide -->
+<p class="section-label">Navigation rapide</p>
+<div class="quick-nav-grid">
+    <a href="/Groupes/Index" class="quick-link">
+        <i class="fas fa-layer-group"></i> Groupes
+    </a>
+    <a href="/EmploiDuTemps/Index" class="quick-link">
+        <i class="fas fa-calendar-alt"></i> Emploi du temps
+    </a>
+    <a href="/Reservations/Index" class="quick-link">
+        <i class="fas fa-bookmark"></i> Réservations
+    </a>
+    <a href="/Account/Profile" class="quick-link">
+        <i class="fas fa-user-circle"></i> Mon profil
+    </a>
+</div>
