@@ -1,150 +1,202 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\",
+  "WorkspaceRootPath": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509154351_AjoutTableNotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509154351_AjoutTableNotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\classes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\classes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\mondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\mondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\classes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\classes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\classes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\classes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\salles\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\salles\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\reservationsalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\reservationsalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\salles\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\salles\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\controllers\\classescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\controllers\\classescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\membreclub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\membreclub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\club.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\club.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\disponibiliteenseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\disponibiliteenseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\emploidutemps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\emploidutemps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\salle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\salle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\matiereclasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\matiereclasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\matiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\matiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\elevegroupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\elevegroupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\classe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\classe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\groupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\groupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\scolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\scolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\eleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\eleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\migrations\\20260508214553_ajouttableutilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\migrations\\20260508214553_ajouttableutilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\nicolas\\source\\repos\\gestion_s_e\\gestion_s_e\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\classes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\classes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\salles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\salles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\salles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\salles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\classe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\classe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\mondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\mondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\membreclub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\membreclub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\shared\\_layouteleve.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\shared\\_layouteleve.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\shared\\_layoutenseignant.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\shared\\_layoutenseignant.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260510004826_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GESTION_S_E\\Migrations\\20260510004826_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\reservationsalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\reservationsalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\club.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\club.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\disponibiliteenseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\disponibiliteenseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\emploidutemps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\emploidutemps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\salle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\salle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\matiereclasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\matiereclasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\matiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\matiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\elevegroupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\elevegroupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\groupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\groupe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\scolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\scolarite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|c:\\users\\madistor\\documents\\projetasp\\gestion_s_e\\gestion_s_e\\models\\eleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04528C87-89DE-6965-6422-9E33C45A6D94}|GESTION_S_E\\GESTION_S_E.csproj|solutionrelative:gestion_s_e\\models\\eleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260508214553_AjoutTableUtilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -154,477 +206,662 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20260509154351_AjoutTableNotification.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509154351_AjoutTableNotification.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509154351_AjoutTableNotification.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509154351_AjoutTableNotification.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509154351_AjoutTableNotification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:43:51.933Z",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Index.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Index.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Index.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAowC4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:54:45.291Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Notification.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Notification.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Notification.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Notification.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Notification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:42:06.829Z",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Index.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Salles\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Index.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Salles\\Index.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAowCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:53:01.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "20260509153916_AjoutTableReservationSalle.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs",
+              "DocumentIndex": 10,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Edit.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Salles\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Edit.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Salles\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:39:16.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReservationSalle.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\ReservationSalle.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\ReservationSalle.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\ReservationSalle.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\ReservationSalle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:37:10.482Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20260509153452_AjoutTableMembreClub.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:34:52.767Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MembreClub.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\MembreClub.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\MembreClub.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\MembreClub.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\MembreClub.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:32:32.732Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:53:00.398Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Delete.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Delete.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:44:05.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Edit.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Edit.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:43:42.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Create.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Classes\\Create.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Classes\\Create.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Classes\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T01:43:19.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClassesController.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ClassesController.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Controllers\\ClassesController.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Controllers\\ClassesController.cs",
+              "RelativeToolTip": "GESTION_S_E\\Controllers\\ClassesController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAowEwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T01:34:55.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Utilisateur.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Utilisateur.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Utilisateur.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Utilisateur.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Utilisateur.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T21:42:11.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAAFwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T00:51:24.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Program.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Program.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Program.cs",
+              "RelativeToolTip": "GESTION_S_E\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T21:17:18.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Create.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Salles\\Create.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Create.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Salles\\Create.cshtml",
+              "ViewState": "AgIAAAcAAABAMzMzMzMrwCYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T00:51:35.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_LayoutEnseignant.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LayoutEnseignant.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_LayoutEnseignant.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LayoutEnseignant.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Shared\\_LayoutEnseignant.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T00:51:18.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Delete.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Salles\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Salles\\Delete.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Salles\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T00:51:36.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T00:51:16.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "_LayoutEleve.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LayoutEleve.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_LayoutEleve.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LayoutEleve.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Shared\\_LayoutEleve.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T00:51:21.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T00:51:23.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MembreClub.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MembreClub.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\MembreClub.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MembreClub.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\MembreClub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:32:32.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "MonDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\MonDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MonDbContext.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\MonDbContext.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\MonDbContext.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MonDbContext.cs",
               "RelativeToolTip": "GESTION_S_E\\Models\\MonDbContext.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA6wBwAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-08T21:22:27.89Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "20260509153050_AjoutTableClub.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:30:50.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Club.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Club.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Club.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Club.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Club.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:29:07.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "20260509152751_AjoutTableDisponibiliteEnseignant.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:27:51.161Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DisponibiliteEnseignant.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\DisponibiliteEnseignant.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\DisponibiliteEnseignant.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\DisponibiliteEnseignant.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\DisponibiliteEnseignant.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:25:46.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "20260509152436_AjoutTableEmploiDuTemps.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:24:36.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "EmploiDuTemps.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\EmploiDuTemps.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\EmploiDuTemps.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\EmploiDuTemps.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\EmploiDuTemps.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:22:46.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "20260509152116_AjoutTableSalle.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:21:16.109Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Salle.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Salle.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Salle.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Salle.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Salle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:18:54.5Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "20260509151618_AjoutTableMatiereClasse.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:16:18.123Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "MatiereClasse.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\MatiereClasse.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\MatiereClasse.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\MatiereClasse.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\MatiereClasse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:14:36.829Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "20260509151304_AjoutTableMatiere.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:13:04.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Matiere.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Matiere.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Matiere.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Matiere.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Matiere.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:11:44.759Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "20260509151020_AjoutTableEleveGroupe.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:10:20.223Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "EleveGroupe.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\EleveGroupe.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\EleveGroupe.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\EleveGroupe.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\EleveGroupe.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:07:55.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "20260509150427_AjoutTableGroupe.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:04:27.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Groupe.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Groupe.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Groupe.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Groupe.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Groupe.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:03:14.241Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "20260509150126_AjoutTableScolarite.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T15:01:26.201Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Scolarite.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Scolarite.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Scolarite.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Scolarite.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Scolarite.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T14:59:48.003Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "20260509145709_AjoutTableEnseignant.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T14:57:09.976Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
               "Title": "Classe.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Classe.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Classe.cs",
               "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Classe.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Classe.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Classe.cs",
               "RelativeToolTip": "GESTION_S_E\\Models\\Classe.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwCEAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-09T14:35:27.6Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Enseignant.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Enseignant.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Enseignant.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Enseignant.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Enseignant.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwCkAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T14:54:23.262Z",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\appsettings.json",
+              "RelativeDocumentMoniker": "GESTION_S_E\\appsettings.json",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\appsettings.json",
+              "RelativeToolTip": "GESTION_S_E\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-08T21:14:32.7Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "20260509145233_AjoutTableEleve.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs",
+              "DocumentIndex": 17,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Services\\AuthService.cs",
+              "RelativeToolTip": "GESTION_S_E\\Services\\AuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T14:52:33.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-10T00:53:24.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Services\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Services\\IAuthService.cs",
+              "RelativeToolTip": "GESTION_S_E\\Services\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T00:53:26.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "GESTION_S_E\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T00:51:15.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20260510004826_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260510004826_InitialCreate.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260510004826_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260510004826_InitialCreate.cs",
+              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260510004826_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T00:48:26.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Notification.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Notification.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Notification.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Notification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:42:06.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20260509153916_AjoutTableReservationSalle.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153916_AjoutTableReservationSalle.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:39:16.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "20260509153050_AjoutTableClub.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153050_AjoutTableClub.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:30:50.318Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 29,
-              "Title": "Eleve.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Eleve.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Eleve.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Eleve.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Eleve.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAswDMAAAAAAAAAAAAAAA==",
+              "Title": "Club.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Club.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Club.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Club.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Club.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T14:48:18.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-09T15:29:07.237Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 30,
-              "Title": "20260509144449_AjoutTableClasseCorrige.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Title": "20260509152751_AjoutTableDisponibiliteEnseignant.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152751_AjoutTableDisponibiliteEnseignant.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T14:44:49.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-09T15:27:51.161Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 31,
-              "Title": "Utilisateur.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Utilisateur.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Utilisateur.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Models\\Utilisateur.cs",
-              "RelativeToolTip": "GESTION_S_E\\Models\\Utilisateur.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
+              "Title": "DisponibiliteEnseignant.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\DisponibiliteEnseignant.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\DisponibiliteEnseignant.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\DisponibiliteEnseignant.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\DisponibiliteEnseignant.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T21:42:11.855Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-09T15:25:46.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20260509153452_AjoutTableMembreClub.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509153452_AjoutTableMembreClub.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:34:52.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ReservationSalle.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\ReservationSalle.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\ReservationSalle.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\ReservationSalle.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\ReservationSalle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:37:10.482Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 32,
-              "Title": "20260509144106_AjoutTableClasse.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Title": "20260509152436_AjoutTableEmploiDuTemps.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152436_AjoutTableEmploiDuTemps.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T14:41:06.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-09T15:24:36.927Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 33,
-              "Title": "20260508214553_AjoutTableUtilisateur.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260508214553_AjoutTableUtilisateur.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Migrations\\20260508214553_AjoutTableUtilisateur.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260508214553_AjoutTableUtilisateur.cs",
-              "RelativeToolTip": "GESTION_S_E\\Migrations\\20260508214553_AjoutTableUtilisateur.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Title": "EmploiDuTemps.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\EmploiDuTemps.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\EmploiDuTemps.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\EmploiDuTemps.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\EmploiDuTemps.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T21:45:54.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-09T15:22:46.67Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 34,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Program.cs",
-              "RelativeDocumentMoniker": "GESTION_S_E\\Program.cs",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Program.cs",
-              "RelativeToolTip": "GESTION_S_E\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Title": "20260509152116_AjoutTableSalle.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509152116_AjoutTableSalle.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T21:17:18.299Z"
+              "WhenOpened": "2026-05-09T15:21:16.109Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 35,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\appsettings.json",
-              "RelativeDocumentMoniker": "GESTION_S_E\\appsettings.json",
-              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\appsettings.json",
-              "RelativeToolTip": "GESTION_S_E\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-08T21:14:32.7Z"
+              "Title": "Salle.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Salle.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Salle.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Salle.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Salle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:18:54.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "20260509151618_AjoutTableMatiereClasse.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151618_AjoutTableMatiereClasse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:16:18.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "MatiereClasse.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MatiereClasse.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\MatiereClasse.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\MatiereClasse.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\MatiereClasse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:14:36.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "20260509151304_AjoutTableMatiere.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151304_AjoutTableMatiere.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:13:04.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Matiere.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Matiere.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Matiere.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Matiere.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Matiere.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:11:44.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "20260509151020_AjoutTableEleveGroupe.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509151020_AjoutTableEleveGroupe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:10:20.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "EleveGroupe.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\EleveGroupe.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\EleveGroupe.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\EleveGroupe.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\EleveGroupe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:07:55.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "20260509150427_AjoutTableGroupe.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150427_AjoutTableGroupe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:04:27.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Groupe.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Groupe.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Groupe.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Groupe.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Groupe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:03:14.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "20260509150126_AjoutTableScolarite.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509150126_AjoutTableScolarite.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T15:01:26.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Scolarite.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Scolarite.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Scolarite.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Scolarite.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Scolarite.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T14:59:48.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "20260509145709_AjoutTableEnseignant.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145709_AjoutTableEnseignant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T14:57:09.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Enseignant.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Enseignant.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Enseignant.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Enseignant.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Enseignant.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwCkAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T14:54:23.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "20260509145233_AjoutTableEleve.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509145233_AjoutTableEleve.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T14:52:33.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Eleve.cs",
+              "DocumentMoniker": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Eleve.cs",
+              "RelativeDocumentMoniker": "GESTION_S_E\\Models\\Eleve.cs",
+              "ToolTip": "C:\\Users\\MADISTOR\\Documents\\ProjetASP\\GESTION_S_E\\GESTION_S_E\\Models\\Eleve.cs",
+              "RelativeToolTip": "GESTION_S_E\\Models\\Eleve.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAswDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T14:48:18.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "20260509144449_AjoutTableClasseCorrige.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144449_AjoutTableClasseCorrige.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T14:44:49.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "20260509144106_AjoutTableClasse.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260509144106_AjoutTableClasse.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T14:41:06.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "20260508214553_AjoutTableUtilisateur.cs",
+              "DocumentMoniker": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260508214553_AjoutTableUtilisateur.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260508214553_AjoutTableUtilisateur.cs",
+              "ToolTip": "C:\\Users\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260508214553_AjoutTableUtilisateur.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Nicolas\\Source\\Repos\\GESTION_S_E\\GESTION_S_E\\Migrations\\20260508214553_AjoutTableUtilisateur.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T21:45:54.018Z"
             }
           ]
         }
