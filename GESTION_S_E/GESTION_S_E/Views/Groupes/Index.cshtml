@@ -1,0 +1,61 @@
+@model List<GESTION_S_E.Models.Groupe>
+
+<h1>Liste des groupes</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div style="background-color: red; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+        @TempData["Error"]
+    </div>
+}
+
+<a href="/Groupes/Create">Ajouter un groupe</a>
+
+<br />
+<br />
+
+@if (Model != null && Model.Any())
+{
+    <table border="1" cellpadding="10" style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom du groupe</th>
+                <th>Classe</th>
+                <th>Niveau</th>
+                <th>Filière</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var groupe in Model)
+            {
+                <tr>
+                    <td>@groupe.IdGroupe</td>
+                    <td>@groupe.NomGroupe</td>
+                    <td>@groupe.Classe?.NomClasse</td>
+                    <td>@groupe.Classe?.Niveau</td>
+                    <td>@groupe.Classe?.Filiere</td>
+                    <td>
+                        <a href="/Groupes/Edit/@groupe.IdGroupe">Modifier</a>
+                        |
+                        <a href="/Groupes/Delete/@groupe.IdGroupe">Supprimer</a>
+                        |
+                        <a href="/Groupes/Details/@groupe.IdGroupe">Détails</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Aucun groupe trouvé. Cliquez sur "Ajouter un groupe" pour créer le premier groupe.</p>
+}

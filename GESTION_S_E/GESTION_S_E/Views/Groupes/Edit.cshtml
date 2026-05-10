@@ -1,0 +1,51 @@
+@model GESTION_S_E.Models.Groupe
+
+@{
+    ViewData["Title"] = "Modifier un groupe";
+}
+
+<h1>Modifier le groupe</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" name="id" value="@Model.IdGroupe" />
+
+            <div class="form-group mb-3">
+                <label for="NomGroupe" class="control-label">Nom du groupe</label>
+                <input type="text" name="NomGroupe" id="NomGroupe" class="form-control" value="@Model.NomGroupe" required />
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="IdClasse" class="control-label">Classe</label>
+                <select name="IdClasse" id="IdClasse" class="form-control" required>
+                    <option value="">-- Sélectionner une classe --</option>
+                    @if (ViewBag.Classes != null)
+                    {
+                        foreach (var classe in ViewBag.Classes)
+                        {
+                            if (classe.IdClasse == Model.IdClasse)
+                            {
+                                <option value="@classe.IdClasse" selected>@classe.NomClasse - @classe.Niveau - @classe.Filiere</option>
+                            }
+                            else
+                            {
+                                <option value="@classe.IdClasse">@classe.NomClasse - @classe.Niveau - @classe.Filiere</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+                <a href="/Groupes" class="btn btn-secondary">Retour à la liste</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

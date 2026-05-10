@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Ajouter un groupe";
+}
+
+<h1>Ajouter un groupe</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" action="/Groupes/Create">
+            <div class="form-group mb-3">
+                <label for="NomGroupe" class="control-label">Nom du groupe</label>
+                <input type="text" name="NomGroupe" id="NomGroupe" class="form-control" required />
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="IdClasse" class="control-label">Classe</label>
+                <select name="IdClasse" id="IdClasse" class="form-control" required>
+                    <option value="">-- Sélectionner une classe --</option>
+                    @if (ViewBag.Classes != null)
+                    {
+                        foreach (var classe in ViewBag.Classes)
+                        {
+                            <option value="@classe.IdClasse">@classe.NomClasse - @classe.Niveau - @classe.Filiere (@classe.AnneeAcademique)</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Créer</button>
+                <a href="/Groupes" class="btn btn-secondary">Retour à la liste</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (ViewBag.Classes == null || ((System.Collections.IEnumerable)ViewBag.Classes).Cast<object>().Count() == 0)
+{
+    <div class="alert alert-warning mt-3">
+        Aucune classe disponible. Veuillez d'abord <a asp-controller="Classes" asp-action="Create">créer une classe</a>.
+    </div>
+}

@@ -1,0 +1,43 @@
+@model GESTION_S_E.Models.Groupe
+
+@{
+    ViewData["Title"] = "Détails du groupe";
+}
+
+<h1>Détails du groupe</h1>
+
+<div>
+    <a href="/Groupes" class="btn btn-secondary">Retour à la liste</a>
+</div>
+
+<hr />
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h4>Informations du groupe</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID :</dt>
+            <dd class="col-sm-9">@Model.IdGroupe</dd>
+
+            <dt class="col-sm-3">Nom du groupe :</dt>
+            <dd class="col-sm-9">@Model.NomGroupe</dd>
+
+            <dt class="col-sm-3">Classe :</dt>
+            <dd class="col-sm-9">@Model.Classe?.NomClasse</dd>
+
+            <dt class="col-sm-3">Niveau :</dt>
+            <dd class="col-sm-9">@Model.Classe?.Niveau</dd>
+
+            <dt class="col-sm-3">Filière :</dt>
+            <dd class="col-sm-9">@Model.Classe?.Filiere</dd>
+
+            <dt class="col-sm-3">Année académique :</dt>
+            <dd class="col-sm-9">@Model.Classe?.AnneeAcademique</dd>
+
+            <dt class="col-sm-3">Effectif de la classe :</dt>
+            <dd class="col-sm-9">@Model.Classe?.Effectif</dd>
+        </dl>
+    </div>
+</div>

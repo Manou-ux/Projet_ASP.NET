@@ -1,0 +1,41 @@
+@model GESTION_S_E.Models.Groupe
+
+@{
+    ViewData["Title"] = "Supprimer un groupe";
+}
+
+<h1>Supprimer le groupe</h1>
+
+<div class="alert alert-danger">
+    <h3>Êtes-vous sûr de vouloir supprimer ce groupe ?</h3>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9">@Model.IdGroupe</dd>
+
+            <dt class="col-sm-3">Nom du groupe</dt>
+            <dd class="col-sm-9">@Model.NomGroupe</dd>
+
+            <dt class="col-sm-3">Classe</dt>
+            <dd class="col-sm-9">@Model.Classe?.NomClasse</dd>
+
+            <dt class="col-sm-3">Niveau</dt>
+            <dd class="col-sm-9">@Model.Classe?.Niveau</dd>
+
+            <dt class="col-sm-3">Filière</dt>
+            <dd class="col-sm-9">@Model.Classe?.Filiere</dd>
+
+            <dt class="col-sm-3">Année académique</dt>
+            <dd class="col-sm-9">@Model.Classe?.AnneeAcademique</dd>
+        </dl>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" name="id" value="@Model.IdGroupe" />
+            <button type="submit" class="btn btn-danger">Confirmer la suppression</button>
+            <a href="/Groupes" class="btn btn-secondary">Annuler</a>
+        </form>
+    </div>
+</div>
