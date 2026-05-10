@@ -13,36 +13,36 @@
     
     <!-- Custom CSS -->
     <style>
-        body {
-            background-color: #f8f9fa;
-        }
+            body {
+                background-color: #f8f9fa;
+            }
         
-        .navbar-brand {
-            font-weight: bold;
-        }
+            .navbar-brand {
+                font-weight: bold;
+            }
         
-        .card {
-            transition: transform 0.2s;
-        }
+            .card {
+                transition: transform 0.2s;
+            }
         
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+                .card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                }
         
-        .footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #f8f9fa;
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-        }
+            .footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background-color: #f8f9fa;
+                text-align: center;
+                padding: 10px;
+                font-size: 14px;
+            }
         
-        .main-content {
-            margin-bottom: 60px;
-        }
+            .main-content {
+                margin-bottom: 60px;
+            }
     </style>
 </head>
 <body>
@@ -58,8 +58,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" asp-controller="Salles" asp-action="Index">
+                        <a class="nav-link" asp-controller="Salles" asp-action="Index">
                             <i class="fas fa-door-open"></i> Salles
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Classes" asp-action="Index">
+                            <i class="fas fa-users"></i> Classes
                         </a>
                     </li>
                     <li class="nav-item">
@@ -75,11 +80,6 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Enseignants" asp-action="Index">
                             <i class="fas fa-chalkboard-user"></i> Enseignants
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Classes" asp-action="Index">
-                            <i class="fas fa-users"></i> Classes
                         </a>
                     </li>
                 </ul>

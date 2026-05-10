@@ -1,0 +1,47 @@
+@model GESTION_S_E.Models.Classe
+
+<h1>Ajouter une classe</h1>
+
+<form method="post" action="/Classes/Create">
+    @Html.AntiForgeryToken()  <!-- ← AJOUTEZ CETTE LIGNE -->
+
+    <div>
+        <label>Nom Classe</label>
+        <input type="text" name="NomClasse" value="@Model?.NomClasse" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Niveau</label>
+        <select name="Niveau">
+            <option value="">-- Sélectionner --</option>
+            <option value="L1">L1 - Licence 1</option>
+            <option value="L2">L2 - Licence 2</option>
+            <option value="L3">L3 - Licence 3</option>
+            <option value="M1">M1 - Master 1</option>
+            <option value="M2">M2 - Master 2</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Filière</label>
+        <input type="text" name="Filiere" value="@Model?.Filiere" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Effectif</label>
+        <input type="number" name="Effectif" value="@Model?.Effectif" />
+    </div>
+    <br />
+
+    <div>
+        <label>Année académique</label>
+        <input type="text" name="AnneeAcademique" value="@Model?.AnneeAcademique" placeholder="Ex: 2024-2025" required />
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer</button>
+    <a href="/Classes/Index">Annuler</a>
+</form>

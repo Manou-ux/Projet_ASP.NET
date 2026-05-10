@@ -1,0 +1,47 @@
+@model List<GESTION_S_E.Models.Classe>
+
+<h1>Liste des classes</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+        @TempData["Success"]
+    </div>
+}
+
+<a href="/Classes/Create">Ajouter une classe</a>
+
+<br />
+<br />
+
+<table border="1" cellpadding="10" style="border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom Classe</th>
+            <th>Niveau</th>
+            <th>Filière</th>
+            <th>Effectif</th>
+            <th>Année académique</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var classe in Model)
+        {
+            <tr>
+                <td>@classe.IdClasse</td>
+                <td>@classe.NomClasse</td>
+                <td>@classe.Niveau</td>
+                <td>@classe.Filiere</td>
+                <td>@classe.Effectif</td>
+                <td>@classe.AnneeAcademique</td>
+                <td>
+                    <a href="/Classes/Edit/@classe.IdClasse">Modifier</a>
+                    |
+                    <a href="/Classes/Delete/@classe.IdClasse">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

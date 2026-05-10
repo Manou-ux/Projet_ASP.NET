@@ -1,0 +1,49 @@
+@model GESTION_S_E.Models.Classe
+
+<h1>Modifier une classe</h1>
+
+<form method="post" action="/Classes/Edit/@Model?.IdClasse">
+    @Html.AntiForgeryToken()  <!-- ← AJOUTEZ CETTE LIGNE -->
+    
+    <input type="hidden" name="IdClasse" value="@Model?.IdClasse" />
+
+    <div>
+        <label>Nom Classe</label>
+        <input type="text" name="NomClasse" value="@Model?.NomClasse" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Niveau</label>
+        <select name="Niveau">
+            <option value="">-- Sélectionner --</option>
+            <option value="L1" @(Model?.Niveau == "L1" ? "selected" : "")>L1 - Licence 1</option>
+            <option value="L2" @(Model?.Niveau == "L2" ? "selected" : "")>L2 - Licence 2</option>
+            <option value="L3" @(Model?.Niveau == "L3" ? "selected" : "")>L3 - Licence 3</option>
+            <option value="M1" @(Model?.Niveau == "M1" ? "selected" : "")>M1 - Master 1</option>
+            <option value="M2" @(Model?.Niveau == "M2" ? "selected" : "")>M2 - Master 2</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Filière</label>
+        <input type="text" name="Filiere" value="@Model?.Filiere" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Effectif</label>
+        <input type="number" name="Effectif" value="@Model?.Effectif" />
+    </div>
+    <br />
+
+    <div>
+        <label>Année académique</label>
+        <input type="text" name="AnneeAcademique" value="@Model?.AnneeAcademique" required />
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer</button>
+    <a href="/Classes/Index">Annuler</a>
+</form>
