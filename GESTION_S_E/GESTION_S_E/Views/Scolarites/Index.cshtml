@@ -1,0 +1,53 @@
+﻿@model List<GESTION_S_E.Models.Scolarite>
+
+@{
+    ViewData["Title"] = "Gestion de la scolarité";
+}
+
+<h1>Liste des agents de scolarité</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
+        @TempData["Success"]
+    </div>
+}
+
+<a href="/Scolarites/Create" class="btn btn-primary">Ajouter un agent</a>
+
+<br />
+<br />
+
+<table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Fonction</th>
+            <th>Téléphone</th>
+            <th>Bureau</th>
+            <th>ID Utilisateur</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var scolarite in Model)
+        {
+            <tr>
+                <td>@scolarite.IdScolarite</td>
+                <td>@scolarite.NomScolarite</td>
+                <td>@scolarite.PrenomScolarite</td>
+                <td>@scolarite.Fonction ?? "-"</td>
+                <td>@scolarite.Telephone ?? "-"</td>
+                <td>@scolarite.Bureau ?? "-"</td>
+                <td>@scolarite.IdUtilisateur</td>
+                <td>
+                    <a href="/Scolarites/Edit/@scolarite.IdScolarite">Modifier</a> |
+                    <a href="/Scolarites/Delete/@scolarite.IdScolarite">Supprimer</a> |
+                    <a href="/Scolarites/Details/@scolarite.IdScolarite">Détails</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

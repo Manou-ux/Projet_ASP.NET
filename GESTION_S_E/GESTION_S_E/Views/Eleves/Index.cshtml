@@ -1,0 +1,53 @@
+﻿@model List<GESTION_S_E.Models.Eleve>
+
+@{
+    ViewData["Title"] = "Liste des élèves";
+}
+
+<h1>Liste des élèves</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
+        @TempData["Success"]
+    </div>
+}
+
+<a href="/Eleves/Create">Ajouter un élève</a>
+
+<br />
+<br />
+
+<table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Matricule</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date naissance</th>
+            <th>Téléphone</th>
+            <th>Classe</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var eleve in Model)
+        {
+            <tr>
+                <td>@eleve.IdEleve</td>
+                <td>@eleve.Matricule</td>
+                <td>@eleve.NomEleve</td>
+                <td>@eleve.PrenomEleve</td>
+                <td>@(eleve.DateNaissance?.ToString("dd/MM/yyyy") ?? "-")</td>
+                <td>@eleve.Telephone</td>
+                <td>@eleve.Classe?.NomClasse</td>
+                <td>
+                    <a href="/Eleves/Edit/@eleve.IdEleve">Modifier</a> |
+                    <a href="/Eleves/Delete/@eleve.IdEleve">Supprimer</a> |
+                    <a href="/Eleves/Details/@eleve.IdEleve">Détails</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

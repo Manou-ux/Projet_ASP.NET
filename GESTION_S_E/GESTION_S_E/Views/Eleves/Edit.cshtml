@@ -1,0 +1,65 @@
+﻿@model GESTION_S_E.Models.Eleve
+
+@{
+    ViewData["Title"] = "Modifier un élève";
+}
+
+<h1>Modifier un élève</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
+        @TempData["Success"]
+    </div>
+}
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="IdEleve" value="@Model.IdEleve" />
+
+    <div>
+        <label>Matricule</label>
+        <input type="text" name="Matricule" value="@Model.Matricule" readonly style="background-color: #f0f0f0;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Nom</label>
+        <input type="text" name="NomEleve" value="@Model.NomEleve" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Prénom</label>
+        <input type="text" name="PrenomEleve" value="@Model.PrenomEleve" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Date de naissance</label>
+        <input type="date" name="DateNaissance" value="@(Model.DateNaissance?.ToString("yyyy-MM-dd"))" />
+    </div>
+    <br />
+
+    <div>
+        <label>Téléphone</label>
+        <input type="text" name="Telephone" value="@Model.Telephone" />
+    </div>
+    <br />
+
+    <div>
+        <label>Classe (ID)</label>
+        <input type="number" name="IdClasse" value="@Model.IdClasse" required />
+        <small>ID de la classe (exemple: 1)</small>
+    </div>
+    <br />
+
+    <div>
+        <label>ID Utilisateur</label>
+        <input type="number" name="IdUtilisateur" value="@Model.IdUtilisateur" />
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer</button>
+    <a href="/Eleves/Index">Annuler</a>
+</form>

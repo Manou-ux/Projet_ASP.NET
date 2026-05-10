@@ -3,6 +3,7 @@ using System;
 using GESTION_S_E.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GESTION_S_E.Migrations
 {
     [DbContext(typeof(MonDbContext))]
-    partial class MonDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260510132617_FixDateTimeKind")]
+    partial class FixDateTimeKind
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,0 +1,22 @@
+﻿@model GESTION_S_E.Models.Eleve
+
+@{
+    ViewData["Title"] = "Détails de l'élève";
+}
+
+<h1>Détails de l'élève</h1>
+
+<div>
+    <div><strong>ID:</strong> @Model?.IdEleve</div>
+    <div><strong>Matricule:</strong> @Model?.Matricule</div>
+    <div><strong>Nom:</strong> @Model?.NomEleve</div>
+    <div><strong>Prénom:</strong> @Model?.PrenomEleve</div>
+    <div><strong>Date naissance:</strong> @(Model?.DateNaissance?.ToString("dd/MM/yyyy") ?? "-")</div>
+    <div><strong>Téléphone:</strong> @Model?.Telephone</div>
+    <div><strong>Classe:</strong> @Model?.Classe?.NomClasse</div>
+
+    <br />
+
+    <a href="/Eleves/Edit/@Model?.IdEleve">Modifier</a> |
+    <a href="/Eleves/Index">Retour à la liste</a>
+</div>

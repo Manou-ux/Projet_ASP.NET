@@ -1,0 +1,58 @@
+﻿@model GESTION_S_E.Models.Scolarite
+
+@{
+    ViewData["Title"] = "Modifier un agent de scolarité";
+}
+
+<h1>Modifier un agent de scolarité</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
+        @TempData["Success"]
+    </div>
+}
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="IdScolarite" value="@Model.IdScolarite" />
+
+    <div>
+        <label>Nom *</label><br />
+        <input type="text" name="NomScolarite" value="@Model.NomScolarite" required style="width: 300px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Prénom *</label><br />
+        <input type="text" name="PrenomScolarite" value="@Model.PrenomScolarite" required style="width: 300px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Fonction</label><br />
+        <input type="text" name="Fonction" value="@Model.Fonction" style="width: 300px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Téléphone</label><br />
+        <input type="text" name="Telephone" value="@Model.Telephone" style="width: 200px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Bureau</label><br />
+        <input type="text" name="Bureau" value="@Model.Bureau" style="width: 200px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>ID Utilisateur</label><br />
+        <input type="number" name="IdUtilisateur" value="@Model.IdUtilisateur" />
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer</button>
+    <a href="/Scolarites/Index">Annuler</a>
+</form>

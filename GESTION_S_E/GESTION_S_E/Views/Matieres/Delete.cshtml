@@ -1,0 +1,38 @@
+@model GESTION_S_E.Models.Matiere
+
+<h1>Supprimer la matière</h1>
+
+<div style="background-color: red; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+    Êtes-vous sûr de vouloir supprimer cette matière ?
+</div>
+
+<table cellpadding="10">
+    <tr>
+        <td><strong>ID :</strong></td>
+        <td>@Model.IdMatiere</td>
+    </tr>
+    <tr>
+        <td><strong>Code :</strong></td>
+        <td>@Model.CodeMatiere</td>
+    </tr>
+    <tr>
+        <td><strong>Nom :</strong></td>
+        <td>@Model.NomMatiere</td>
+    </tr>
+    <tr>
+        <td><strong>Volume horaire :</strong></td>
+        <td>@(Model.VolumeHoraire?.ToString() ?? "-")</td>
+    </tr>
+    <tr>
+        <td><strong>Coefficient :</strong></td>
+        <td>@Model.Coefficient.ToString("0.00")</td>
+    </tr>
+</table>
+
+<br />
+
+<form action="/Matieres/Delete/@Model.IdMatiere" method="post">
+    <input type="hidden" name="id" value="@Model.IdMatiere" />
+    <input type="submit" value="Confirmer la suppression" style="background-color: red; color: white;" />
+    <a href="/Matieres">Annuler</a>
+</form>

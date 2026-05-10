@@ -1,0 +1,62 @@
+﻿@model GESTION_S_E.Models.Eleve
+
+@{
+    ViewData["Title"] = "Ajouter un élève";
+}
+
+<h1>Ajouter un élève</h1>
+
+<form method="post" action="/Eleves/Create">
+    @Html.AntiForgeryToken()
+
+    <div>
+        <label>Matricule</label>
+        <input type="text" name="Matricule" placeholder="Optionnel - généré automatiquement" style="width: 250px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Nom *</label>
+        <input type="text" name="NomEleve" required style="width: 250px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Prénom *</label>
+        <input type="text" name="PrenomEleve" required style="width: 250px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Date de naissance</label>
+        <input type="date" name="DateNaissance" style="width: 200px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Téléphone</label>
+        <input type="text" name="Telephone" style="width: 200px;" />
+    </div>
+    <br />
+
+    <div>
+        <label>Classe *</label>
+        <select name="IdClasse" required style="width: 250px;">
+            <option value="">-- Sélectionner une classe --</option>
+            @foreach (var classe in ViewBag.Classes)
+            {
+                <option value="@classe.Value">@classe.Text</option>
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>ID Utilisateur</label>
+        <input type="number" name="IdUtilisateur" style="width: 200px;" />
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer</button>
+    <a href="/Eleves/Index">Annuler</a>
+</form>

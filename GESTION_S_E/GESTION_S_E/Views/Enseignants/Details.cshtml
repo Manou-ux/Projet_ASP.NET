@@ -1,0 +1,22 @@
+﻿@model GESTION_S_E.Models.Enseignant
+
+@{
+    ViewData["Title"] = "Détails de l'enseignant";
+}
+
+<h1>Détails de l'enseignant</h1>
+
+<div>
+    <div><strong>ID:</strong> @Model?.IdEnseignant</div>
+    <div><strong>Nom:</strong> @Model?.NomEnseignant</div>
+    <div><strong>Prénom:</strong> @Model?.PrenomEnseignant</div>
+    <div><strong>Spécialité:</strong> @Model?.Specialite</div>
+    <div><strong>Téléphone:</strong> @Model?.TelephoneEnseignant</div>
+    <div><strong>Email pro:</strong> @Model?.EmailPro</div>
+    <div><strong>ID Utilisateur:</strong> @Model?.IdUtilisateur</div>
+
+    <br />
+
+    <a href="/Enseignants/Edit/@Model?.IdEnseignant">Modifier</a> |
+    <a href="/Enseignants/Index">Retour à la liste</a>
+</div>

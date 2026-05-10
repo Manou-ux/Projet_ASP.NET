@@ -1,0 +1,30 @@
+@model GESTION_S_E.Models.Matiere
+
+<h1>Ajouter une matière</h1>
+
+<form action="/Matieres/Create" method="post">
+    <table cellpadding="10">
+        <tr>
+            <td><label>Nom de la matière :</label></td>
+            <td><input type="text" name="NomMatiere" required style="width: 300px;" /></td>
+        </tr>
+        <tr>
+            <td><label>Code matière :</label></td>
+            <td><input type="text" name="CodeMatiere" style="width: 300px;" /></td>
+        </tr>
+        <tr>
+            <td><label>Volume horaire :</label></td>
+            <td><input type="number" name="VolumeHoraire" style="width: 300px;" /></td>
+        </tr>
+        <tr>
+            <td><label>Coefficient :</label></td>
+            <td><input type="number" name="Coefficient" step="0.01" required style="width: 300px;" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Créer" />
+                <a href="/Matieres">Annuler</a>
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,32 @@
+@model GESTION_S_E.Models.Matiere
+
+<h1>Modifier la matière</h1>
+
+<form action="/Matieres/Edit/@Model.IdMatiere" method="post">
+    <input type="hidden" name="id" value="@Model.IdMatiere" />
+    
+    <table cellpadding="10">
+        <tr>
+            <td><label>Nom de la matière :</label></td>
+            <td><input type="text" name="NomMatiere" value="@Model.NomMatiere" required style="width: 300px;" /></td>
+        </tr>
+        <tr>
+            <td><label>Code matière :</label></td>
+            <td><input type="text" name="CodeMatiere" value="@Model.CodeMatiere" style="width: 300px;" /></td>
+        </tr>
+        <tr>
+            <td><label>Volume horaire :</label></td>
+            <td><input type="number" name="VolumeHoraire" value="@Model.VolumeHoraire" style="width: 300px;" /></td>
+        </tr>
+        <tr>
+            <td><label>Coefficient :</label></td>
+            <td><input type="number" name="Coefficient" step="0.01" value="@Model.Coefficient.ToString("0.00")" required style="width: 300px;" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Enregistrer" />
+                <a href="/Matieres">Annuler</a>
+            </td>
+        </tr>
+    </table>
+</form>

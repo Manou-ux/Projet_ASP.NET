@@ -1,0 +1,26 @@
+﻿@model GESTION_S_E.Models.Enseignant
+
+@{
+    ViewData["Title"] = "Supprimer un enseignant";
+}
+
+<h1>Supprimer un enseignant</h1>
+
+<div style="background-color: #ffcccc; padding: 15px; border-radius: 5px;">
+    <p>Êtes-vous sûr de vouloir supprimer cet enseignant ?</p>
+
+    <div><strong>ID:</strong> @Model?.IdEnseignant</div>
+    <div><strong>Nom:</strong> @Model?.NomEnseignant</div>
+    <div><strong>Prénom:</strong> @Model?.PrenomEnseignant</div>
+    <div><strong>Spécialité:</strong> @Model?.Specialite</div>
+    <div><strong>Téléphone:</strong> @Model?.TelephoneEnseignant</div>
+    <div><strong>Email pro:</strong> @Model?.EmailPro</div>
+
+    <br />
+
+    <form method="post">
+        @Html.AntiForgeryToken()
+        <button type="submit" style="background-color: red; color: white;">Confirmer la suppression</button>
+        <a href="/Enseignants/Index">Annuler</a>
+    </form>
+</div>

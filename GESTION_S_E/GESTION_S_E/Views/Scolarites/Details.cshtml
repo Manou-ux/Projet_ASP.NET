@@ -1,0 +1,22 @@
+﻿@model GESTION_S_E.Models.Scolarite
+
+@{
+    ViewData["Title"] = "Détails de l'agent de scolarité";
+}
+
+<h1>Détails de l'agent de scolarité</h1>
+
+<div>
+    <div><strong>ID:</strong> @Model?.IdScolarite</div>
+    <div><strong>Nom:</strong> @Model?.NomScolarite</div>
+    <div><strong>Prénom:</strong> @Model?.PrenomScolarite</div>
+    <div><strong>Fonction:</strong> @Model?.Fonction</div>
+    <div><strong>Téléphone:</strong> @Model?.Telephone</div>
+    <div><strong>Bureau:</strong> @Model?.Bureau</div>
+    <div><strong>ID Utilisateur:</strong> @Model?.IdUtilisateur</div>
+
+    <br />
+
+    <a href="/Scolarites/Edit/@Model?.IdScolarite">Modifier</a> |
+    <a href="/Scolarites/Index">Retour à la liste</a>
+</div>

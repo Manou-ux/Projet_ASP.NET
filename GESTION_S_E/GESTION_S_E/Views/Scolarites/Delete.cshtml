@@ -1,0 +1,26 @@
+﻿@model GESTION_S_E.Models.Scolarite
+
+@{
+    ViewData["Title"] = "Supprimer un agent de scolarité";
+}
+
+<h1>Supprimer un agent de scolarité</h1>
+
+<div style="background-color: #ffcccc; padding: 15px; border-radius: 5px;">
+    <p>Êtes-vous sûr de vouloir supprimer cet agent ?</p>
+
+    <div><strong>ID:</strong> @Model?.IdScolarite</div>
+    <div><strong>Nom:</strong> @Model?.NomScolarite</div>
+    <div><strong>Prénom:</strong> @Model?.PrenomScolarite</div>
+    <div><strong>Fonction:</strong> @Model?.Fonction</div>
+    <div><strong>Téléphone:</strong> @Model?.Telephone</div>
+    <div><strong>Bureau:</strong> @Model?.Bureau</div>
+
+    <br />
+
+    <form method="post">
+        @Html.AntiForgeryToken()
+        <button type="submit" style="background-color: red; color: white;">Confirmer la suppression</button>
+        <a href="/Scolarites/Index">Annuler</a>
+    </form>
+</div>

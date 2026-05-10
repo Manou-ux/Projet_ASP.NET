@@ -1,0 +1,60 @@
+@model List<GESTION_S_E.Models.Matiere>
+
+<h1>Liste des matières</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div style="background-color: red; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+        @TempData["Error"]
+    </div>
+}
+
+<a href="/Matieres/Create">Ajouter une matière</a>
+
+<br />
+<br />
+
+@if (Model != null && Model.Any())
+{
+    <table border="1" cellpadding="10" style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Code</th>
+                <th>Nom de la matière</th>
+                <th>Volume horaire</th>
+                <th>Coefficient</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var matiere in Model)
+            {
+                <tr>
+                    <td>@matiere.IdMatiere</td>
+                    <td>@matiere.CodeMatiere</td>
+                    <td>@matiere.NomMatiere</td>
+                    <td>@(matiere.VolumeHoraire?.ToString() ?? "-")</td>
+                    <td>@matiere.Coefficient.ToString("0.00")</td>
+                    <td>
+                        <a href="/Matieres/Edit/@matiere.IdMatiere">Modifier</a>
+                        |
+                        <a href="/Matieres/Delete/@matiere.IdMatiere">Supprimer</a>
+                    </td>
+                
+                 </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Aucune matière trouvée. Cliquez sur "Ajouter une matière" pour créer la première matière.</p>
+}
