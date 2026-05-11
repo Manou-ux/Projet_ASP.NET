@@ -29,38 +29,289 @@
         </div>
     }
 
-    <table class="table table-hover border shadow-sm">
-        <thead class="table-dark">
-            <tr>
-                <th>Nom du Club</th>
-                <th>Responsable</th>
-                <th>Date Création</th>
-                <th>Statut</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td><strong>@item.NomClub</strong></td>
-                    <td>@(item.Responsable != null ? item.Responsable.Email : "Non assigné")</td>
-                    <td>@item.DateCreation.ToString("dd/MM/yyyy")</td>
-                    <td>
-                        <span class="badge @(item.Actif ? "bg-success" : "bg-secondary")">
-                             @(item.Actif ? "Actif" : "Inactif")
-                        </span>
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.IdClub" class="btn btn-warning btn-sm">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        <a asp-action="Delete" asp-route-id="@item.IdClub" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <!-- Liste des clubs -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="fas fa-flag"></i> Liste des Clubs</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Nom du Club</th>
+                            <th>Responsable</th>
+                            <th>Date Création</th>
+                            <th>Statut</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <strong>@item.NomClub</strong>
+                                    <br />
+                                    <small class="text-muted">@(item.Description?.Length > 50 ? item.Description.Substring(0, 50) + "..." : item.Description)</small>
+                                </td>
+                                <td>@(item.Responsable != null ? item.Responsable.Email : "Non assigné")</td>
+                                <td>@item.DateCreation.ToString("dd/MM/yyyy")</td>
+                                <td>
+                                    <span class="badge @(item.Actif ? "bg-success" : "bg-secondary")">
+                                        @(item.Actif ? "Actif" : "Inactif")
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Edit" asp-route-id="@item.IdClub" class="btn btn-warning btn-sm" title="Modifier">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.IdClub" class="btn btn-danger btn-sm" title="Supprimer">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                        <button type="button" class="btn btn-info btn-sm" onclick="showMembres(@item.IdClub, '@item.NomClub')" title="Voir les membres">
+                                            <i class="fas fa-users"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section des membres d'un club (cachée par défaut) -->
+    <div id="membresSection" style="display: none;">
+        <div class="card shadow-sm">
+            <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-users"></i> Membres du club : <span id="clubNom"></span></h5>
+                <button type="button" class="btn-close btn-close-white" onclick="hideMembres()"></button>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <button type="button" class="btn btn-success btn-sm" onclick="showAddMembreForm()">
+                        <i class="fas fa-plus"></i> Ajouter un membre
+                    </button>
+                </div>
+                
+                <!-- Formulaire d'ajout de membre (caché par défaut) -->
+                <div id="addMembreForm" style="display: none;" class="mb-4 p-3 border rounded bg-light">
+                    <h6>Ajouter un membre</h6>
+                    <form id="formAjoutMembre">
+                        <input type="hidden" id="clubIdForMembre" />
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label>Utilisateur</label>
+                                <select id="utilisateurId" class="form-control" required>
+                                    <option value="">-- Sélectionner un utilisateur --</option>
+                                    @if (ViewBag.Utilisateurs != null)
+                                    {
+                                        foreach (var u in ViewBag.Utilisateurs)
+                                        {
+                                            <option value="@u.IdUtilisateur">@u.Email</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <label>Rôle</label>
+                                <select id="roleMembre" class="form-control" required>
+                                    <option value="membre">Membre</option>
+                                    <option value="vice-president">Vice-Président</option>
+                                    <option value="president">Président</option>
+                                    <option value="secretaire">Secrétaire</option>
+                                    <option value="tresorier">Trésorier</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 mb-2 d-flex align-items-end">
+                                <button type="button" class="btn btn-primary w-100" onclick="ajouterMembre()">Ajouter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tableau des membres -->
+                <div id="membresList" class="table-responsive">
+                    <table class="table table-sm table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Utilisateur</th>
+                                <th>Rôle</th>
+                                <th>Date d'adhésion</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="membresTableBody">
+                            <tr>
+                                <td colspan="4" class="text-center text-muted">Sélectionnez un club pour voir ses membres</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    <script>
+        let currentClubId = null;
+
+        function showMembres(clubId, clubNom) {
+            currentClubId = clubId;
+            document.getElementById('clubNom').innerText = clubNom;
+            document.getElementById('clubIdForMembre').value = clubId;
+            document.getElementById('membresSection').style.display = 'block';
+            
+            // Charger les membres du club
+            chargerMembres(clubId);
+            
+            // Scroll vers la section
+            document.getElementById('membresSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function hideMembres() {
+            document.getElementById('membresSection').style.display = 'none';
+            currentClubId = null;
+        }
+
+        function showAddMembreForm() {
+            const form = document.getElementById('addMembreForm');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        }
+
+        async function chargerMembres(clubId) {
+            try {
+                const response = await fetch(`/MembresClubs/GetMembresByClubJson?clubId=${clubId}`);
+                const membres = await response.json();
+                
+                const tbody = document.getElementById('membresTableBody');
+                
+                if (membres.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Aucun membre dans ce club</td></tr>';
+                    return;
+                }
+                
+                let html = '';
+                for (const m of membres) {
+                    let badgeClass = '';
+                    if (m.roleMembre === 'president') badgeClass = 'bg-danger';
+                    else if (m.roleMembre === 'vice-president') badgeClass = 'bg-warning';
+                    else if (m.roleMembre === 'secretaire') badgeClass = 'bg-secondary';
+                    else if (m.roleMembre === 'tresorier') badgeClass = 'bg-success';
+                    else badgeClass = 'bg-info';
+                    
+                    html += `
+                        <tr>
+                            <td>${m.email}</td>
+                            <td><span class="badge ${badgeClass}">${m.roleMembre}</span></td>
+                            <td>${new Date(m.dateAdhesion).toLocaleDateString('fr-FR')}</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm" onclick="modifierRole(${m.idUtilisateur}, ${m.idClub}, '${m.roleMembre}')">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="supprimerMembre(${m.idUtilisateur}, ${m.idClub})">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                }
+                tbody.innerHTML = html;
+            } catch (error) {
+                console.error('Erreur:', error);
+            }
+        }
+
+        async function ajouterMembre() {
+            const utilisateurId = document.getElementById('utilisateurId').value;
+            const roleMembre = document.getElementById('roleMembre').value;
+            
+            if (!utilisateurId) {
+                alert('Veuillez sélectionner un utilisateur');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/MembresClubs/AjouterMembre', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        IdUtilisateur: parseInt(utilisateurId),
+                        IdClub: currentClubId,
+                        RoleMembre: roleMembre
+                    })
+                });
+                
+                if (response.ok) {
+                    alert('Membre ajouté avec succès !');
+                    document.getElementById('addMembreForm').style.display = 'none';
+                    document.getElementById('utilisateurId').value = '';
+                    chargerMembres(currentClubId);
+                } else {
+                    const error = await response.text();
+                    alert('Erreur : ' + error);
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Erreur lors de l\'ajout');
+            }
+        }
+
+        async function modifierRole(idUtilisateur, idClub, roleActuel) {
+            const nouveauRole = prompt('Entrez le nouveau rôle (membre, vice-president, president, secretaire, tresorier):', roleActuel);
+            if (nouveauRole && nouveauRole !== roleActuel) {
+                try {
+                    const response = await fetch('/MembresClubs/ModifierRole', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            IdUtilisateur: idUtilisateur,
+                            IdClub: idClub,
+                            RoleMembre: nouveauRole
+                        })
+                    });
+                    
+                    if (response.ok) {
+                        alert('Rôle modifié avec succès !');
+                        chargerMembres(currentClubId);
+                    } else {
+                        alert('Erreur lors de la modification');
+                    }
+                } catch (error) {
+                    console.error('Erreur:', error);
+                }
+            }
+        }
+
+        async function supprimerMembre(idUtilisateur, idClub) {
+            if (confirm('Voulez-vous vraiment retirer ce membre du club ?')) {
+                try {
+                    const response = await fetch(`/MembresClubs/SupprimerMembre?idUtilisateur=${idUtilisateur}&idClub=${idClub}`, {
+                        method: 'DELETE'
+                    });
+                    
+                    if (response.ok) {
+                        alert('Membre retiré avec succès !');
+                        chargerMembres(currentClubId);
+                    } else {
+                        alert('Erreur lors de la suppression');
+                    }
+                } catch (error) {
+                    console.error('Erreur:', error);
+                }
+            }
+        }
+    </script>
+}

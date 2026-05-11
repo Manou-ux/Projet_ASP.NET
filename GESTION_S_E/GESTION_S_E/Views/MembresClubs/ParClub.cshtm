@@ -1,0 +1,58 @@
+@model IEnumerable<GESTION_S_E.Models.MembreClub>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = $"Membres du club - {ViewBag.ClubNom}";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Membres du club : @ViewBag.ClubNom</h2>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Ajouter un membre
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Utilisateur</th>
+                            <th>Rôle</th>
+                            <th>Date d'adhésion</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@(item.Utilisateur?.Email ?? "N/A")</td>
+                                <td>
+                                    <span class="badge @(item.RoleMembre == "president" ? "bg-danger" : (item.RoleMembre == "vice-president" ? "bg-warning" : "bg-info"))">
+                                        @item.RoleMembre
+                                    </span>
+                                </td>
+                                <td>@item.DateAdhesion.ToString("dd/MM/yyyy HH:mm")</td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-idUtilisateur="@item.IdUtilisateur" asp-route-idClub="@item.IdClub" class="btn btn-warning btn-sm">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-idUtilisateur="@item.IdUtilisateur" asp-route-idClub="@item.IdClub" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary">Retour à la liste complète</a>
+    </div>
+</div>

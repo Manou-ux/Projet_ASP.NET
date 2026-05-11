@@ -1,0 +1,50 @@
+@model GESTION_S_E.Models.MembreClub
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Retirer un membre du club";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="alert alert-warning">
+                <h3><i class="fas fa-exclamation-triangle"></i> Attention !</h3>
+                <p>Voulez-vous vraiment retirer ce membre du club ?</p>
+            </div>
+
+            <div class="card p-3 shadow-sm">
+                <dl class="row">
+                    <dt class="col-sm-4">Utilisateur</dt>
+                    <dd class="col-sm-8">
+                        <strong>@(Model.Utilisateur?.Email ?? "N/A")</strong>
+                    </dd>
+
+                    <dt class="col-sm-4">Club</dt>
+                    <dd class="col-sm-8">@(Model.Club?.NomClub ?? "N/A")</dd>
+
+                    <dt class="col-sm-4">Rôle</dt>
+                    <dd class="col-sm-8">
+                        <span class="badge @(Model.RoleMembre == "president" ? "bg-danger" : (Model.RoleMembre == "vice-president" ? "bg-warning" : "bg-info"))">
+                            @Model.RoleMembre
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-4">Date d'adhésion</dt>
+                    <dd class="col-sm-8">@Model.DateAdhesion.ToString("dd/MM/yyyy HH:mm")</dd>
+                </dl>
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" name="idUtilisateur" value="@Model.IdUtilisateur" />
+                    <input type="hidden" name="idClub" value="@Model.IdClub" />
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-trash"></i> Confirmer le retrait
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="fas fa-times"></i> Annuler
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+@model GESTION_S_E.Models.MembreClub
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Modifier le rôle du membre";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6 border p-4 shadow-sm bg-light">
+            <h4 class="mb-3">Modifier le rôle de @(Model.Utilisateur?.Email)</h4>
+            <h6 class="mb-3 text-muted">Club : @(Model.Club?.NomClub)</h6>
+
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="IdUtilisateur" />
+                <input type="hidden" asp-for="IdClub" />
+                <input type="hidden" asp-for="DateAdhesion" />
+
+                <div class="form-group mb-3">
+                    <label class="control-label">Utilisateur</label>
+                    <input type="text" class="form-control" value="@(Model.Utilisateur?.Email)" disabled />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="control-label">Club</label>
+                    <input type="text" class="form-control" value="@(Model.Club?.NomClub)" disabled />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="RoleMembre" class="control-label">Rôle</label>
+                    <select asp-for="RoleMembre" class="form-control" required>
+                        <option value="membre">Membre</option>
+                        <option value="vice-president">Vice-Président</option>
+                        <option value="president">Président</option>
+                        <option value="secretaire">Secrétaire</option>
+                        <option value="tresorier">Trésorier</option>
+                    </select>
+                    <span asp-validation-for="RoleMembre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="control-label">Date d'adhésion</label>
+                    <input type="text" class="form-control" value="@Model.DateAdhesion.ToString("dd/MM/yyyy HH:mm")" disabled />
+                </div>
+
+                <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-warning w-100 text-white">
+                        <i class="fas fa-save"></i> Sauvegarder
+                    </button>
+                    <a asp-action="Index" class="btn btn-link w-100 mt-2 text-secondary">
+                        <i class="fas fa-arrow-left"></i> Retour
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

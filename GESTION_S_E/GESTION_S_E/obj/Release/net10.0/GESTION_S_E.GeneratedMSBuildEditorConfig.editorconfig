@@ -226,6 +226,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aWVyZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/ParUtilisateur.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXFBhclV0aWxpc2F0ZXVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Calendar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXENhbGVuZGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

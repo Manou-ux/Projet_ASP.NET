@@ -1,0 +1,59 @@
+@model GESTION_S_E.Models.MembreClub
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Ajouter un membre au club";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6 border p-4 shadow-sm bg-light">
+            <h4 class="mb-3">Ajouter un membre au club</h4>
+
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+            <form asp-action="Create" method="post">
+                <div class="form-group mb-3">
+                    <label asp-for="IdUtilisateur" class="control-label">Utilisateur</label>
+                    <select asp-for="IdUtilisateur" class="form-control" asp-items="ViewBag.IdUtilisateur" required>
+                        <option value="">-- Sélectionner un utilisateur --</option>
+                    </select>
+                    <span asp-validation-for="IdUtilisateur" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="IdClub" class="control-label">Club</label>
+                    <select asp-for="IdClub" class="form-control" asp-items="ViewBag.IdClub" required>
+                        <option value="">-- Sélectionner un club --</option>
+                    </select>
+                    <span asp-validation-for="IdClub" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="RoleMembre" class="control-label">Rôle</label>
+                    <select asp-for="RoleMembre" class="form-control" required>
+                        <option value="membre">Membre</option>
+                        <option value="vice-president">Vice-Président</option>
+                        <option value="president">Président</option>
+                        <option value="secretaire">Secrétaire</option>
+                        <option value="tresorier">Trésorier</option>
+                    </select>
+                    <span asp-validation-for="RoleMembre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-success w-100">
+                        <i class="fas fa-save"></i> Ajouter
+                    </button>
+                    <a asp-action="Index" class="btn btn-link w-100 mt-2 text-secondary">
+                        <i class="fas fa-arrow-left"></i> Retour à la liste
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

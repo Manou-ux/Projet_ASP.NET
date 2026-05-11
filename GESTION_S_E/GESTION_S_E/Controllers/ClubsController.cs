@@ -21,6 +21,12 @@ namespace GESTION_S_E.Controllers
                 .Include(c => c.Responsable)
                 .OrderByDescending(c => c.DateCreation)
                 .ToListAsync();
+
+            // Récupérer les utilisateurs pour le formulaire d'ajout de membre
+            ViewBag.Utilisateurs = await _context.Utilisateurs
+                .Select(u => new { u.IdUtilisateur, u.Email })
+                .ToListAsync();
+
             return View(clubs);
         }
 
@@ -29,6 +35,14 @@ namespace GESTION_S_E.Controllers
         {
             ViewBag.IdResponsable = new SelectList(_context.Utilisateurs, "IdUtilisateur", "Email");
             return View();
+        }
+        // GET: Clubs/GetUtilisateursForMembres
+        public async Task<IActionResult> GetUtilisateursForMembres()
+        {
+            var utilisateurs = await _context.Utilisateurs
+                .Select(u => new { u.IdUtilisateur, u.Email })
+                .ToListAsync();
+            return Json(utilisateurs);
         }
 
         // POST: Clubs/Create
