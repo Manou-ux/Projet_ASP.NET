@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj": {}
+    "D:\\AspNet.2026\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj": {
+    "D:\\AspNet.2026\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
+        "projectUniqueName": "D:\\AspNet.2026\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
         "projectName": "GESTION_S_E",
-        "projectPath": "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
-        "packagesPath": "C:\\Users\\Manou\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\obj\\",
+        "projectPath": "D:\\AspNet.2026\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
+        "packagesPath": "C:\\Users\\Nicolas\\.nuget\\packages\\",
+        "outputPath": "D:\\AspNet.2026\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Manou\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Nicolas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "https://nuget.org/api/v2/": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
@@ -84,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

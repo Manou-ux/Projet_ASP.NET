@@ -1,0 +1,42 @@
+@model GESTION_S_E.Models.Club
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Supprimer le Club";
+}
+
+<div class="container mt-4">
+    <div class="alert alert-warning">
+        <h3>Attention !</h3>
+        <p>Voulez-vous vraiment supprimer le club <strong>@Model.NomClub</strong> ?</p>
+    </div>
+
+    <div class="card p-3 shadow-sm">
+        <dl class="row">
+            <dt class="col-sm-3">Nom</dt>
+            <dd class="col-sm-9">@Model.NomClub</dd>
+
+            <dt class="col-sm-3">Description</dt>
+            <dd class="col-sm-9">@(string.IsNullOrEmpty(Model.Description) ? "Non renseignée" : Model.Description)</dd>
+
+            <dt class="col-sm-3">Responsable</dt>
+            <dd class="col-sm-9">@(Model.Responsable != null ? Model.Responsable.Email : "Non assigné")</dd>
+
+            <dt class="col-sm-3">Date de création</dt>
+            <dd class="col-sm-9">@Model.DateCreation.ToString("dd/MM/yyyy HH:mm")</dd>
+
+            <dt class="col-sm-3">Statut</dt>
+            <dd class="col-sm-9">
+                <span class="badge @(Model.Actif ? "bg-success" : "bg-secondary")">
+                    @(Model.Actif ? "Actif" : "Inactif")
+                </span>
+            </dd>
+        </dl>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" name="id" value="@Model.IdClub" />
+            <button type="submit" class="btn btn-danger">Confirmer la suppression</button>
+            <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+        </form>
+    </div>
+</div>

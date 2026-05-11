@@ -1,0 +1,66 @@
+@model IEnumerable<GESTION_S_E.Models.Club>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Gestion des Clubs";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Gestion des Clubs</h2>
+        <a asp-controller="Clubs" asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Créer un nouveau club
+        </a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle"></i> @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-triangle"></i> @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <table class="table table-hover border shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Nom du Club</th>
+                <th>Responsable</th>
+                <th>Date Création</th>
+                <th>Statut</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><strong>@item.NomClub</strong></td>
+                    <td>@(item.Responsable != null ? item.Responsable.Email : "Non assigné")</td>
+                    <td>@item.DateCreation.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <span class="badge @(item.Actif ? "bg-success" : "bg-secondary")">
+                             @(item.Actif ? "Actif" : "Inactif")
+                        </span>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdClub" class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.IdClub" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
