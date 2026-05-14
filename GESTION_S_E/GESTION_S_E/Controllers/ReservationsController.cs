@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GESTION_S_E.Models;
 
@@ -25,12 +26,32 @@ namespace GESTION_S_E.Controllers
             return View(reservations);
         }
 
+// GET: Reservations/Calendar
+public async Task<IActionResult> Calendar()
+{
+    try
+    {
+        var reservations = await _context.ReservationsSalles
+            .Include(r => r.Salle)
+            .Include(r => r.Utilisateur)
+            .Include(r => r.Club)
+            .OrderBy(r => r.DateReservation)
+            .ToListAsync();
+        return View(reservations);
+    }
+    catch (Exception ex)
+    {
+        TempData["Error"] = "Erreur de chargement du calendrier : " + ex.Message;
+        return View(new List<ReservationSalle>());
+    }
+}
+
         // GET: Reservations/Create
         public async Task<IActionResult> Create()
         {
-            ViewBag.Salles = await _context.Salles.Where(s => s.Disponible).ToListAsync();
-            ViewBag.Utilisateurs = await _context.Utilisateurs.Where(u => u.Actif).ToListAsync();
-            ViewBag.Clubs = await _context.Clubs.Where(c => c.Actif).ToListAsync();
+            ViewBag.Salles = new SelectList(await _context.Salles.ToListAsync(), "IdSalle", "NomSalle");
+            ViewBag.Utilisateurs = new SelectList(await _context.Utilisateurs.ToListAsync(), "IdUtilisateur", "Email");
+            ViewBag.Clubs = new SelectList(await _context.Clubs.ToListAsync(), "IdClub", "NomClub");
             return View();
         }
 
@@ -39,24 +60,31 @@ namespace GESTION_S_E.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ReservationSalle reservation)
         {
-            if (string.IsNullOrEmpty(reservation.Motif))
-                reservation.Motif = null;
-            if (reservation.IdClub == 0)
-                reservation.IdClub = null;
-            
             if (ModelState.IsValid)
             {
-                reservation.Statut = "en_attente";
-                reservation.DateReservation = DateTime.UtcNow;
-                _context.ReservationsSalles.Add(reservation);
-                await _context.SaveChangesAsync();
-                TempData["Success"] = "Réservation ajoutée avec succès !";
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    reservation.Statut = "en_attente";
+                    reservation.DateReservation = DateTime.UtcNow;
+                    _context.ReservationsSalles.Add(reservation);
+                    await _context.SaveChangesAsync();
+                    TempData["Success"] = "Réservation ajoutée avec succès !";
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    TempData["Error"] = "Erreur lors de l'ajout : " + ex.Message;
+                }
             }
-            
-            ViewBag.Salles = await _context.Salles.Where(s => s.Disponible).ToListAsync();
-            ViewBag.Utilisateurs = await _context.Utilisateurs.Where(u => u.Actif).ToListAsync();
-            ViewBag.Clubs = await _context.Clubs.Where(c => c.Actif).ToListAsync();
+            else
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+                TempData["Error"] = "Erreur de validation : " + string.Join(", ", errors);
+            }
+
+            ViewBag.Salles = new SelectList(await _context.Salles.ToListAsync(), "IdSalle", "NomSalle");
+            ViewBag.Utilisateurs = new SelectList(await _context.Utilisateurs.ToListAsync(), "IdUtilisateur", "Email");
+            ViewBag.Clubs = new SelectList(await _context.Clubs.ToListAsync(), "IdClub", "NomClub");
             return View(reservation);
         }
 
@@ -68,9 +96,9 @@ namespace GESTION_S_E.Controllers
             {
                 return NotFound();
             }
-            ViewBag.Salles = await _context.Salles.ToListAsync();
-            ViewBag.Utilisateurs = await _context.Utilisateurs.ToListAsync();
-            ViewBag.Clubs = await _context.Clubs.ToListAsync();
+            ViewBag.Salles = new SelectList(await _context.Salles.ToListAsync(), "IdSalle", "NomSalle", reservation.IdSalle);
+            ViewBag.Utilisateurs = new SelectList(await _context.Utilisateurs.ToListAsync(), "IdUtilisateur", "Email", reservation.IdUtilisateur);
+            ViewBag.Clubs = new SelectList(await _context.Clubs.ToListAsync(), "IdClub", "NomClub", reservation.IdClub);
             return View(reservation);
         }
 
@@ -84,10 +112,6 @@ namespace GESTION_S_E.Controllers
                 return NotFound();
             }
 
-            ModelState.Remove("Salle");
-            ModelState.Remove("Utilisateur");
-            ModelState.Remove("Club");
-
             if (ModelState.IsValid)
             {
                 try
@@ -99,17 +123,21 @@ namespace GESTION_S_E.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_context.ReservationsSalles.Any(r => r.IdReservation == id))
+                    if (!ReservationExists(id))
                     {
                         return NotFound();
                     }
                     throw;
                 }
+                catch (Exception ex)
+                {
+                    TempData["Error"] = "Erreur lors de la modification : " + ex.Message;
+                }
             }
-            
-            ViewBag.Salles = await _context.Salles.ToListAsync();
-            ViewBag.Utilisateurs = await _context.Utilisateurs.ToListAsync();
-            ViewBag.Clubs = await _context.Clubs.ToListAsync();
+
+            ViewBag.Salles = new SelectList(await _context.Salles.ToListAsync(), "IdSalle", "NomSalle", reservation.IdSalle);
+            ViewBag.Utilisateurs = new SelectList(await _context.Utilisateurs.ToListAsync(), "IdUtilisateur", "Email", reservation.IdUtilisateur);
+            ViewBag.Clubs = new SelectList(await _context.Clubs.ToListAsync(), "IdClub", "NomClub", reservation.IdClub);
             return View(reservation);
         }
 
@@ -159,7 +187,7 @@ namespace GESTION_S_E.Controllers
         }
 
         // POST: Reservations/Valider/5
-        [HttpPost, ActionName("Valider")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Valider(int id)
         {
@@ -168,13 +196,13 @@ namespace GESTION_S_E.Controllers
             {
                 reservation.Statut = "validee";
                 await _context.SaveChangesAsync();
-                TempData["Success"] = "Réservation validée !";
+                TempData["Success"] = "Réservation validée avec succès !";
             }
             return RedirectToAction(nameof(Index));
         }
 
         // POST: Reservations/Annuler/5
-        [HttpPost, ActionName("Annuler")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Annuler(int id)
         {
@@ -183,9 +211,14 @@ namespace GESTION_S_E.Controllers
             {
                 reservation.Statut = "annulee";
                 await _context.SaveChangesAsync();
-                TempData["Success"] = "Réservation annulée !";
+                TempData["Success"] = "Réservation annulée avec succès !";
             }
             return RedirectToAction(nameof(Index));
+        }
+
+        private bool ReservationExists(int id)
+        {
+            return _context.ReservationsSalles.Any(e => e.IdReservation == id);
         }
     }
 }

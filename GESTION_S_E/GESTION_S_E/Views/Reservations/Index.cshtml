@@ -1,75 +1,93 @@
-@model List<GESTION_S_E.Models.ReservationSalle>
+@model IEnumerable<GESTION_S_E.Models.ReservationSalle>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    ViewData["Title"] = "Gestion des réservations";
+    ViewData["Title"] = "Gestion des Réservations";
 }
 
-<h1>Liste des réservations</h1>
-
-@if (TempData["Success"] != null)
-{
-    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
-        @TempData["Success"]
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Gestion des Réservations</h2>
+        <div>
+            <a asp-controller="Reservations" asp-action="Create" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Nouvelle réservation
+            </a>
+            <a asp-controller="Reservations" asp-action="Calendar" class="btn btn-info ms-2">
+                <i class="fas fa-calendar-alt"></i> Vue calendrier
+            </a>
+        </div>
     </div>
-}
 
-<a href="/Reservations/Create">Ajouter une réservation</a>
-<br />
-<br />
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle"></i> @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
-<table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%;">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Date</th>
-            <th>Horaire</th>
-            <th>Salle</th>
-            <th>Demandeur</th>
-            <th>Motif</th>
-            <th>Statut</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var reservation in Model)
-        {
-            <tr>
-                <td>@reservation.IdReservation</td>
-                <td>@reservation.DateReservation.ToString("dd/MM/yyyy")</td>
-                <td>@reservation.HeureDebut.ToString(@"hh\:mm") - @reservation.HeureFin.ToString(@"hh\:mm")</td>
-                <td>@(reservation.Salle?.NomSalle ?? "-")</td>
-                <td>@(reservation.Utilisateur?.Email ?? "-")</td>
-                <td>@reservation.Motif</td>
-                <td>
-                    @if (reservation.Statut == "en_attente")
-                    {
-                        <span style="background-color: orange; color: white; padding: 3px 8px;"> En attente</span>
-                    }
-                    else if (reservation.Statut == "validee")
-                    {
-                        <span style="background-color: green; color: white; padding: 3px 8px;"> Validée</span>
-                    }
-                    else
-                    {
-                        <span style="background-color: red; color: white; padding: 3px 8px;"> Annulée</span>
-                    }
-                 </td>
-                <td>
-                    <a href="/Reservations/Edit/@reservation.IdReservation">Modifier</a> |
-                    <a href="/Reservations/Delete/@reservation.IdReservation">Supprimer</a> |
-                    <a href="/Reservations/Details/@reservation.IdReservation">Détails</a>
-                    @if (reservation.Statut == "en_attente")
-                    {
-                        <text>|</text>
-                        <a href="/Reservations/Valider/@reservation.IdReservation">Valider</a>
-                        <text>|</text>
-                        <a href="/Reservations/Annuler/@reservation.IdReservation">Annuler</a>
-                    }
-                 </td>
-             </tr>
-        }
-    </tbody>
-</table>
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-triangle"></i> @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
-<br />
-<a href="/Reservations/Calendar"> Vue calendrier</a>
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="fas fa-list"></i> Liste des réservations</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Date</th>
+                            <th>Horaire</th>
+                            <th>Salle</th>
+                            <th>Demandeur</th>
+                            <th>Club</th>
+                            <th>Motif</th>
+                            <th>Statut</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.IdReservation</td>
+                                <td>@item.DateReservation.ToString("dd/MM/yyyy")</td>
+                                <td>@item.HeureDebut.ToString(@"hh\:mm") - @item.HeureFin.ToString(@"hh\:mm")</td>
+                                <td>@item.Salle?.NomSalle</td>
+                                <td>@item.Utilisateur?.Email</td>
+                                <td>@(item.Club?.NomClub ?? "-")</td>
+                                <td>@(item.Motif?.Length > 30 ? item.Motif.Substring(0, 30) + "..." : item.Motif)</td>
+                                <td>
+                                    <span class="badge @(item.Statut == "validee" ? "bg-success" : item.Statut == "en_attente" ? "bg-warning" : "bg-danger")">
+                                        @(item.Statut == "validee" ? "✅ Validée" : item.Statut == "en_attente" ? "⏳ En attente" : "❌ Annulée")
+                                    </span>
+                                 </td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Edit" asp-route-id="@item.IdReservation" class="btn btn-warning btn-sm" title="Modifier">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.IdReservation" class="btn btn-danger btn-sm" title="Supprimer">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                        <a asp-action="Details" asp-route-id="@item.IdReservation" class="btn btn-info btn-sm" title="Détails">
+                                            <i class="fas fa-info-circle"></i>
+                                        </a>
+                                    </div>
+                                 </td>
+                             </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

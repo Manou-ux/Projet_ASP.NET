@@ -1,83 +1,84 @@
 @model GESTION_S_E.Models.ReservationSalle
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    ViewData["Title"] = "Ajouter une réservation";
+    ViewData["Title"] = "Nouvelle réservation";
 }
 
-<h1>Ajouter une réservation</h1>
-
-<form method="post">
-    @Html.AntiForgeryToken()
-
-    <div>
-        <label>Salle *</label><br />
-        <select name="IdSalle" required style="width: 300px;">
-            <option value="">-- Choisir une salle --</option>
-            @if (ViewBag.Salles != null)
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6 border p-4 shadow-sm bg-light">
+            <h4 class="mb-3">Nouvelle réservation</h4>
+            
+            @if (!ViewData.ModelState.IsValid)
             {
-                foreach (var salle in ViewBag.Salles)
-                {
-                    <option value="@salle.IdSalle">@salle.NomSalle (Capacité: @salle.Capacite, Type: @salle.Type)</option>
-                }
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach (var modelError in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@modelError.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
             }
-        </select>
-    </div>
-    <br />
+            
+            <form asp-action="Create" method="post">
+                <div class="form-group mb-3">
+                    <label asp-for="IdSalle" class="control-label">Salle</label>
+                    <select asp-for="IdSalle" class="form-control" asp-items="ViewBag.Salles">
+                        <option value="">-- Sélectionner une salle --</option>
+                    </select>
+                    <span asp-validation-for="IdSalle" class="text-danger"></span>
+                </div>
 
-    <div>
-        <label>Utilisateur (demandeur) *</label><br />
-        <select name="IdUtilisateur" required style="width: 300px;">
-            <option value="">-- Choisir un utilisateur --</option>
-            @if (ViewBag.Utilisateurs != null)
-            {
-                foreach (var user in ViewBag.Utilisateurs)
-                {
-                    <option value="@user.IdUtilisateur">@user.Email (@user.Role)</option>
-                }
-            }
-        </select>
-    </div>
-    <br />
+                <div class="form-group mb-3">
+                    <label asp-for="IdUtilisateur" class="control-label">Demandeur (Utilisateur)</label>
+                    <select asp-for="IdUtilisateur" class="form-control" asp-items="ViewBag.Utilisateurs">
+                        <option value="">-- Sélectionner un utilisateur --</option>
+                    </select>
+                    <span asp-validation-for="IdUtilisateur" class="text-danger"></span>
+                </div>
 
-    <div>
-        <label>Club (optionnel)</label><br />
-        <select name="IdClub" style="width: 300px;">
-            <option value="">-- Aucun club --</option>
-            @if (ViewBag.Clubs != null)
-            {
-                foreach (var club in ViewBag.Clubs)
-                {
-                    <option value="@club.IdClub">@club.NomClub</option>
-                }
-            }
-        </select>
-    </div>
-    <br />
+                <div class="form-group mb-3">
+                    <label asp-for="IdClub" class="control-label">Club (optionnel)</label>
+                    <select asp-for="IdClub" class="form-control" asp-items="ViewBag.Clubs">
+                        <option value="">-- Aucun club --</option>
+                    </select>
+                    <span asp-validation-for="IdClub" class="text-danger"></span>
+                </div>
 
-    <div>
-        <label>Date *</label><br />
-        <input type="date" name="DateReservation" required style="width: 200px;" />
-    </div>
-    <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label asp-for="HeureDebut" class="control-label">Heure début</label>
+                            <input asp-for="HeureDebut" class="form-control" type="time" />
+                            <span asp-validation-for="HeureDebut" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label asp-for="HeureFin" class="control-label">Heure fin</label>
+                            <input asp-for="HeureFin" class="form-control" type="time" />
+                            <span asp-validation-for="HeureFin" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
 
-    <div>
-        <label>Heure début *</label><br />
-        <input type="time" name="HeureDebut" required style="width: 150px;" />
-    </div>
-    <br />
+                <div class="form-group mb-3">
+                    <label asp-for="Motif" class="control-label">Motif</label>
+                    <textarea asp-for="Motif" class="form-control" rows="3" placeholder="Raison de la réservation..."></textarea>
+                    <span asp-validation-for="Motif" class="text-danger"></span>
+                </div>
 
-    <div>
-        <label>Heure fin *</label><br />
-        <input type="time" name="HeureFin" required style="width: 150px;" />
+                <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-success w-100">Enregistrer</button>
+                    <a asp-action="Index" class="btn btn-link w-100 mt-2 text-secondary">Annuler</a>
+                </div>
+            </form>
+        </div>
     </div>
-    <br />
+</div>
 
-    <div>
-        <label>Motif *</label><br />
-        <textarea name="Motif" rows="3" style="width: 300px;" required></textarea>
-    </div>
-    <br />
-
-    <button type="submit">Enregistrer</button>
-    <a href="/Reservations/Index">Annuler</a>
-</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

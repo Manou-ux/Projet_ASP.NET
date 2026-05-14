@@ -1,42 +1,78 @@
 @model GESTION_S_E.Models.ReservationSalle
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Supprimer une réservation";
 }
 
-<h1>Supprimer une réservation</h1>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0"><i class="fas fa-exclamation-triangle"></i> Confirmation de suppression</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Êtes-vous sûr de vouloir supprimer cette réservation ?</h5>
+                    
+                    <div class="alert alert-warning">
+                        <p class="mb-0">Cette action est irréversible.</p>
+                    </div>
 
-<div style="background-color: #ffcccc; padding: 15px; border-radius: 5px;">
-    <p>Êtes-vous sûr de vouloir supprimer cette réservation ?</p>
+                    <div class="table-responsive mt-3">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th style="width: 40%;">ID</th>
+                                <td>@Model.IdReservation</td>
+                            </tr>
+                            <tr>
+                                <th>Date</th>
+                                <td>@Model.DateReservation.ToString("dd/MM/yyyy")</td>
+                            </tr>
+                            <tr>
+                                <th>Horaire</th>
+                                <td>@Model.HeureDebut.ToString(@"hh\:mm") - @Model.HeureFin.ToString(@"hh\:mm")</td>
+                            </tr>
+                            <tr>
+                                <th>Salle</th>
+                                <td>@Model.Salle?.NomSalle</td>
+                            </tr>
+                            <tr>
+                                <th>Demandeur</th>
+                                <td>@Model.Utilisateur?.Email</td>
+                            </tr>
+                            <tr>
+                                <th>Club</th>
+                                <td>@(Model.Club?.NomClub ?? "Aucun")</td>
+                            </tr>
+                            <tr>
+                                <th>Motif</th>
+                                <td>@Model.Motif</td>
+                            </tr>
+                            <tr>
+                                <th>Statut</th>
+                                <td>
+                                    <span class="badge @(Model.Statut == "validee" ? "bg-success" : Model.Statut == "en_attente" ? "bg-warning" : "bg-danger")">
+                                        @(Model.Statut == "validee" ? "✅ Validée" : Model.Statut == "en_attente" ? "⏳ En attente" : "❌ Annulée")
+                                    </span>
+                                 </td>
+                            </tr>
+                        </table>
+                    </div>
 
-    <div><strong>ID:</strong> @Model?.IdReservation</div>
-    <div><strong>Date:</strong> @Model?.DateReservation.ToString("dd/MM/yyyy")</div>
-    <div><strong>Horaire:</strong> @Model?.HeureDebut - @Model?.HeureFin</div>
-    <div><strong>Salle:</strong> @(Model?.Salle?.NomSalle ?? "-")</div>
-    <div><strong>Demandeur:</strong> @(Model?.Utilisateur?.Email ?? "-")</div>
-    <div><strong>Club:</strong> @(Model?.Club?.NomClub ?? "-")</div>
-    <div><strong>Motif:</strong> @Model?.Motif</div>
-    <div>
-        <strong>Statut:</strong>
-        @if (Model?.Statut == "en_attente")
-        {
-            <span> En attente</span>
-        }
-        else if (Model?.Statut == "validee")
-        {
-            <span> Validée</span>
-        }
-        else
-        {
-            <span> Annulée</span>
-        }
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="IdReservation" />
+                        <div class="d-flex gap-2 mt-3">
+                            <button type="submit" class="btn btn-danger flex-grow-1">
+                                <i class="fas fa-trash"></i> Confirmer la suppression
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary flex-grow-1">
+                                <i class="fas fa-times"></i> Annuler
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <br />
-
-    <form method="post">
-        @Html.AntiForgeryToken()
-        <button type="submit" style="background-color: red; color: white;">Confirmer la suppression</button>
-        <a href="/Reservations/Index">Annuler</a>
-    </form>
 </div>

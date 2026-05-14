@@ -1,76 +1,95 @@
 @model GESTION_S_E.Models.DisponibiliteEnseignant
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Ajouter une disponibilité";
 }
 
-<h1>Ajouter une disponibilité</h1>
-
-<form method="post">
-    @Html.AntiForgeryToken()
-
-    <div>
-        <label>Enseignant *</label><br />
-        <select name="IdEnseignant" required style="width: 300px;">
-            <option value="">-- Choisir un enseignant --</option>
-            @if (ViewBag.Enseignants != null)
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6 border p-4 shadow-sm bg-light">
+            <h4 class="mb-3">Ajouter une disponibilité</h4>
+            
+            @if (!ViewData.ModelState.IsValid)
             {
-                foreach (var enseignant in ViewBag.Enseignants)
-                {
-                    <option value="@enseignant.IdEnseignant">
-                        @enseignant.NomEnseignant @enseignant.PrenomEnseignant - @enseignant.Specialite
-                    </option>
-                }
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach (var modelError in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@modelError.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
             }
-        </select>
-    </div>
-    <br />
+            
+            <form asp-action="Create" method="post">
+                <div class="form-group mb-3">
+                    <label asp-for="IdEnseignant" class="control-label">Enseignant</label>
+                    <select asp-for="IdEnseignant" class="form-control" asp-items="ViewBag.Enseignants">
+                        <option value="">-- Sélectionner un enseignant --</option>
+                    </select>
+                    <span asp-validation-for="IdEnseignant" class="text-danger"></span>
+                </div>
 
-    <div>
-        <label>Jour *</label><br />
-        <select name="Jour" required style="width: 200px;">
-            <option value="">-- Choisir un jour --</option>
-            <option value="Lundi">Lundi</option>
-            <option value="Mardi">Mardi</option>
-            <option value="Mercredi">Mercredi</option>
-            <option value="Jeudi">Jeudi</option>
-            <option value="Vendredi">Vendredi</option>
-            <option value="Samedi">Samedi</option>
-        </select>
-    </div>
-    <br />
+                <div class="form-group mb-3">
+                    <label asp-for="Jour" class="control-label">Jour</label>
+                    <select asp-for="Jour" class="form-control">
+                        <option value="">-- Sélectionner un jour --</option>
+                        <option value="Lundi">Lundi</option>
+                        <option value="Mardi">Mardi</option>
+                        <option value="Mercredi">Mercredi</option>
+                        <option value="Jeudi">Jeudi</option>
+                        <option value="Vendredi">Vendredi</option>
+                        <option value="Samedi">Samedi</option>
+                    </select>
+                    <span asp-validation-for="Jour" class="text-danger"></span>
+                </div>
 
-    <div>
-        <label>Heure début *</label><br />
-        <input type="time" name="HeureDebut" required style="width: 150px;" />
-    </div>
-    <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label asp-for="HeureDebut" class="control-label">Heure début</label>
+                            <input asp-for="HeureDebut" class="form-control" type="time" />
+                            <span asp-validation-for="HeureDebut" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label asp-for="HeureFin" class="control-label">Heure fin</label>
+                            <input asp-for="HeureFin" class="form-control" type="time" />
+                            <span asp-validation-for="HeureFin" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
 
-    <div>
-        <label>Heure fin *</label><br />
-        <input type="time" name="HeureFin" required style="width: 150px;" />
-    </div>
-    <br />
+                <div class="form-group mb-3">
+                    <label asp-for="TypeDispo" class="control-label">Type de disponibilité</label>
+                    <select asp-for="TypeDispo" class="form-control">
+                        <option value="">-- Sélectionner un type --</option>
+                        <option value="cours">📚 Cours</option>
+                        <option value="td">📝 TD</option>
+                        <option value="tp">🔬 TP</option>
+                        <option value="reunion">📅 Réunion</option>
+                    </select>
+                    <span asp-validation-for="TypeDispo" class="text-danger"></span>
+                </div>
 
-    <div>
-        <label>Type de disponibilité *</label><br />
-        <select name="TypeDispo" required style="width: 200px;">
-            <option value="">-- Choisir un type --</option>
-            <option value="cours">📚 Cours</option>
-            <option value="td">📝 TD</option>
-            <option value="tp">🔬 TP</option>
-            <option value="reunion">📅 Réunion</option>
-        </select>
-    </div>
-    <br />
+                <div class="form-group mb-3">
+                    <label asp-for="DateSpecifique" class="control-label">Date spécifique (optionnel)</label>
+                    <input asp-for="DateSpecifique" class="form-control" type="date" />
+                    <small class="text-muted">Laisser vide pour une disponibilité hebdomadaire</small>
+                    <span asp-validation-for="DateSpecifique" class="text-danger"></span>
+                </div>
 
-    <div>
-        <label>Date spécifique (optionnel)</label><br />
-        <input type="date" name="DateSpecifique" style="width: 200px;" />
-        <small>(Laisser vide pour une disponibilité hebdomadaire)</small>
+                <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-success w-100">Enregistrer</button>
+                    <a asp-action="Index" class="btn btn-link w-100 mt-2 text-secondary">Annuler</a>
+                </div>
+            </form>
+        </div>
     </div>
-    <br />
+</div>
 
-    <button type="submit">Enregistrer</button>
-    <a href="/Disponibilites/Index">Annuler</a>
-</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

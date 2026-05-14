@@ -1,44 +1,70 @@
 @model GESTION_S_E.Models.DisponibiliteEnseignant
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Supprimer une disponibilité";
 }
 
-<h1>Supprimer une disponibilité</h1>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0"><i class="fas fa-exclamation-triangle"></i> Confirmation de suppression</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Êtes-vous sûr de vouloir supprimer cette disponibilité ?</h5>
+                    
+                    <div class="alert alert-warning">
+                        <p class="mb-0">Cette action est irréversible.</p>
+                    </div>
 
-<div style="background-color: #ffcccc; padding: 15px; border-radius: 5px;">
-    <p>Êtes-vous sûr de vouloir supprimer cette disponibilité ?</p>
+                    <div class="table-responsive mt-3">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th style="width: 40%;">Enseignant</th>
+                                <td>@Model.Enseignant?.NomEnseignant @Model.Enseignant?.PrenomEnseignant</td>
+                            </tr>
+                            <tr>
+                                <th>Spécialité</th>
+                                <td>@Model.Enseignant?.Specialite</td>
+                            </tr>
+                            <tr>
+                                <th>Jour</th>
+                                <td>@Model.Jour</td>
+                            </tr>
+                            <tr>
+                                <th>Horaire</th>
+                                <td>@Model.HeureDebut.ToString(@"hh\:mm") - @Model.HeureFin.ToString(@"hh\:mm")</td>
+                            </tr>
+                            <tr>
+                                <th>Type</th>
+                                <td>
+                                    <span class="badge @(Model.TypeDispo == "cours" ? "bg-primary" : Model.TypeDispo == "td" ? "bg-success" : Model.TypeDispo == "tp" ? "bg-info" : "bg-warning")">
+                                        @(Model.TypeDispo == "cours" ? "📚 Cours" : Model.TypeDispo == "td" ? "📝 TD" : Model.TypeDispo == "tp" ? "🔬 TP" : "📅 Réunion")
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Date spécifique</th>
+                                <td>@(Model.DateSpecifique?.ToString("dd/MM/yyyy") ?? "Hebdomadaire")</td>
+                            </tr>
+                        </table>
+                    </div>
 
-    <div><strong>ID:</strong> @Model?.IdDispo</div>
-    <div><strong>Enseignant:</strong> @(Model?.Enseignant?.NomEnseignant ?? "-") @(Model?.Enseignant?.PrenomEnseignant ?? "-")</div>
-    <div><strong>Jour:</strong> @Model?.Jour</div>
-    <div><strong>Horaire:</strong> @Model?.HeureDebut - @Model?.HeureFin</div>
-    <div>
-        <strong>Type:</strong>
-        @if (Model?.TypeDispo == "cours")
-        {
-            <span>📚 Cours</span>
-        }
-        else if (Model?.TypeDispo == "td")
-        {
-            <span>📝 TD</span>
-        }
-        else if (Model?.TypeDispo == "tp")
-        {
-            <span>🔬 TP</span>
-        }
-        else
-        {
-            <span>📅 Réunion</span>
-        }
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="IdDispo" />
+                        <div class="d-flex gap-2 mt-3">
+                            <button type="submit" class="btn btn-danger flex-grow-1">
+                                <i class="fas fa-trash"></i> Confirmer la suppression
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary flex-grow-1">
+                                <i class="fas fa-times"></i> Annuler
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div><strong>Date spécifique:</strong> @(Model?.DateSpecifique?.ToString("dd/MM/yyyy") ?? "-")</div>
-
-    <br />
-
-    <form method="post">
-        @Html.AntiForgeryToken()
-        <button type="submit" style="background-color: red; color: white;">Confirmer la suppression</button>
-        <a href="/Disponibilites/Index">Annuler</a>
-    </form>
 </div>

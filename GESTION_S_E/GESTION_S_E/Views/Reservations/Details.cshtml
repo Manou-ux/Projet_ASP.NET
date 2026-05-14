@@ -1,47 +1,86 @@
 @model GESTION_S_E.Models.ReservationSalle
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Détails de la réservation";
 }
 
-<h1>Détails de la réservation</h1>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="fas fa-info-circle"></i> Détails de la réservation</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th style="width: 40%;">ID</th>
+                                <td>@Model.IdReservation</td>
+                            </tr>
+                            <tr>
+                                <th>Date de réservation</th>
+                                <td>@Model.DateReservation.ToString("dd/MM/yyyy HH:mm")</td>
+                            </tr>
+                            <tr>
+                                <th>Horaire</th>
+                                <td>@Model.HeureDebut.ToString(@"hh\:mm") - @Model.HeureFin.ToString(@"hh\:mm")</td>
+                            </tr>
+                            <tr>
+                                <th>Salle</th>
+                                <td>
+                                    <strong>@Model.Salle?.NomSalle</strong>
+                                    <br />
+                                    <small class="text-muted">Capacité: @Model.Salle?.Capacite | Type: @Model.Salle?.Type</small>
+                                 </td>
+                            </tr>
+                            <tr>
+                                <th>Demandeur</th>
+                                <td>
+                                    <strong>@Model.Utilisateur?.Email</strong>
+                                    <br />
+                                    <small class="text-muted">Rôle: @Model.Utilisateur?.Role</small>
+                                 </td>
+                            </tr>
+                            <tr>
+                                <th>Club associé</th>
+                                <td>@(Model.Club?.NomClub ?? "Aucun club")</td>
+                            </tr>
+                            <tr>
+                                <th>Motif</th>
+                                <td>@Model.Motif</td>
+                            </tr>
+                            <tr>
+                                <th>Statut</th>
+                                <td>
+                                    <span class="badge @(Model.Statut == "validee" ? "bg-success" : Model.Statut == "en_attente" ? "bg-warning" : "bg-danger")">
+                                        @(Model.Statut == "validee" ? "✅ Validée" : Model.Statut == "en_attente" ? "⏳ En attente" : "❌ Annulée")
+                                    </span>
+                                 </td>
+                            </tr>
+                        </table>
+                    </div>
 
-<div>
-    <div><strong>ID:</strong> @Model?.IdReservation</div>
-    <div><strong>Date de réservation:</strong> @Model?.DateReservation.ToString("dd/MM/yyyy")</div>
-    <div><strong>Horaire:</strong> @Model?.HeureDebut - @Model?.HeureFin</div>
-    <div><strong>Salle:</strong> @(Model?.Salle?.NomSalle ?? "-")</div>
-    <div><strong>Capacité de la salle:</strong> @(Model?.Salle?.Capacite ?? 0)</div>
-    <div><strong>Type de salle:</strong> @(Model?.Salle?.Type ?? "-")</div>
-    <div><strong>Demandeur:</strong> @(Model?.Utilisateur?.Email ?? "-")</div>
-    <div><strong>Rôle demandeur:</strong> @(Model?.Utilisateur?.Role ?? "-")</div>
-    <div><strong>Club:</strong> @(Model?.Club?.NomClub ?? "Aucun club")</div>
-    <div><strong>Motif:</strong> @Model?.Motif</div>
-    <div>
-        <strong>Statut:</strong>
-        @if (Model?.Statut == "en_attente")
-        {
-            <span style="background-color: orange; color: white; padding: 3px 8px;"> En attente</span>
-        }
-        else if (Model?.Statut == "validee")
-        {
-            <span style="background-color: green; color: white; padding: 3px 8px;"> Validée</span>
-        }
-        else
-        {
-            <span style="background-color: red; color: white; padding: 3px 8px;"> Annulée</span>
-        }
+                    <div class="d-flex gap-2 mt-3">
+                        <a asp-action="Edit" asp-route-id="@Model.IdReservation" class="btn btn-warning flex-grow-1">
+                            <i class="fas fa-edit"></i> Modifier
+                        </a>
+                        @if (Model.Statut == "en_attente")
+                        {
+                            <a asp-action="Valider" asp-route-id="@Model.IdReservation" class="btn btn-success flex-grow-1">
+                                <i class="fas fa-check"></i> Valider
+                            </a>
+                            <a asp-action="Annuler" asp-route-id="@Model.IdReservation" class="btn btn-warning flex-grow-1">
+                                <i class="fas fa-ban"></i> Annuler
+                            </a>
+                        }
+                        <a asp-action="Index" class="btn btn-secondary flex-grow-1">
+                            <i class="fas fa-arrow-left"></i> Retour
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <br />
-
-    <a href="/Reservations/Edit/@Model?.IdReservation">Modifier</a> |
-    @if (Model?.Statut == "en_attente")
-    {
-        <a href="/Reservations/Valider/@Model?.IdReservation">Valider</a>
-        <text>|</text>
-        <a href="/Reservations/Annuler/@Model?.IdReservation">Annuler</a>
-        <text>|</text>
-    }
-    <a href="/Reservations/Index">Retour à la liste</a>
 </div>

@@ -1,68 +1,102 @@
-@model List<GESTION_S_E.Models.ReservationSalle>
+@model IEnumerable<GESTION_S_E.Models.ReservationSalle>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Calendrier des réservations";
 }
 
-<h1>Calendrier des réservations</h1>
-
-@if (TempData["Success"] != null)
-{
-    <div style="background-color: green; color: white; padding: 10px; margin-bottom: 20px;">
-        @TempData["Success"]
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Calendrier des réservations</h2>
+        <div>
+            <a asp-controller="Reservations" asp-action="Create" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Nouvelle réservation
+            </a>
+            <a asp-controller="Reservations" asp-action="Index" class="btn btn-secondary ms-2">
+                <i class="fas fa-list"></i> Vue liste
+            </a>
+        </div>
     </div>
-}
 
-<a href="/Reservations/Index"> Vue liste</a>
-<br />
-<br />
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle"></i> @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
-@{
-    var today = DateTime.Today;
-    var startOfWeek = today.AddDays(-(int)today.DayOfWeek + (int)DayOfWeek.Monday);
-    if (today.DayOfWeek == DayOfWeek.Sunday)
-        startOfWeek = today.AddDays(-6);
-}
-
-<table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%; text-align: center; vertical-align: top;">
-    <thead>
-        <tr>
-            <th style="background-color: #f0f0f0;">Lundi</th>
-            <th style="background-color: #f0f0f0;">Mardi</th>
-            <th style="background-color: #f0f0f0;">Mercredi</th>
-            <th style="background-color: #f0f0f0;">Jeudi</th>
-            <th style="background-color: #f0f0f0;">Vendredi</th>
-            <th style="background-color: #f0f0f0;">Samedi</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            @for (int i = 0; i < 6; i++)
-            {
-                var currentDay = startOfWeek.AddDays(i);
-                var dayReservations = Model.Where(r => r.DateReservation.Date == currentDay).ToList();
-                
-                <td style="width: 16.6%; vertical-align: top; height: 150px;">
-                    <strong>@currentDay.ToString("dd/MM")</strong>
-                    <hr style="margin: 5px 0;" />
-                    @foreach (var res in dayReservations)
-                    {
-                        <div style="margin-bottom: 8px; font-size: 12px; text-align: left;">
-                            <div style="background-color: @(res.Statut == "validee" ? "#d4edda" : res.Statut == "en_attente" ? "#fff3cd" : "#f8d7da"); padding: 4px; border-radius: 3px;">
-                                <strong>@res.HeureDebut.ToString(@"hh\:mm") - @res.HeureFin.ToString(@"hh\:mm")</strong><br />
-                                📍 @(res.Salle?.NomSalle ?? "-")<br />
-                                @(res.Motif?.Length > 20 ? res.Motif.Substring(0, 20) + "..." : res.Motif)
-                                <div style="margin-top: 4px;">
-                                    <a href="/Reservations/Details/@res.IdReservation" style="font-size: 10px;">Voir</a>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </td>
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="fas fa-calendar-alt"></i> Calendrier hebdomadaire</h5>
+        </div>
+        <div class="card-body">
+            @{
+                var today = DateTime.Today;
+                var startOfWeek = today.AddDays(-(int)today.DayOfWeek + (int)DayOfWeek.Monday);
+                if (today.DayOfWeek == DayOfWeek.Sunday)
+                    startOfWeek = today.AddDays(-6);
             }
-        </tr>
-    </tbody>
-</table>
 
-<br />
-<a href="/Reservations/Create" style="background-color: green; color: white; padding: 5px 10px; text-decoration: none;">➕ Nouvelle réservation</a>
+            <div class="row mb-3">
+                <div class="col text-center">
+                    <h6>Semaine du @startOfWeek.ToString("dd/MM/yyyy") au @startOfWeek.AddDays(5).ToString("dd/MM/yyyy")</h6>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            <th style="width: 14%;">Lundi<br />@startOfWeek.ToString("dd/MM")</th>
+                            <th style="width: 14%;">Mardi<br />@startOfWeek.AddDays(1).ToString("dd/MM")</th>
+                            <th style="width: 14%;">Mercredi<br />@startOfWeek.AddDays(2).ToString("dd/MM")</th>
+                            <th style="width: 14%;">Jeudi<br />@startOfWeek.AddDays(3).ToString("dd/MM")</th>
+                            <th style="width: 14%;">Vendredi<br />@startOfWeek.AddDays(4).ToString("dd/MM")</th>
+                            <th style="width: 14%;">Samedi<br />@startOfWeek.AddDays(5).ToString("dd/MM")</th>
+                            <th style="width: 14%;">Dimanche<br />@startOfWeek.AddDays(6).ToString("dd/MM")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @for (int i = 0; i < 7; i++)
+                            {
+                                var currentDay = startOfWeek.AddDays(i);
+                                var dayReservations = Model.Where(r => r.DateReservation.Date == currentDay && r.Statut != "annulee").ToList();
+                                
+                                <td style="vertical-align: top; height: 400px;">
+                                    <div style="overflow-y: auto; max-height: 380px;">
+                                        @foreach (var res in dayReservations)
+                                        {
+                                            <div class="card mb-2 @(res.Statut == "validee" ? "border-success" : "border-warning")" style="font-size: 12px; text-align: left;">
+                                                <div class="card-body p-2">
+                                                    <strong>@res.HeureDebut.ToString(@"hh\:mm") - @res.HeureFin.ToString(@"hh\:mm")</strong>
+                                                    <hr class="my-1" />
+                                                    <div><i class="fas fa-door-open"></i> @res.Salle?.NomSalle</div>
+                                                    <div><i class="fas fa-user"></i> @res.Utilisateur?.Email</div>
+                                                    <div class="text-truncate" title="@res.Motif">
+                                                        <i class="fas fa-comment"></i> @res.Motif
+                                                    </div>
+                                                    <div class="mt-1">
+                                                        <span class="badge @(res.Statut == "validee" ? "bg-success" : "bg-warning")">
+                                                            @(res.Statut == "validee" ? "Validée" : "En attente")
+                                                        </span>
+                                                    </div>
+                                                    <div class="mt-1">
+                                                        <a asp-action="Details" asp-route-id="@res.IdReservation" class="btn btn-sm btn-outline-info w-100">
+                                                            <i class="fas fa-info-circle"></i> Détails
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </td>
+                            }
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

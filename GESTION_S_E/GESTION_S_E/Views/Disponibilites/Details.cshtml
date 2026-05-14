@@ -1,42 +1,77 @@
 @model GESTION_S_E.Models.DisponibiliteEnseignant
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Détails de la disponibilité";
 }
 
-<h1>Détails de la disponibilité</h1>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="fas fa-info-circle"></i> Détails de la disponibilité</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th style="width: 40%;">ID</th>
+                                <td>@Model.IdDispo</td>
+                            </tr>
+                            <tr>
+                                <th>Enseignant</th>
+                                <td>
+                                    <strong>@Model.Enseignant?.NomEnseignant @Model.Enseignant?.PrenomEnseignant</strong>
+                                    <br />
+                                    <small class="text-muted">@Model.Enseignant?.Specialite</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Email professionnel</th>
+                                <td>@Model.Enseignant?.EmailPro</td>
+                            </tr>
+                            <tr>
+                                <th>Téléphone</th>
+                                <td>@Model.Enseignant?.TelephoneEnseignant</td>
+                            </tr>
+                            <tr>
+                                <th>Jour</th>
+                                <td>@Model.Jour</td>
+                            </tr>
+                            <tr>
+                                <th>Heure début</th>
+                                <td>@Model.HeureDebut.ToString(@"hh\:mm")</td>
+                            </tr>
+                            <tr>
+                                <th>Heure fin</th>
+                                <td>@Model.HeureFin.ToString(@"hh\:mm")</td>
+                            </tr>
+                            <tr>
+                                <th>Type</th>
+                                <td>
+                                    <span class="badge @(Model.TypeDispo == "cours" ? "bg-primary" : Model.TypeDispo == "td" ? "bg-success" : Model.TypeDispo == "tp" ? "bg-info" : "bg-warning")">
+                                        @(Model.TypeDispo == "cours" ? "📚 Cours" : Model.TypeDispo == "td" ? "📝 TD" : Model.TypeDispo == "tp" ? "🔬 TP" : "📅 Réunion")
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Date spécifique</th>
+                                <td>@(Model.DateSpecifique?.ToString("dd/MM/yyyy") ?? "Hebdomadaire (chaque semaine)")</td>
+                            </tr>
+                        </table>
+                    </div>
 
-<div>
-    <div><strong>ID:</strong> @Model?.IdDispo</div>
-    <div><strong>Enseignant:</strong> @(Model?.Enseignant?.NomEnseignant ?? "-") @(Model?.Enseignant?.PrenomEnseignant ?? "-")</div>
-    <div><strong>Spécialité:</strong> @(Model?.Enseignant?.Specialite ?? "-")</div>
-    <div><strong>Email pro:</strong> @(Model?.Enseignant?.EmailPro ?? "-")</div>
-    <div><strong>Jour:</strong> @Model?.Jour</div>
-    <div><strong>Heure début:</strong> @Model?.HeureDebut</div>
-    <div><strong>Heure fin:</strong> @Model?.HeureFin</div>
-    <div>
-        <strong>Type:</strong>
-        @if (Model?.TypeDispo == "cours")
-        {
-            <span>📚 Cours</span>
-        }
-        else if (Model?.TypeDispo == "td")
-        {
-            <span>📝 TD</span>
-        }
-        else if (Model?.TypeDispo == "tp")
-        {
-            <span>🔬 TP</span>
-        }
-        else
-        {
-            <span>📅 Réunion</span>
-        }
+                    <div class="d-flex gap-2 mt-3">
+                        <a asp-action="Edit" asp-route-id="@Model.IdDispo" class="btn btn-warning flex-grow-1">
+                            <i class="fas fa-edit"></i> Modifier
+                        </a>
+                        <a asp-action="Index" class="btn btn-secondary flex-grow-1">
+                            <i class="fas fa-arrow-left"></i> Retour
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div><strong>Date spécifique:</strong> @(Model?.DateSpecifique?.ToString("dd/MM/yyyy") ?? "Hebdomadaire")</div>
-
-    <br />
-
-    <a href="/Disponibilites/Edit/@Model?.IdDispo">Modifier</a> |
-    <a href="/Disponibilites/Index">Retour à la liste</a>
 </div>
