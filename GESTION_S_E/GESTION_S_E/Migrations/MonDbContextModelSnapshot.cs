@@ -859,18 +859,19 @@ namespace GESTION_S_E.Migrations
                 {
                     b.HasOne("GESTION_S_E.Models.Club", "Club")
                         .WithMany()
-                        .HasForeignKey("IdClub");
+                        .HasForeignKey("IdClub")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("GESTION_S_E.Models.Salle", "Salle")
                         .WithMany()
                         .HasForeignKey("IdSalle")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("GESTION_S_E.Models.Utilisateur", "Utilisateur")
                         .WithMany()
                         .HasForeignKey("IdUtilisateur")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Club");

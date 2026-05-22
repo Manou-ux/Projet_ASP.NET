@@ -27,6 +27,9 @@ builder.Services.AddDbContext<MonDbContext>(options =>
 
 var app = builder.Build();
 
+// Pour bien gérer les types PostgreSQL (interval + timestamp with time zone)
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
 // 5. Middleware (ordre important)
 app.UseStaticFiles();
 app.UseRouting();

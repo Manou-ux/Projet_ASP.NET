@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using GESTION_S_E.Models;
 
 namespace GESTION_S_E.Models
 {
@@ -29,6 +30,62 @@ namespace GESTION_S_E.Models
         {
             base.OnModelCreating(modelBuilder);
 
+            // ==================== DISPONIBILITÉS ENSEIGNANTS ====================
+            modelBuilder.Entity<DisponibiliteEnseignant>(entity =>
+            {
+                entity.HasKey(d => d.IdDispo);
+
+                entity.HasOne(d => d.Enseignant)
+                      .WithMany() 
+                      .HasForeignKey(d => d.IdEnseignant)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.Property(d => d.HeureDebut)
+                      .HasColumnType("interval");
+
+                entity.Property(d => d.HeureFin)
+                      .HasColumnType("interval");
+
+                entity.Property(d => d.DateSpecifique)
+                      .HasColumnType("timestamp with time zone");
+
+                entity.HasCheckConstraint("CK_Dispo_Jour", "jour IN ('Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi')");
+                entity.HasCheckConstraint("CK_Dispo_Type", "type_dispo IN ('cours','td','tp','reunion')");
+            });
+
+            // ==================== RÉSERVATIONS SALLE ====================
+            modelBuilder.Entity<ReservationSalle>(entity =>
+            {
+                entity.HasKey(r => r.IdReservation);
+
+                entity.HasOne(r => r.Salle)
+                      .WithMany()
+                      .HasForeignKey(r => r.IdSalle)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(r => r.Utilisateur)
+                      .WithMany()
+                      .HasForeignKey(r => r.IdUtilisateur)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(r => r.Club)
+                      .WithMany()
+                      .HasForeignKey(r => r.IdClub)
+                      .OnDelete(DeleteBehavior.SetNull);
+
+                entity.Property(r => r.DateReservation)
+                      .HasColumnType("timestamp with time zone");
+
+                entity.Property(r => r.HeureDebut)
+                      .HasColumnType("interval");
+
+                entity.Property(r => r.HeureFin)
+                      .HasColumnType("interval");
+
+                entity.HasCheckConstraint("CK_Reservation_Statut", "statut IN ('en_attente','validee','annulee')");
+            });
+
+            // ==================== TES CONFIGURATIONS ORIGINALES (conservées) ====================
             modelBuilder.Entity<Classe>()
                 .HasCheckConstraint("CK_Classe_Niveau", "\"Niveau\" IN ('L1','L2','L3','M1','M2')");
 
@@ -84,12 +141,6 @@ namespace GESTION_S_E.Models
             modelBuilder.Entity<EmploiDuTemps>()
                 .HasCheckConstraint("CK_Emploi_Destinataire", "id_classe IS NOT NULL OR id_groupe IS NOT NULL");
 
-            modelBuilder.Entity<DisponibiliteEnseignant>()
-                .HasCheckConstraint("CK_Dispo_Jour", "jour IN ('Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi')");
-
-            modelBuilder.Entity<DisponibiliteEnseignant>()
-                .HasCheckConstraint("CK_Dispo_Type", "type_dispo IN ('cours','td','tp','reunion')");
-
             modelBuilder.Entity<Club>()
                 .HasIndex(c => c.NomClub)
                 .IsUnique();
@@ -99,9 +150,6 @@ namespace GESTION_S_E.Models
 
             modelBuilder.Entity<MembreClub>()
                 .HasCheckConstraint("CK_Membre_Role", "role_membre IN ('president','tresorier','secretaire','membre')");
-
-            modelBuilder.Entity<ReservationSalle>()
-                .HasCheckConstraint("CK_Reservation_Statut", "statut IN ('en_attente','validee','annulee')");
         }
     }
 }

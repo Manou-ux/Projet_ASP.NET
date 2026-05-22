@@ -57,8 +57,9 @@
                                     <small class="text-muted">@item.Enseignant?.Specialite</small>
                                 </td>
                                 <td>@item.Jour</td>
-                                <td>@item.HeureDebut.ToString(@"hh\:mm")</td>
+                                <td>@(item.HeureDebut != default ? item.HeureDebut.ToString(@"hh\:mm") : "-")</td>
                                 <td>@item.HeureFin.ToString(@"hh\:mm")</td>
+                                
                                 <td>
                                     <span class="badge @(item.TypeDispo == "cours" ? "bg-primary" : item.TypeDispo == "td" ? "bg-success" : item.TypeDispo == "tp" ? "bg-info" : "bg-warning")">
                                         @(item.TypeDispo == "cours" ? "📚 Cours" : item.TypeDispo == "td" ? "📝 TD" : item.TypeDispo == "tp" ? "🔬 TP" : "📅 Réunion")
