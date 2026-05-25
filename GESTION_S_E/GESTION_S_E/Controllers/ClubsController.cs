@@ -21,28 +21,26 @@ namespace GESTION_S_E.Controllers
                 .Include(c => c.Responsable)
                 .OrderByDescending(c => c.DateCreation)
                 .ToListAsync();
-
-            // Récupérer les utilisateurs pour le formulaire d'ajout de membre
-            ViewBag.Utilisateurs = await _context.Utilisateurs
-                .Select(u => new { u.IdUtilisateur, u.Email })
-                .ToListAsync();
-
             return View(clubs);
         }
 
         // GET: Clubs/Create
         public IActionResult Create()
         {
-            ViewBag.IdResponsable = new SelectList(_context.Utilisateurs, "IdUtilisateur", "Email");
+            // Afficher le nom au lieu de l'email
+            var utilisateurs = _context.Utilisateurs
+                .Select(u => new
+                {
+                    u.IdUtilisateur,
+                    NomComplet = (u.Role == "eleve" ? _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEleve + " " + _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEleve :
+                                u.Role == "enseignant" ? _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEnseignant + " " + _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEnseignant :
+                                u.Role == "scolarite" ? _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).NomScolarite + " " + _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).PrenomScolarite :
+                                u.Email)
+                })
+                .ToList();
+
+            ViewBag.IdResponsable = new SelectList(utilisateurs, "IdUtilisateur", "NomComplet");
             return View();
-        }
-        // GET: Clubs/GetUtilisateursForMembres
-        public async Task<IActionResult> GetUtilisateursForMembres()
-        {
-            var utilisateurs = await _context.Utilisateurs
-                .Select(u => new { u.IdUtilisateur, u.Email })
-                .ToListAsync();
-            return Json(utilisateurs);
         }
 
         // POST: Clubs/Create
@@ -73,7 +71,18 @@ namespace GESTION_S_E.Controllers
                 }
             }
 
-            ViewBag.IdResponsable = new SelectList(_context.Utilisateurs, "IdUtilisateur", "Email", club.IdResponsable);
+            var utilisateurs = _context.Utilisateurs
+                .Select(u => new
+                {
+                    u.IdUtilisateur,
+                    NomComplet = (u.Role == "eleve" ? _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEleve + " " + _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEleve :
+                                u.Role == "enseignant" ? _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEnseignant + " " + _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEnseignant :
+                                u.Role == "scolarite" ? _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).NomScolarite + " " + _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).PrenomScolarite :
+                                u.Email)
+                })
+                .ToList();
+
+            ViewBag.IdResponsable = new SelectList(utilisateurs, "IdUtilisateur", "NomComplet", club.IdResponsable);
             return View(club);
         }
 
@@ -87,7 +96,18 @@ namespace GESTION_S_E.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewBag.IdResponsable = new SelectList(_context.Utilisateurs, "IdUtilisateur", "Email", club.IdResponsable);
+            var utilisateurs = _context.Utilisateurs
+                .Select(u => new
+                {
+                    u.IdUtilisateur,
+                    NomComplet = (u.Role == "eleve" ? _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEleve + " " + _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEleve :
+                                u.Role == "enseignant" ? _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEnseignant + " " + _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEnseignant :
+                                u.Role == "scolarite" ? _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).NomScolarite + " " + _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).PrenomScolarite :
+                                u.Email)
+                })
+                .ToList();
+
+            ViewBag.IdResponsable = new SelectList(utilisateurs, "IdUtilisateur", "NomComplet", club.IdResponsable);
             return View(club);
         }
 
@@ -147,7 +167,18 @@ namespace GESTION_S_E.Controllers
             }
 
             // Si on arrive ici, il y a une erreur de validation
-            ViewBag.IdResponsable = new SelectList(_context.Utilisateurs, "IdUtilisateur", "Email", club.IdResponsable);
+            var utilisateurs = _context.Utilisateurs
+                .Select(u => new
+                {
+                    u.IdUtilisateur,
+                    NomComplet = (u.Role == "eleve" ? _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEleve + " " + _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEleve :
+                                u.Role == "enseignant" ? _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEnseignant + " " + _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEnseignant :
+                                u.Role == "scolarite" ? _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).NomScolarite + " " + _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).PrenomScolarite :
+                                u.Email)
+                })
+                .ToList();
+
+            ViewBag.IdResponsable = new SelectList(utilisateurs, "IdUtilisateur", "NomComplet", club.IdResponsable);
             return View(club);
         }
 
