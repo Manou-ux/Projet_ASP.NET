@@ -1,6 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\GESTION_S_E",
+    "\\GESTION_S_E\\GESTION_S_E",
+    "\\GESTION_S_E\\GESTION_S_E\\Controllers",
+    "\\GESTION_S_E\\GESTION_S_E\\Properties",
+    "\\GESTION_S_E\\GESTION_S_E\\Views",
+    "\\GESTION_S_E\\GESTION_S_E\\Views\\Clubs",
+    "\\GESTION_S_E\\GESTION_S_E\\Views\\MembresClubs"
   ],
+  "SelectedNode": "\\GESTION_S_E\\GESTION_S_E\\Views\\MembresClubs\\Create.cshtml",
   "PreviewInSolutionExplorer": false
 }
