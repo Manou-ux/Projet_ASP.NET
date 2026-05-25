@@ -1,11 +1,10 @@
-﻿
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GESTION_S_E.Models
 {
-    [Table("utilisateurs")] // Pour que la table s'appelle ainsi dans PostgreSQL
+    [Table("utilisateurs")]
     public class Utilisateur
     {
         [Key]
@@ -29,5 +28,8 @@ namespace GESTION_S_E.Models
 
         [Column("date_creation")]
         public DateTime DateCreation { get; set; } = DateTime.UtcNow;
+
+        // Relation avec Enseignant (un utilisateur peut avoir un enseignant)
+        public virtual Enseignant? Enseignant { get; set; }
     }
 }

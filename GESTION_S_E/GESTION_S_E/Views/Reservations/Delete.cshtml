@@ -3,6 +3,10 @@
 
 @{
     ViewData["Title"] = "Supprimer une réservation";
+    
+    var demandeurNom = Model.Utilisateur?.Enseignant != null 
+        ? $"{Model.Utilisateur.Enseignant.PrenomEnseignant} {Model.Utilisateur.Enseignant.NomEnseignant}"
+        : Model.Utilisateur?.Email ?? "Inconnu";
 }
 
 <div class="container mt-4">
@@ -39,7 +43,7 @@
                             </tr>
                             <tr>
                                 <th>Demandeur</th>
-                                <td>@Model.Utilisateur?.Email</td>
+                                <td>@demandeurNom</td>
                             </tr>
                             <tr>
                                 <th>Club</th>

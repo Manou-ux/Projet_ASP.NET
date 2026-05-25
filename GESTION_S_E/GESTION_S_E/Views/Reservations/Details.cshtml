@@ -3,6 +3,10 @@
 
 @{
     ViewData["Title"] = "Détails de la réservation";
+    
+    var demandeurNom = Model.Utilisateur?.Enseignant != null 
+        ? $"{Model.Utilisateur.Enseignant.PrenomEnseignant} {Model.Utilisateur.Enseignant.NomEnseignant}"
+        : Model.Utilisateur?.Email ?? "Inconnu";
 }
 
 <div class="container mt-4">
@@ -38,9 +42,9 @@
                             <tr>
                                 <th>Demandeur</th>
                                 <td>
-                                    <strong>@Model.Utilisateur?.Email</strong>
+                                    <strong>@demandeurNom</strong>
                                     <br />
-                                    <small class="text-muted">Rôle: @Model.Utilisateur?.Role</small>
+                                    <small class="text-muted">Email: @Model.Utilisateur?.Email | Rôle: @Model.Utilisateur?.Role</small>
                                  </td>
                             </tr>
                             <tr>
@@ -68,12 +72,18 @@
                         </a>
                         @if (Model.Statut == "en_attente")
                         {
-                            <a asp-action="Valider" asp-route-id="@Model.IdReservation" class="btn btn-success flex-grow-1">
-                                <i class="fas fa-check"></i> Valider
-                            </a>
-                            <a asp-action="Annuler" asp-route-id="@Model.IdReservation" class="btn btn-warning flex-grow-1">
-                                <i class="fas fa-ban"></i> Annuler
-                            </a>
+                            <form asp-action="Valider" asp-route-id="@Model.IdReservation" method="post" style="display: inline;" class="flex-grow-1" onsubmit="return confirm('Valider cette réservation ?')">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-success w-100">
+                                    <i class="fas fa-check"></i> Valider
+                                </button>
+                            </form>
+                            <form asp-action="Annuler" asp-route-id="@Model.IdReservation" method="post" style="display: inline;" class="flex-grow-1" onsubmit="return confirm('Annuler cette réservation ?')">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-warning w-100">
+                                    <i class="fas fa-ban"></i> Annuler
+                                </button>
+                            </form>
                         }
                         <a asp-action="Index" class="btn btn-secondary flex-grow-1">
                             <i class="fas fa-arrow-left"></i> Retour

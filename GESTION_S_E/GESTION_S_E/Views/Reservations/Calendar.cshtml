@@ -68,12 +68,16 @@
                                     <div style="overflow-y: auto; max-height: 380px;">
                                         @foreach (var res in dayReservations)
                                         {
+                                            var demandeurNom = res.Utilisateur?.Enseignant != null 
+                                                ? $"{res.Utilisateur.Enseignant.PrenomEnseignant} {res.Utilisateur.Enseignant.NomEnseignant}"
+                                                : res.Utilisateur?.Email ?? "Inconnu";
+                                                
                                             <div class="card mb-2 @(res.Statut == "validee" ? "border-success" : "border-warning")" style="font-size: 12px; text-align: left;">
                                                 <div class="card-body p-2">
                                                     <strong>@res.HeureDebut.ToString(@"hh\:mm") - @res.HeureFin.ToString(@"hh\:mm")</strong>
                                                     <hr class="my-1" />
                                                     <div><i class="fas fa-door-open"></i> @res.Salle?.NomSalle</div>
-                                                    <div><i class="fas fa-user"></i> @res.Utilisateur?.Email</div>
+                                                    <div><i class="fas fa-user"></i> @demandeurNom</div>
                                                     <div class="text-truncate" title="@res.Motif">
                                                         <i class="fas fa-comment"></i> @res.Motif
                                                     </div>
@@ -83,7 +87,7 @@
                                                         </span>
                                                     </div>
                                                     <div class="mt-1">
-                                                        <a asp-action="Details" asp-route-id="@res.IdReservation" class="btn btn-sm btn-outline-info w-100">
+                                                        <a asp-controller="Reservations" asp-action="Details" asp-route-id="@res.IdReservation" class="btn btn-sm btn-outline-info w-100">
                                                             <i class="fas fa-info-circle"></i> Détails
                                                         </a>
                                                     </div>
@@ -91,7 +95,7 @@
                                             </div>
                                         }
                                     </div>
-                                </td>
+                                 </td>
                             }
                         </tr>
                     </tbody>

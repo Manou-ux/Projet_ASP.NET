@@ -57,12 +57,16 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
+                            var demandeurNom = item.Utilisateur?.Enseignant != null 
+                                ? $"{item.Utilisateur.Enseignant.PrenomEnseignant} {item.Utilisateur.Enseignant.NomEnseignant}"
+                                : item.Utilisateur?.Email ?? "Inconnu";
+                            
                             <tr>
                                 <td>@item.IdReservation</td>
                                 <td>@item.DateReservation.ToString("dd/MM/yyyy")</td>
                                 <td>@item.HeureDebut.ToString(@"hh\:mm") - @item.HeureFin.ToString(@"hh\:mm")</td>
                                 <td>@item.Salle?.NomSalle</td>
-                                <td>@item.Utilisateur?.Email</td>
+                                <td>@demandeurNom</td>
                                 <td>@(item.Club?.NomClub ?? "-")</td>
                                 <td>@(item.Motif?.Length > 30 ? item.Motif.Substring(0, 30) + "..." : item.Motif)</td>
                                 <td>
@@ -71,19 +75,49 @@
                                     </span>
                                  </td>
                                 <td>
-                                    <div class="btn-group" role="group">
+                                    <div class="btn-group btn-group-sm mb-1" role="group">
+                                        <a asp-action="Details" asp-route-id="@item.IdReservation" class="btn btn-info btn-sm" title="Détails">
+                                            <i class="fas fa-info-circle"></i>
+                                        </a>
                                         <a asp-action="Edit" asp-route-id="@item.IdReservation" class="btn btn-warning btn-sm" title="Modifier">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                         <a asp-action="Delete" asp-route-id="@item.IdReservation" class="btn btn-danger btn-sm" title="Supprimer">
                                             <i class="fas fa-trash"></i>
                                         </a>
-                                        <a asp-action="Details" asp-route-id="@item.IdReservation" class="btn btn-info btn-sm" title="Détails">
-                                            <i class="fas fa-info-circle"></i>
-                                        </a>
+                                    </div>
+                                    
+                                    @* Boutons de changement de statut rapide *@
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        @if (item.Statut == "en_attente")
+                                        {
+                                            <form asp-action="Valider" asp-route-id="@item.IdReservation" method="post" style="display: inline;" onsubmit="return confirm('Valider cette réservation ?')">
+                                                @Html.AntiForgeryToken()
+                                                <button type="submit" class="btn btn-success btn-sm" title="Valider">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                            </form>
+                                        }
+                                        
+                                        @if (item.Statut != "annulee")
+                                        {
+                                            <form asp-action="Annuler" asp-route-id="@item.IdReservation" method="post" style="display: inline;" onsubmit="return confirm('Annuler cette réservation ?')">
+                                                @Html.AntiForgeryToken()
+                                                <button type="submit" class="btn btn-secondary btn-sm" title="Annuler">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </form>
+                                        }
+                                        
+                                        @if (item.Statut == "annulee")
+                                        {
+                                            <button type="button" class="btn btn-secondary btn-sm" disabled title="Déjà annulée">
+                                                <i class="fas fa-ban"></i>
+                                            </button>
+                                        }
                                     </div>
                                  </td>
-                             </tr>
+                            </tr>
                         }
                     </tbody>
                 </table>
