@@ -17,332 +17,331 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v10.0
-build_property.EntryPointFilePath = 
 build_property.RootNamespace = GESTION_S_E
 build_property.RootNamespace = GESTION_S_E
-build_property.ProjectDir = D:\AspNet.2026\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\
+build_property.ProjectDir = C:\jakin\Projet_ASP.NET\GESTION_S_E\GESTION_S_E\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.RazorLangVersion = 10.0
+build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\AspNet.2026\Projet_ASP.NET\GESTION_S_E\GESTION_S_E
+build_property.MSBuildProjectDirectory = C:\jakin\Projet_ASP.NET\GESTION_S_E\GESTION_S_E
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Account/ForgotPassword.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Account/Login.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Account/Profile.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Account/Register.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Classes/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Classes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Classes/Delete.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Classes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Classes/Details.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Classes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Classes/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Classes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Classes/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Classes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Clubs/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Clubs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2x1YnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Clubs/Delete.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Clubs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2x1YnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Clubs/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Clubs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2x1YnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Clubs/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Clubs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2x1YnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Clubs/Members.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Clubs/Members.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2x1YnNcTWVtYmVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Dashboard/AdminDashboard.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Dashboard/AdminDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkbWluRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Dashboard/EleveDashboard.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Dashboard/EleveDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEVsZXZlRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Dashboard/EnseignantDashboard.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Dashboard/EnseignantDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEVuc2VpZ25hbnREYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Dashboard/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9uaWJpbGl0ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Delete.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9uaWJpbGl0ZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Details.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9uaWJpbGl0ZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9uaWJpbGl0ZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9uaWJpbGl0ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Eleves/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Eleves/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Eleves/Delete.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Eleves/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Eleves/Details.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Eleves/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Eleves/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Eleves/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Eleves/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Eleves/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/Calendar.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/Calendar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG9pRHVUZW1wc1xDYWxlbmRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG9pRHVUZW1wc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/Details.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG9pRHVUZW1wc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG9pRHVUZW1wc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG9pRHVUZW1wc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/MySchedule.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/EmploiDuTemps/MySchedule.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG9pRHVUZW1wc1xNeVNjaGVkdWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Delete.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Details.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Disponibilites.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Disponibilites.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudHNcRGlzcG9uaWJpbGl0ZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Enseignants/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Groupes/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Groupes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Groupes/Delete.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Groupes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Groupes/Details.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Groupes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Groupes/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Groupes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Groupes/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Groupes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Matieres/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Matieres/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aWVyZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Matieres/Delete.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Matieres/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aWVyZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Matieres/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Matieres/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aWVyZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Matieres/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Matieres/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aWVyZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Delete.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Details.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/ParUtilisateur.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/MembresClubs/ParUtilisateur.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYnJlc0NsdWJzXFBhclV0aWxpc2F0ZXVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Calendar.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Calendar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXENhbGVuZGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Delete.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Details.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Reservations/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Salles/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Salles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsbGVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Salles/Delete.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Salles/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsbGVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Salles/Disponibilite.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Salles/Disponibilite.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsbGVzXERpc3BvbmliaWxpdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Salles/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Salles/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsbGVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Salles/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Salles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsbGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Scolarites/Create.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Scolarites/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvbGFyaXRlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Scolarites/Delete.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Scolarites/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvbGFyaXRlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Scolarites/Details.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Scolarites/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvbGFyaXRlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Scolarites/Edit.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Scolarites/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvbGFyaXRlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Scolarites/Index.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Scolarites/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvbGFyaXRlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/Error.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_Layout.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_LayoutAdmin.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_LayoutEleve.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_LayoutEleve.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRFbGV2ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_LayoutEnseignant.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_LayoutEnseignant.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRFbnNlaWduYW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_LoginPartial.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AspNet.2026/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/_ViewStart.cshtml]
+[C:/jakin/Projet_ASP.NET/GESTION_S_E/GESTION_S_E/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -27,7 +27,7 @@ namespace GESTION_S_E.Controllers
             return View(reservations);
         }
 
-        public async Task<IActionResult> Calendar()
+        public async Task<IActionResult> Calendar(int weekOffset = 0)
         {
             var reservations = await _context.ReservationsSalles
                 .Include(r => r.Salle)
@@ -37,7 +37,20 @@ namespace GESTION_S_E.Controllers
                 .OrderBy(r => r.DateReservation)
                 .ToListAsync();
 
+            // Calculer la date de début de semaine en fonction du décalage
+            var today = DateTime.Today;
+            var startOfWeek = GetStartOfWeek(today).AddDays(weekOffset * 7);
+            
+            ViewBag.StartOfWeek = startOfWeek;
+            
             return View(reservations);
+        }
+
+        private DateTime GetStartOfWeek(DateTime date)
+        {
+            // Commencer la semaine le lundi
+            int diff = (7 + (date.DayOfWeek - DayOfWeek.Monday)) % 7;
+            return date.AddDays(-diff).Date;
         }
 
         public async Task<IActionResult> Details(int id)
@@ -77,7 +90,6 @@ namespace GESTION_S_E.Controllers
                 ModelState.AddModelError("HeureFin", "L'heure de fin doit être supérieure à l'heure de début.");
             }
 
-            // Validation : La date ne doit pas être dans le passé
             if (reservation.DateReservation.Date < DateTime.Today)
             {
                 ModelState.AddModelError("DateReservation", "La date de réservation ne peut pas être dans le passé.");
@@ -88,8 +100,6 @@ namespace GESTION_S_E.Controllers
                 try
                 {
                     reservation.Statut = "en_attente";
-                    // SUPPRIMÉ : reservation.DateReservation = DateTime.UtcNow;
-                    // La date garde celle que l'utilisateur a choisie
 
                     _context.ReservationsSalles.Add(reservation);
                     await _context.SaveChangesAsync();
@@ -135,7 +145,6 @@ namespace GESTION_S_E.Controllers
                 ModelState.AddModelError("HeureFin", "L'heure de fin doit être supérieure à l'heure de début.");
             }
 
-            // Validation : La date ne doit pas être dans le passé
             if (reservation.DateReservation.Date < DateTime.Today)
             {
                 ModelState.AddModelError("DateReservation", "La date de réservation ne peut pas être dans le passé.");
@@ -153,7 +162,7 @@ namespace GESTION_S_E.Controllers
                     reservationExistante.IdSalle = reservation.IdSalle;
                     reservationExistante.IdUtilisateur = reservation.IdUtilisateur;
                     reservationExistante.IdClub = reservation.IdClub;
-                    reservationExistante.DateReservation = reservation.DateReservation; // AJOUT : Mise à jour de la date
+                    reservationExistante.DateReservation = reservation.DateReservation;
                     reservationExistante.HeureDebut = reservation.HeureDebut;
                     reservationExistante.HeureFin = reservation.HeureFin;
                     reservationExistante.Motif = reservation.Motif;
