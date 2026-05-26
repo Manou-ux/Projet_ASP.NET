@@ -5,6 +5,7 @@ using GESTION_S_E.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace GESTION_S_E.Controllers
 {
@@ -75,8 +76,6 @@ namespace GESTION_S_E.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            // DEBUG : Si ça ne marche toujours pas, regarde ton terminal, 
-            // les erreurs exactes s'afficheront ici :
             foreach (var modelStateKey in ModelState.Keys)
             {
                 var value = ModelState[modelStateKey];
@@ -128,7 +127,6 @@ namespace GESTION_S_E.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            // DEBUG : Permet de voir dans le terminal s'il y a un champ invalide
             foreach (var modelStateKey in ModelState.Keys)
             {
                 var value = ModelState[modelStateKey];
@@ -188,24 +186,124 @@ namespace GESTION_S_E.Controllers
         // =======================================================
         private void PopulateDropDownListData(EmploiDuTemps edt = null)
         {
-            // Salles : Value = IdSalle, Text = NomSalle
             ViewBag.IdSalle = new SelectList(_context.Salles, "IdSalle", "NomSalle", edt?.IdSalle);
-
-            // Enseignants : Value = IdEnseignant, Text = "NomEnseignant PrenomEnseignant"
             var enseignantsQuery = _context.Enseignants.Select(e => new {
                 IdEnseignant = e.IdEnseignant,
                 NomComplet = e.NomEnseignant + " " + e.PrenomEnseignant
             });
             ViewBag.IdEnseignant = new SelectList(enseignantsQuery, "IdEnseignant", "NomComplet", edt?.IdEnseignant);
-
-            // Matières : Value = IdMatiere, Text = NomMatiere
             ViewBag.IdMatiere = new SelectList(_context.Matieres, "IdMatiere", "NomMatiere", edt?.IdMatiere);
-
-            // Classes : Value = IdClasse, Text = NomClasse
             ViewBag.IdClasse = new SelectList(_context.Classes, "IdClasse", "NomClasse", edt?.IdClasse);
-
-            // Groupes : Value = IdGroupe, Text = NomGroupe
             ViewBag.IdGroupe = new SelectList(_context.Groupes, "IdGroupe", "NomGroupe", edt?.IdGroupe);
+        }
+
+        // =======================================================
+        // ViewModel pour l'affichage hebdomadaire (imbriqué)
+        // =======================================================
+        public class WeeklyTimetableViewModel
+        {
+            public DateTime Lundi { get; set; }
+            public int ClasseId { get; set; }
+            public List<Classe> Classes { get; set; } // Ajout pour contourner le problème du SelectList
+            public Dictionary<DayOfWeek, Dictionary<TimeSpan, List<EmploiDuTemps>>> CoursParJourEtHeure { get; set; }
+        }
+
+        // =======================================================
+        // 9. WEEKLY VIEW : Affichage planning hebdomadaire (version finale)
+        // =======================================================
+        public async Task<IActionResult> WeeklyView(int? classeId, DateTime? dateDebut)
+        {
+            // 1. Récupérer TOUTES les classes
+            var toutesLesClasses = await _context.Classes.ToListAsync();
+            if (!toutesLesClasses.Any())
+            {
+                TempData["Error"] = "Aucune classe trouvée. Veuillez d'abord créer une classe via /Classes/Create.";
+                var emptyModel = new WeeklyTimetableViewModel
+                {
+                    Lundi = GetStartOfWeek(DateTime.Today),
+                    Classes = new List<Classe>(),
+                    CoursParJourEtHeure = new Dictionary<DayOfWeek, Dictionary<TimeSpan, List<EmploiDuTemps>>>()
+                };
+                return View(emptyModel);
+            }
+
+            // 2. Sélectionner la classe par défaut (première) si aucun ID n'est passé
+            if (classeId == null)
+                classeId = toutesLesClasses.First().IdClasse;
+
+            // 3. Calcul de la semaine
+            DateTime today = dateDebut ?? DateTime.Today;
+            DateTime lundi = GetStartOfWeek(today);
+            DateTime dimanche = lundi.AddDays(6);
+
+            // 4. Récupérer les cours pour cette classe et cette semaine
+            var cours = await _context.EmploisDuTemps
+                .Include(e => e.Matiere)
+                .Include(e => e.Enseignant)
+                .Include(e => e.Salle)
+                .Include(e => e.Classe)
+                .Where(e => e.IdClasse == classeId && e.DateCours >= lundi && e.DateCours <= dimanche)
+                .ToListAsync();
+
+            if (!cours.Any())
+                TempData["Info"] = $"Aucun cours programmé pour la classe sélectionnée du {lundi:dd/MM/yyyy} au {dimanche:dd/MM/yyyy}.";
+
+            // 5. Remplir le ViewBag (optionnel, gardé pour compatibilité)
+            ViewBag.DateDebut = lundi.ToString("yyyy-MM-dd");
+
+            // 6. Construire le modèle
+            var model = new WeeklyTimetableViewModel
+            {
+                Lundi = lundi,
+                ClasseId = classeId.Value,
+                Classes = toutesLesClasses, // Passage de la liste complète
+                CoursParJourEtHeure = OrganiserCoursParJourEtHeure(cours, lundi)
+            };
+            return View(model);
+        }
+
+        private DateTime GetStartOfWeek(DateTime date)
+        {
+            int diff = (7 + (date.DayOfWeek - DayOfWeek.Monday)) % 7;
+            return date.AddDays(-diff).Date;
+        }
+
+        private Dictionary<DayOfWeek, Dictionary<TimeSpan, List<EmploiDuTemps>>> OrganiserCoursParJourEtHeure(List<EmploiDuTemps> cours, DateTime lundi)
+        {
+            var result = new Dictionary<DayOfWeek, Dictionary<TimeSpan, List<EmploiDuTemps>>>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                DayOfWeek jour = (DayOfWeek)((int)DayOfWeek.Monday + i);
+                result[jour] = new Dictionary<TimeSpan, List<EmploiDuTemps>>();
+            }
+
+            var creneaux = new List<TimeSpan>();
+            for (int h = 7; h <= 18; h++)
+                creneaux.Add(TimeSpan.FromHours(h));
+
+            foreach (var jour in result.Keys.ToList())
+            {
+                foreach (var creneau in creneaux)
+                {
+                    result[jour][creneau] = new List<EmploiDuTemps>();
+                }
+            }
+
+            foreach (var c in cours)
+            {
+                DayOfWeek jourCours = c.DateCours.DayOfWeek;
+                if (result.ContainsKey(jourCours))
+                {
+                    TimeSpan debut = c.HeureDebut;
+                    TimeSpan cle = new TimeSpan(debut.Hours, 0, 0);
+                    if (result[jourCours].ContainsKey(cle))
+                        result[jourCours][cle].Add(c);
+                    else
+                        result[jourCours][cle] = new List<EmploiDuTemps> { c };
+                }
+            }
+            return result;
         }
     }
 }

@@ -1,0 +1,135 @@
+@using GESTION_S_E.Models
+@using GESTION_S_E.Controllers
+@model EmploiDuTempsController.WeeklyTimetableViewModel
+
+@{
+    ViewData["Title"] = "Emploi du temps hebdomadaire";
+    var jours = new[] { DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday };
+    var libelles = new[] { "LUNDI", "MARDI", "MERCREDI", "JEUDI", "VENDREDI" };
+    var heures = Enumerable.Range(7, 12).Select(h => TimeSpan.FromHours(h));
+}
+
+<div class="container-fluid mt-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>📅 Emploi du temps – Semaine du @Model.Lundi.ToString("dd/MM/yyyy")</h2>
+        <a href="/EmploiDuTemps/Index" class="btn btn-outline-secondary">← Retour à la liste des séances</a>
+    </div>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+    @if (TempData["Info"] != null)
+    {
+        <div class="alert alert-info">@TempData["Info"]</div>
+    }
+
+    <form method="get" class="row g-3 mb-4">
+        <div class="col-auto">
+            <label for="classeId" class="form-label">Classe</label>
+            <select name="classeId" class="form-select" onchange="this.form.submit()">
+                @foreach (var c in Model.Classes)
+                {
+                    <option value="@c.IdClasse" selected="@(c.IdClasse == Model.ClasseId)">
+                        @c.NomClasse
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="col-auto">
+            <label for="dateDebut" class="form-label">Semaine débutant le</label>
+            <input type="date" name="dateDebut" class="form-control" value="@ViewBag.DateDebut" onchange="this.form.submit()" />
+        </div>
+    </form>
+
+    <div class="table-responsive">
+        <table class="table table-bordered timetable">
+            <thead class="table-dark text-center">
+                <tr>
+                    <th class="heure-colonne">Horaire</th>
+                    @foreach (var lib in libelles)
+                    {
+                        <th>@lib</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var heure in heures)
+                {
+                    bool skip = false;
+                    string afficheHeure = $"{heure.Hours:D2}:{heure.Minutes:D2}";
+                    <tr>
+                        <td class="heure-colonne text-center fw-bold">@afficheHeure</td>
+                        @foreach (var jour in jours)
+                        {
+                            if (skip) { skip = false; continue; }
+                            var coursListe = Model.CoursParJourEtHeure.ContainsKey(jour) &&
+                                              Model.CoursParJourEtHeure[jour].ContainsKey(heure)
+                                              ? Model.CoursParJourEtHeure[jour][heure]
+                                              : new List<EmploiDuTemps>();
+
+                            if (coursListe.Any())
+                            {
+                                var cours = coursListe.First();
+                                int duree = (int)(cours.HeureFin - cours.HeureDebut).TotalHours;
+                                int rowspan = duree > 1 ? duree : 1;
+                                if (duree > 1 && heure != new TimeSpan(cours.HeureDebut.Hours, 0, 0))
+                                {
+                                    skip = true;
+                                    continue;
+                                }
+                                <td rowspan="@rowspan" class="cours-cell">
+                                    <strong>@cours.Matiere?.NomMatiere</strong><br />
+                                    <span class="prof">@cours.Enseignant?.NomEnseignant @cours.Enseignant?.PrenomEnseignant</span><br />
+                                    <span class="salle">📍 @cours.Salle?.NomSalle</span>
+                                    @if (cours.Groupe != null)
+                                    {
+                                        <br /><span class="groupe">👥 @cours.Groupe.NomGroupe</span>
+                                    }
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="bg-light"></td>
+                            }
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .timetable td, .timetable th {
+        vertical-align: middle;
+        padding: 10px;
+        min-width: 130px;
+    }
+
+    .heure-colonne {
+        background-color: #f8f9fa;
+        width: 80px;
+    }
+
+    .cours-cell {
+        background-color: #e7f3ff;
+        border-left: 4px solid #0d6efd;
+        text-align: left;
+    }
+
+    .prof {
+        font-size: 0.85rem;
+        color: #2c3e50;
+    }
+
+    .salle {
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+
+    .groupe {
+        font-size: 0.75rem;
+        color: #198754;
+    }
+</style>
