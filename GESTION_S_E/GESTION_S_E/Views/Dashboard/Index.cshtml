@@ -5,407 +5,275 @@
 <style>
     body {
         font-family: 'DM Sans', sans-serif;
-        background-color: #f0f2f5;
+        background-color: #ffffff;
+        color: #0f172a;
+        padding: 30px 20px;
     }
 
-    /* Header */
-    .dash-header {
-        background: #1a1a2e;
-        border-radius: 16px;
-        padding: 28px 32px;
-        margin-bottom: 28px;
-        display: flex;
-        align-items: center;
-        gap: 18px;
-    }
-
-    .dash-header-icon {
-        width: 52px;
-        height: 52px;
-        background: rgba(255,255,255,0.1);
-        border-radius: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .dash-header-icon i { color: #fff; font-size: 22px; }
-
-    .dash-header h1 {
-        font-size: 22px;
-        font-weight: 600;
-        color: #fff;
-        margin: 0 0 4px;
-        letter-spacing: -0.3px;
-    }
-
-    .dash-header p {
-        font-size: 13px;
-        color: rgba(255,255,255,0.55);
-        margin: 0;
-    }
-
-    /* Section label */
-    .section-label {
-        font-size: 11px;
-        font-weight: 600;
-        color: #b0b4c4;
-        text-transform: uppercase;
-        letter-spacing: 0.7px;
-        margin-bottom: 14px;
-    }
-
-    /* Stat cards */
+    /* Minimal Stat Card */
     .stat-card {
-        background: #fff;
-        border-radius: 14px;
-        padding: 22px 24px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        transition: transform 0.2s, box-shadow 0.2s;
         text-decoration: none;
         color: inherit;
-        height: 100%;
+        transition: border-color 0.15s ease, background-color 0.15s ease;
     }
-
     .stat-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+        border-color: #0f172a;
+        background-color: #ffffff;
         color: inherit;
     }
-
-    .stat-card-left h5 {
+    .stat-card h5 {
         font-size: 12px;
         font-weight: 500;
-        color: #8a8fa8;
-        margin: 0 0 6px;
+        color: #64748b;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        margin: 0 0 4px;
     }
-
-    .stat-card-left h2 {
-        font-size: 32px;
+    .stat-card h2 {
+        font-size: 28px;
         font-weight: 600;
-        color: #1a1a2e;
-        margin: 0 0 10px;
-        letter-spacing: -1px;
+        color: #0f172a;
+        margin: 0;
+        letter-spacing: -0.5px;
     }
-
-    .stat-card-left .stat-link {
-        font-size: 12px;
-        color: #8a8fa8;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        text-decoration: none;
-    }
-
-    .stat-card-left .stat-link:hover { color: #1a1a2e; }
-
     .stat-card-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
+        font-size: 20px;
+        color: #94a3b8;
     }
 
-    .stat-card-icon i { font-size: 20px; }
-
-    .icon-blue   { background: #eef2ff; } .icon-blue i   { color: #4f6ef7; }
-    .icon-green  { background: #edfaf4; } .icon-green i  { color: #2ecc8f; }
-    .icon-amber  { background: #fff8eb; } .icon-amber i  { color: #f5a623; }
-    .icon-red    { background: #fff0f0; } .icon-red i    { color: #e05c5c; }
-    .icon-purple { background: #f3e8ff; } .icon-purple i { color: #a855f7; }
-
-    /* Admin cards */
+    /* Minimal Admin Card */
     .admin-card {
-        background: #fff;
-        border-radius: 14px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
         padding: 24px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        height: 100%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        height: 100%;
-        transition: transform 0.2s, box-shadow 0.2s;
+        transition: border-color 0.15s ease;
     }
-
     .admin-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+        border-color: #0f172a;
     }
-
-    .admin-card-icon {
-        width: 46px;
-        height: 46px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 16px;
-        flex-shrink: 0;
-    }
-
-    .admin-card-icon i { font-size: 20px; }
-
     .admin-card h5 {
         font-size: 15px;
         font-weight: 600;
-        color: #1a1a2e;
+        color: #0f172a;
         margin: 0 0 6px;
     }
-
     .admin-card p {
         font-size: 13px;
-        color: #8a8fa8;
+        color: #64748b;
         margin: 0 0 20px;
         flex-grow: 1;
     }
-
     .btn-access {
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        padding: 9px 16px;
-        background: #1a1a2e;
-        color: #fff;
-        border-radius: 8px;
+        padding: 8px 14px;
+        background: #0f172a;
+        color: #ffffff;
+        border-radius: 6px;
         font-size: 13px;
         font-weight: 500;
-        font-family: inherit;
         text-decoration: none;
-        transition: background 0.2s;
+        width: fit-content;
+        transition: background-color 0.15s ease;
     }
+    .btn-access:hover { background: #1e293b; color: #ffffff; }
 
-    .btn-access:hover { background: #2d2d50; color: #fff; }
-
-    /* Quick nav */
-    .quick-nav-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 12px;
-    }
-
+    /* Quick Links */
     .quick-link {
-        background: #fff;
-        border-radius: 12px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
         padding: 16px;
         text-align: center;
         text-decoration: none;
-        color: #1a1a2e;
+        color: #0f172a;
         font-size: 13px;
         font-weight: 500;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        border: 1.5px solid #e4e6ef;
-        transition: border-color 0.2s, background 0.2s, transform 0.2s;
+        transition: all 0.15s ease;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 8px;
     }
-
     .quick-link i {
-        font-size: 20px;
-        color: #8a8fa8;
-        transition: color 0.2s;
+        font-size: 18px;
+        color: #64748b;
     }
-
     .quick-link:hover {
-        border-color: #1a1a2e;
-        background: #f7f8fa;
-        transform: translateY(-2px);
-        color: #1a1a2e;
+        border-color: #0f172a;
+        background: #ffffff;
+        color: #0f172a;
     }
+    .quick-link:hover i { color: #0f172a; }
 
-    .quick-link:hover i { color: #1a1a2e; }
-
-    /* 2 lignes pour la grille des statistiques */
-    .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
-        margin-bottom: 30px;
-    }
-
-    @@media (max-width: 992px) {
-        .stats-grid { grid-template-columns: repeat(2, 1fr); }
-        .quick-nav-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @@media (max-width: 768px) {
-        .stats-grid { grid-template-columns: 1fr; }
-        .quick-nav-grid { grid-template-columns: 1fr; }
+    /* Section Label */
+    .section-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-top: 35px;
+        margin-bottom: 16px;
     }
 </style>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-<div class="dash-header">
-    <div class="dash-header-icon">
-        <i class="fas fa-school"></i>
+<div class="container-fluid px-0">
+    
+    <div class="d-flex align-items-center gap-3 border-bottom pb-4 mb-4">
+        <div class="text-dark" style="font-size: 28px;"><i class="fas fa-school"></i></div>
+        <div>
+            <h1 class="h4 fw-semibold m-0">Dashboard EMIT</h1>
+            <p class="text-muted small m-0">Système de gestion des salles, emplois du temps et clubs</p>
+        </div>
     </div>
-    <div>
-        <h1>Dashboard EMIT</h1>
-        <p>Système de gestion des salles, emplois du temps et clubs</p>
-    </div>
-</div>
 
-<!-- Statistiques - Vue d'ensemble -->
-<p class="section-label">Vue d'ensemble</p>
-<div class="stats-grid">
-    <!-- Salles -->
-    <a href="/Salles/Index" class="stat-card">
-        <div class="stat-card-left">
-            <h5>Salles</h5>
-            <h2>@ViewBag.TotalSalles</h2>
-            <span class="stat-link">Voir détails <i class="fas fa-arrow-right"></i></span>
+    <p class="section-label mt-0">Vue d'ensemble</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3">
+        <div class="col">
+            <a href="/Salles/Index" class="stat-card">
+                <div>
+                    <h5>Salles</h5>
+                    <h2>@ViewBag.TotalSalles</h2>
+                </div>
+                <div class="stat-card-icon"><i class="fas fa-door-open"></i></div>
+            </a>
         </div>
-        <div class="stat-card-icon icon-blue">
-            <i class="fas fa-door-open"></i>
-        </div>
-    </a>
 
-    <!-- Classes -->
-    <a href="/Classes/Index" class="stat-card">
-        <div class="stat-card-left">
-            <h5>Classes</h5>
-            <h2>@ViewBag.TotalClasses</h2>
-            <span class="stat-link">Voir détails <i class="fas fa-arrow-right"></i></span>
+        <div class="col">
+            <a href="/Classes/Index" class="stat-card">
+                <div>
+                    <h5>Classes</h5>
+                    <h2>@ViewBag.TotalClasses</h2>
+                </div>
+                <div class="stat-card-icon"><i class="fas fa-users"></i></div>
+            </a>
         </div>
-        <div class="stat-card-icon icon-green">
-            <i class="fas fa-users"></i>
-        </div>
-    </a>
 
-    <!-- Matières -->
-    <a href="/Matieres/Index" class="stat-card">
-        <div class="stat-card-left">
-            <h5>Matières</h5>
-            <h2>@ViewBag.TotalMatieres</h2>
-            <span class="stat-link">Voir détails <i class="fas fa-arrow-right"></i></span>
+        <div class="col">
+            <a href="/Matieres/Index" class="stat-card">
+                <div>
+                    <h5>Matières</h5>
+                    <h2>@ViewBag.TotalMatieres</h2>
+                </div>
+                <div class="stat-card-icon"><i class="fas fa-book"></i></div>
+            </a>
         </div>
-        <div class="stat-card-icon icon-amber">
-            <i class="fas fa-book"></i>
-        </div>
-    </a>
 
-    <!-- Réservations -->
-    <a href="/Reservations/Index" class="stat-card">
-        <div class="stat-card-left">
-            <h5>Réservations</h5>
-            <h2>@ViewBag.TotalReservations</h2>
-            <span class="stat-link">Voir détails <i class="fas fa-arrow-right"></i></span>
+        <div class="col">
+            <a href="/Reservations/Index" class="stat-card">
+                <div>
+                    <h5>Réservations</h5>
+                    <h2>@ViewBag.TotalReservations</h2>
+                </div>
+                <div class="stat-card-icon"><i class="fas fa-bookmark"></i></div>
+            </a>
         </div>
-        <div class="stat-card-icon icon-red">
-            <i class="fas fa-bookmark"></i>
-        </div>
-    </a>
 
-    <!-- Clubs -->
-    <a href="/Clubs/Index" class="stat-card">
-        <div class="stat-card-left">
-            <h5>Clubs</h5>
-            <h2>@ViewBag.TotalClubs</h2>
-            <span class="stat-link">Voir détails <i class="fas fa-arrow-right"></i></span>
-        </div>
-        <div class="stat-card-icon icon-purple">
-            <i class="fas fa-flag"></i>
-        </div>
-    </a>
-</div>
-
-<!-- Administration des utilisateurs -->
-<p class="section-label">Administration des utilisateurs</p>
-<div class="row g-3 mb-4">
-    <div class="col-md-4">
-        <div class="admin-card">
-            <div class="admin-card-icon icon-blue">
-                <i class="fas fa-user-graduate"></i>
-            </div>
-            <h5>Gestion des Élèves</h5>
-            <p>Consulter, ajouter, modifier ou supprimer les élèves</p>
-            <a href="/Eleves/Index" class="btn-access">
-                <i class="fas fa-arrow-right"></i> Accéder
+        <div class="col">
+            <a href="/Clubs/Index" class="stat-card">
+                <div>
+                    <h5>Clubs</h5>
+                    <h2>@ViewBag.TotalClubs</h2>
+                </div>
+                <div class="stat-card-icon"><i class="fas fa-flag"></i></div>
             </a>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="admin-card">
-            <div class="admin-card-icon icon-green">
-                <i class="fas fa-chalkboard-user"></i>
-            </div>
-            <h5>Gestion des Enseignants</h5>
-            <p>Consulter, ajouter, modifier ou supprimer les enseignants</p>
-            <a href="/Enseignants/Index" class="btn-access">
-                <i class="fas fa-arrow-right"></i> Accéder
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="admin-card">
-            <div class="admin-card-icon" style="background:#edf6ff;">
-                <i class="fas fa-building" style="color:#3b82f6;"></i>
-            </div>
-            <h5>Gestion Scolarité</h5>
-            <p>Consulter, ajouter, modifier ou supprimer le personnel scolarité</p>
-            <a href="/Scolarites/Index" class="btn-access">
-                <i class="fas fa-arrow-right"></i> Accéder
-            </a>
-        </div>
-    </div>
-</div>
 
-<!-- Activités parascolaires - Clubs -->
-<p class="section-label">Activités parascolaires</p>
-<div class="row g-3 mb-4">
-    <div class="col-md-6">
-        <div class="admin-card">
-            <div class="admin-card-icon icon-purple">
-                <i class="fas fa-flag"></i>
+    <p class="section-label">Administration des utilisateurs</p>
+    <div class="row g-3">
+        <div class="col-12 col-md-4">
+            <div class="admin-card">
+                <h5>Gestion des Élèves</h5>
+                <p>Consulter, ajouter, modifier ou supprimer les élèves</p>
+                <a href="/Eleves/Index" class="btn-access">
+                    Accéder <i class="fas fa-arrow-right small ms-1"></i>
+                </a>
             </div>
-            <h5>Gestion des Clubs</h5>
-            <p>Consulter, ajouter, modifier ou supprimer les clubs</p>
-            <a href="/Clubs/Index" class="btn-access">
-                <i class="fas fa-arrow-right"></i> Accéder aux clubs
-            </a>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="admin-card">
+                <h5>Gestion des Enseignants</h5>
+                <p>Consulter, ajouter, modifier ou supprimer les enseignants</p>
+                <a href="/Enseignants/Index" class="btn-access">
+                    Accéder <i class="fas fa-arrow-right small ms-1"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="admin-card">
+                <h5>Gestion Scolarité</h5>
+                <p>Consulter, ajouter, modifier ou supprimer le personnel scolarité</p>
+                <a href="/Scolarites/Index" class="btn-access">
+                    Accéder <i class="fas fa-arrow-right small ms-1"></i>
+                </a>
+            </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="admin-card">
-            <div class="admin-card-icon" style="background:#fef2f2;">
-                <i class="fas fa-users" style="color:#ef4444;"></i>
-            </div>
-            <h5>Membres des Clubs</h5>
-            <p>Gérer les adhésions, les rôles et la participation des membres</p>
-            <a href="/Clubs/Index" class="btn-access">
-                <i class="fas fa-arrow-right"></i> Gérer les membres
-            </a>
-        </div>
-    </div>
-</div>
 
-<!-- Navigation rapide -->
-<p class="section-label">Navigation rapide</p>
-<div class="quick-nav-grid">
-    <a href="/Groupes/Index" class="quick-link">
-        <i class="fas fa-layer-group"></i> Groupes
-    </a>
-    <a href="/EmploiDuTemps/Index" class="quick-link">
-        <i class="fas fa-calendar-alt"></i> Emploi du temps
-    </a>
-    <a href="/Reservations/Index" class="quick-link">
-        <i class="fas fa-bookmark"></i> Réservations
-    </a>
-    <a href="/Clubs/Index" class="quick-link">
-        <i class="fas fa-flag"></i> Clubs
-    </a>
-    <a href="/Account/Profile" class="quick-link">
-        <i class="fas fa-user-circle"></i> Mon profil
-    </a>
+    <p class="section-label">Activités parascolaires</p>
+    <div class="row g-3">
+        <div class="col-12 col-md-6">
+            <div class="admin-card">
+                <h5>Gestion des Clubs</h5>
+                <p>Consulter, ajouter, modifier ou supprimer les clubs</p>
+                <a href="/Clubs/Index" class="btn-access">
+                    Accéder aux clubs <i class="fas fa-arrow-right small ms-1"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="admin-card">
+                <h5>Membres des Clubs</h5>
+                <p>Gérer les adhésions, les rôles et la participation des membres</p>
+                <a href="/Clubs/Index" class="btn-access">
+                    Gérer les membres <i class="fas fa-arrow-right small ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <p class="section-label">Navigation rapide</p>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 g-2">
+        <div class="col">
+            <a href="/Groupes/Index" class="quick-link">
+                <i class="fas fa-layer-group"></i> Groupes
+            </a>
+        </div>
+        <div class="col">
+            <a href="/EmploiDuTemps/Index" class="quick-link">
+                <i class="fas fa-calendar-alt"></i> EDT
+            </a>
+        </div>
+        <div class="col">
+            <a href="/Reservations/Index" class="quick-link">
+                <i class="fas fa-bookmark"></i> Réservations
+            </a>
+        </div>
+        <div class="col">
+            <a href="/Clubs/Index" class="quick-link">
+                <i class="fas fa-flag"></i> Clubs
+            </a>
+        </div>
+        <div class="col">
+            <a href="/Account/Profile" class="quick-link">
+                <i class="fas fa-user-circle"></i> Mon profil
+            </a>
+        </div>
+    </div>
 </div>
