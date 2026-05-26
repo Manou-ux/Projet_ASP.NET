@@ -38,26 +38,26 @@ namespace GESTION_S_E.Models
         [Column("id_salle")]
         public int IdSalle { get; set; }
         [ForeignKey("IdSalle")]
-        public virtual Salle Salle { get; set; }
+        public virtual Salle? Salle { get; set; } // Ajout du ? ici
 
         [Column("id_enseignant")]
         public int IdEnseignant { get; set; }
         [ForeignKey("IdEnseignant")]
-        public virtual Enseignant Enseignant { get; set; }
+        public virtual Enseignant? Enseignant { get; set; } // Ajout du ? ici
 
         [Column("id_matiere")]
         public int IdMatiere { get; set; }
         [ForeignKey("IdMatiere")]
-        public virtual Matiere Matiere { get; set; }
+        public virtual Matiere? Matiere { get; set; } // Ajout du ? ici
 
         [Column("id_classe")]
-        public int? IdClasse { get; set; } // Nullable car on peut viser un groupe à la place
+        public int? IdClasse { get; set; } 
         [ForeignKey("IdClasse")]
-        public virtual Classe Classe { get; set; }
+        public virtual Classe? Classe { get; set; } // Ajout du ? ici
 
         [Column("id_groupe")]
-        public int? IdGroupe { get; set; } // Nullable car on peut viser une classe entière à la place
+        public int? IdGroupe { get; set; } 
         [ForeignKey("IdGroupe")]
-        public virtual Groupe Groupe { get; set; }
+        public virtual Groupe? Groupe { get; set; } // Ajout du ? ici
     }
 }

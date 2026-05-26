@@ -1,0 +1,63 @@
+@model GESTION_S_E.Models.EmploiDuTemps
+
+@{
+    ViewData["Title"] = "Détails de la séance";
+}
+
+<h1>Détails de la séance</h1>
+
+<table border="0" cellpadding="5">
+    <tr>
+        <td><strong>ID:</strong></td>
+        <td>@Model.IdEmploi</td>
+    </tr>
+    <tr>
+        <td><strong>Date:</strong></td>
+        <td>@Model.DateCours.ToString("dd/MM/yyyy")</td>
+    </tr>
+    <tr>
+        <td><strong>Horaire:</strong></td>
+        <td>@Model.HeureDebut.ToString(@"hh\:mm") à @Model.HeureFin.ToString(@"hh\:mm")</td>
+    </tr>
+    <tr>
+        <td><strong>Semestre:</strong></td>
+        <td>@Model.Semestre</td>
+    </tr>
+    <tr>
+        <td><strong>Matière:</strong></td>
+        <td>@Model.Matiere?.NomMatiere</td>
+    </tr>
+    <tr>
+        <td><strong>Enseignant:</strong></td>
+        <td>@Model.Enseignant?.NomEnseignant @Model.Enseignant?.PrenomEnseignant</td>
+    </tr>
+    <tr>
+        <td><strong>Salle:</strong></td>
+        <td>@Model.Salle?.NomSalle</td>
+    </tr>
+    <tr>
+        <td><strong>Public ciblé:</strong></td>
+        <td>
+            @if (Model.IdClasse != null)
+            {
+                <span>Classe: @Model.Classe?.NomClasse</span>
+            }
+            else if (Model.IdGroupe != null)
+            {
+                <span>Groupe: @Model.Groupe?.NomGroupe</span>
+            }
+            else
+            {
+                <span>Non spécifié</span>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Statut:</strong></td>
+        <td>@Model.Statut</td>
+    </tr>
+</table>
+
+<br />
+<a href="/EmploiDuTemps/Edit/@Model.IdEmploi">Modifier</a> | 
+<a href="/EmploiDuTemps/Index">Retour</a>

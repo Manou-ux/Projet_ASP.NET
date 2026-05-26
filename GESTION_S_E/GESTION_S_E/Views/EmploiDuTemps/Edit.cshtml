@@ -1,0 +1,141 @@
+@model GESTION_S_E.Models.EmploiDuTemps
+
+@{
+    ViewData["Title"] = "Modifier la séance";
+}
+
+<h1>Modifier la séance d'emploi du temps</h1>
+
+<div asp-validation-summary="All" style="color:red; font-weight:bold;"></div>
+
+<form method="post" action="/EmploiDuTemps/Edit/@Model.IdEmploi">
+    @Html.AntiForgeryToken()
+    
+    <input type="hidden" name="IdEmploi" value="@Model.IdEmploi" />
+
+    <div>
+        <label>Date du cours</label>
+        <input type="date" name="DateCours" value="@Model.DateCours.ToString("yyyy-MM-dd")" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Heure de début</label>
+        <input type="time" name="HeureDebut" value="@Model.HeureDebut.ToString(@"hh\:mm")" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Heure de fin</label>
+        <input type="time" name="HeureFin" value="@Model.HeureFin.ToString(@"hh\:mm")" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Semestre</label>
+        <select name="Semestre" required>
+            <!= Nettoyé de toute déclaration C# illégale dans la balise option =>
+            <option value="S1" selected="@(Model.Semestre == "S1" ? "selected" : null)">S1</option>
+            <option value="S2" selected="@(Model.Semestre == "S2" ? "selected" : null)">S2</option>
+            <option value="S3" selected="@(Model.Semestre == "S3" ? "selected" : null)">S3</option>
+            <option value="S4" selected="@(Model.Semestre == "S4" ? "selected" : null)">S4</option>
+            <option value="S5" selected="@(Model.Semestre == "S5" ? "selected" : null)">S5</option>
+            <option value="S6" selected="@(Model.Semestre == "S6" ? "selected" : null)">S6</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Statut</label>
+        <select name="Statut" required>
+            <option value="planifie" selected="@(Model.Statut == "planifie" ? "selected" : null)">Planifié</option>
+            <option value="en_cours" selected="@(Model.Statut == "en_cours" ? "selected" : null)">En cours</option>
+            <option value="termine" selected="@(Model.Statut == "termine" ? "selected" : null)">Terminé</option>
+            <option value="annule" selected="@(Model.Statut == "annule" ? "selected" : null)">Annulé</option>
+            <option value="reporte" selected="@(Model.Statut == "reporte" ? "selected" : null)">Reporté</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Salle</label>
+        <select name="IdSalle" required>
+            @if (ViewBag.IdSalle != null)
+            {
+                var salles = (Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewBag.IdSalle;
+                foreach (var item in salles)
+                {
+                    <option value="@item.Value" selected="@(item.Value == Model.IdSalle.ToString() ? "selected" : null)">@item.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Enseignant</label>
+        <select name="IdEnseignant" required>
+            @if (ViewBag.IdEnseignant != null)
+            {
+                var enseignants = (Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewBag.IdEnseignant;
+                foreach (var item in enseignants)
+                {
+                    <option value="@item.Value" selected="@(item.Value == Model.IdEnseignant.ToString() ? "selected" : null)">@item.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Matière</label>
+        <select name="IdMatiere" required>
+            @if (ViewBag.IdMatiere != null)
+            {
+                var matieres = (Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewBag.IdMatiere;
+                foreach (var item in matieres)
+                {
+                    <option value="@item.Value" selected="@(item.Value == Model.IdMatiere.ToString() ? "selected" : null)">@item.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Classe concernée</label>
+        <select name="IdClasse">
+            <option value="">-- Aucune --</option>
+            @if (ViewBag.IdClasse != null)
+            {
+                var classes = (Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewBag.IdClasse;
+                foreach (var item in classes)
+                {
+                    <option value="@item.Value" selected="@(item.Value == Model.IdClasse?.ToString() ? "selected" : null)">@item.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Groupe concerné</label>
+        <select name="IdGroupe">
+            <option value="">-- Aucun --</option>
+            @if (ViewBag.IdGroupe != null)
+            {
+                var groupes = (Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewBag.IdGroupe;
+                foreach (var item in groupes)
+                {
+                    <option value="@item.Value" selected="@(item.Value == Model.IdGroupe?.ToString() ? "selected" : null)">@item.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer les modifications</button>
+</form>
+
+<br />
+<a href="/EmploiDuTemps/Index">Annuler</a>

@@ -1,0 +1,59 @@
+@model IEnumerable<GESTION_S_E.Models.EmploiDuTemps>
+
+@{
+    ViewData["Title"] = "Liste des séances";
+}
+
+<h1>Liste des emplois du temps</h1>
+
+<a href="/EmploiDuTemps/Create">Ajouter une séance</a>
+
+<br /><br />
+
+<table border="1" cellpadding="10" style="border-collapse: collapse;">
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Horaire</th>
+        <th>Semestre</th>
+        <th>Matière</th>
+        <th>Enseignant</th>
+        <th>Salle</th>
+        <th>Public cible</th>
+        <th>Statut</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.IdEmploi</td>
+            <td>@item.DateCours.ToString("dd/MM/yyyy")</td>
+            <td>@item.HeureDebut.ToString(@"hh\:mm") - @item.HeureFin.ToString(@"hh\:mm")</td>
+            <td>@item.Semestre</td>
+            <td>@item.Matiere?.NomMatiere</td>
+            <td>@item.Enseignant?.NomEnseignant @item.Enseignant?.PrenomEnseignant</td>
+            <td>@item.Salle?.NomSalle</td>
+            <td>
+                @if (item.IdClasse != null)
+                {
+                    <span>Classe: @item.Classe?.NomClasse</span>
+                }
+                else if (item.IdGroupe != null)
+                {
+                    <span>Groupe: @item.Groupe?.NomGroupe</span>
+                }
+                else
+                {
+                    <span>--</span>
+                }
+            </td>
+            <td>@item.Statut</td>
+            <td>
+                <a href="/EmploiDuTemps/Details/@item.IdEmploi">Détails</a> |
+                <a href="/EmploiDuTemps/Edit/@item.IdEmploi">Modifier</a> |
+                <a href="/EmploiDuTemps/Delete/@item.IdEmploi">Supprimer</a>
+            </td>
+        </tr>
+    }
+</table>

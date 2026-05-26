@@ -1,0 +1,143 @@
+@model GESTION_S_E.Models.EmploiDuTemps
+
+@{
+    ViewData["Title"] = "Ajouter une séance";
+}
+
+<h1>Ajouter une séance à l'emploi du temps</h1>
+
+<div asp-validation-summary="All" style="color:red; font-weight:bold;"></div>
+
+
+<form method="post" action="/EmploiDuTemps/Create">
+    @Html.AntiForgeryToken()
+
+    <div>
+        <label>Date du cours</label>
+        <input type="date" name="DateCours" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Heure de début</label>
+        <input type="time" name="HeureDebut" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Heure de fin</label>
+        <input type="time" name="HeureFin" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Semestre</label>
+        <select name="Semestre" required>
+            <option value="">-- Sélectionner --</option>
+            <option value="S1">S1</option>
+            <option value="S2">S2</option>
+            <option value="S3">S3</option>
+            <option value="S4">S4</option>
+            <option value="S5">S5</option>
+            <option value="S6">S6</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Statut</label>
+        <select name="Statut" required>
+            <option value="planifie">Planifié</option>
+            <option value="en_cours">En cours</option>
+            <option value="termine">Terminé</option>
+            <option value="annule">Annulé</option>
+            <option value="reporte">Reporté</option>
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Salle</label>
+        <select name="IdSalle" required>
+            <option value="">-- Sélectionner la salle --</option>
+            @if (ViewBag.IdSalle != null)
+            {
+                var salles = (Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewBag.IdSalle;
+                foreach (var item in salles)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Enseignant</label>
+        <select name="IdEnseignant" required>
+            <option value="">-- Sélectionner l'enseignant --</option>
+            @if (ViewBag.IdEnseignant != null)
+            {
+                var enseignants = (Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewBag.IdEnseignant;
+                foreach (var item in enseignants)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Matière</label>
+        <select name="IdMatiere" required>
+            <option value="">-- Sélectionner la matière --</option>
+            @if (ViewBag.IdMatiere != null)
+            {
+                var matieres = (Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewBag.IdMatiere;
+                foreach (var item in matieres)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Classe concernée (Optionnel)</label>
+        <select name="IdClasse">
+            <option value="">-- Aucune (Sélectionner si applicable) --</option>
+            @if (ViewBag.IdClasse != null)
+            {
+                var classes = (Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewBag.IdClasse;
+                foreach (var item in classes)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <div>
+        <label>Groupe concerné (Optionnel)</label>
+        <select name="IdGroupe">
+            <option value="">-- Aucun (Sélectionner si applicable) --</option>
+            @if (ViewBag.IdGroupe != null)
+            {
+                var groupes = (Microsoft.AspNetCore.Mvc.Rendering.SelectList)ViewBag.IdGroupe;
+                foreach (var item in groupes)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <br />
+
+    <button type="submit">Enregistrer</button>
+</form>
+
+<br />
+<a href="/EmploiDuTemps/Index">Retour</a>

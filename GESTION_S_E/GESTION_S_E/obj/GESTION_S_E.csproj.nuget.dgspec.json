@@ -1,26 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\jakin\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj": {}
+    "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj": {}
   },
   "projects": {
-    "C:\\jakin\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj": {
+    "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\jakin\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
+        "projectUniqueName": "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
         "projectName": "GESTION_S_E",
-        "projectPath": "C:\\jakin\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
-        "packagesPath": "C:\\Users\\AA\\.nuget\\packages\\",
-        "outputPath": "C:\\jakin\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\obj\\",
+        "projectPath": "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\GESTION_S_E.csproj",
+        "packagesPath": "C:\\Users\\Manou\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Manou\\Desktop\\Projet_ASP.NET\\GESTION_S_E\\GESTION_S_E\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AA\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Manou\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net10.0": {

@@ -1,0 +1,43 @@
+@model GESTION_S_E.Models.EmploiDuTemps
+
+@{
+    ViewData["Title"] = "Supprimer la séance";
+}
+
+<h1>Supprimer la séance</h1>
+
+<div style="background-color: #ffcccc; padding: 20px; border: 1px solid red; border-radius: 5px;">
+    <h3 style="color: red;">Êtes-vous sûr de vouloir supprimer cette séance de l'emploi du temps ?</h3>
+    
+    <table border="0" cellpadding="5">
+        <tr>
+            <td><strong>ID:</strong></td>
+            <td>@Model.IdEmploi</td>
+        </tr>
+        <tr>
+            <td><strong>Date:</strong></td>
+            <td>@Model.DateCours.ToString("dd/MM/yyyy")</td>
+        </tr>
+        <tr>
+            <td><strong>Horaire:</strong></td>
+            <td>@Model.HeureDebut.ToString(@"hh\:mm") - @Model.HeureFin.ToString(@"hh\:mm")</td>
+        </tr>
+        <tr>
+            <td><strong>Matière:</strong></td>
+            <td>@Model.Matiere?.NomMatiere</td>
+        </tr>
+        <tr>
+            <td><strong>Enseignant:</strong></td>
+            <td>@Model.Enseignant?.NomEnseignant @Model.Enseignant?.PrenomEnseignant</td>
+        </tr>
+    </table>
+    
+    <br />
+    
+    <form method="post" action="/EmploiDuTemps/Delete">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id" value="@Model.IdEmploi" />
+        <button type="submit" style="background-color: red; color: white; padding: 5px 10px;">Oui, supprimer</button>
+        <a href="/EmploiDuTemps/Index" style="margin-left: 10px;">Non, annuler</a>
+    </form>
+</div>
