@@ -78,6 +78,27 @@ namespace GESTION_S_E.Controllers
             return View(disponibilite);
         }
 
+
+
+        // GET: Disponibilites/Details/5
+        public async Task<IActionResult> Details(int id)
+        {
+            // On récupère la disponibilité en incluant les données de l'enseignant lié
+            var disponibilite = await _context.DisponibilitesEnseignants
+                .Include(d => d.Enseignant)
+                .FirstOrDefaultAsync(d => d.IdDispo == id);
+
+            // Si aucune disponibilité ne correspond à l'ID, on renvoie une erreur 404
+            if (disponibilite == null)
+            {
+                return NotFound();
+            }
+
+            // On renvoie la vue avec le modèle trouvé
+            return View(disponibilite);
+        }
+
+
         // POST: Disponibilites/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]

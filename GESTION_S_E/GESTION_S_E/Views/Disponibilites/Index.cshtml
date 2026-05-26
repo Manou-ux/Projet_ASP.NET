@@ -5,85 +5,55 @@
     ViewData["Title"] = "Gestion des Disponibilités";
 }
 
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2>Gestion des Disponibilités</h2>
-        <a asp-controller="Disponibilites" asp-action="Create" class="btn btn-primary">
-            <i class="fas fa-plus"></i> Ajouter une disponibilité
-        </a>
+<h1>Liste des Disponibilités</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+        @TempData["Success"]
     </div>
+}
 
-    @if (TempData["Success"] != null)
-    {
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <i class="fas fa-check-circle"></i> @TempData["Success"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    }
-
-    @if (TempData["Error"] != null)
-    {
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="fas fa-exclamation-triangle"></i> @TempData["Error"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    }
-
-    <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-            <h5 class="mb-0"><i class="fas fa-calendar-alt"></i> Liste des disponibilités</h5>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Enseignant</th>
-                            <th>Jour</th>
-                            <th>Heure début</th>
-                            <th>Heure fin</th>
-                            <th>Type</th>
-                            <th>Date spécifique</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    <strong>@item.Enseignant?.NomEnseignant @item.Enseignant?.PrenomEnseignant</strong>
-                                    <br />
-                                    <small class="text-muted">@item.Enseignant?.Specialite</small>
-                                </td>
-                                <td>@item.Jour</td>
-                                <td>@(item.HeureDebut != default ? item.HeureDebut.ToString(@"hh\:mm") : "-")</td>
-                                <td>@item.HeureFin.ToString(@"hh\:mm")</td>
-                                
-                                <td>
-                                    <span class="badge @(item.TypeDispo == "cours" ? "bg-primary" : item.TypeDispo == "td" ? "bg-success" : item.TypeDispo == "tp" ? "bg-info" : "bg-warning")">
-                                        @(item.TypeDispo == "cours" ? "📚 Cours" : item.TypeDispo == "td" ? "📝 TD" : item.TypeDispo == "tp" ? "🔬 TP" : "📅 Réunion")
-                                    </span>
-                                 </td>
-                                <td>@(item.DateSpecifique?.ToString("dd/MM/yyyy") ?? "Hebdomadaire")</td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        <a asp-action="Edit" asp-route-id="@item.IdDispo" class="btn btn-warning btn-sm" title="Modifier">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        <a asp-action="Delete" asp-route-id="@item.IdDispo" class="btn btn-danger btn-sm" title="Supprimer">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                        <a asp-action="Details" asp-route-id="@item.IdDispo" class="btn btn-info btn-sm" title="Détails">
-                                            <i class="fas fa-info-circle"></i>
-                                        </a>
-                                    </div>
-                                 </td>
-                             </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
+@if (TempData["Error"] != null)
+{
+    <div style="background-color: red; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+        @TempData["Error"]
     </div>
-</div>
+}
+
+<a href="/Disponibilites/Create">Ajouter une disponibilité</a>
+
+<br /><br />
+
+<table border="1" cellpadding="10" style="border-collapse: collapse;">
+    <tr>
+        <th>Enseignant</th>
+        <th>Spécialité</th>
+        <th>Jour</th>
+        <th>Heure début</th>
+        <th>Heure fin</th>
+        <th>Type</th>
+        <th>Date spécifique</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Enseignant?.NomEnseignant @item.Enseignant?.PrenomEnseignant</td>
+            <td>@item.Enseignant?.Specialite</td>
+            <td>@item.Jour</td>
+            <td>@(item.HeureDebut != default ? item.HeureDebut.ToString(@"hh\:mm") : "-")</td>
+            <td>@item.HeureFin.ToString(@"hh\:mm")</td>
+            <td>@(item.TypeDispo == "cours" ? "Cours" : item.TypeDispo == "td" ? "TD" : item.TypeDispo == "tp" ? "TP" : "Réunion")</td>
+            <td>@(item.DateSpecifique?.ToString("dd/MM/yyyy") ?? "Hebdomadaire")</td>
+            <td>
+                <a href="/Disponibilites/Edit/@item.IdDispo">Modifier</a>
+                |
+                <a href="/Disponibilites/Delete/@item.IdDispo">Supprimer</a>
+                |
+                <a href="/Disponibilites/Details/@item.IdDispo">Détails</a>
+            </td>
+        </tr>
+    }
+</table>
