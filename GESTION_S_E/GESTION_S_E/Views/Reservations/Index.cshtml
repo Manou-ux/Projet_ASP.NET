@@ -5,123 +5,81 @@
     ViewData["Title"] = "Gestion des Réservations";
 }
 
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2>Gestion des Réservations</h2>
-        <div>
-            <a asp-controller="Reservations" asp-action="Create" class="btn btn-primary">
-                <i class="fas fa-plus"></i> Nouvelle réservation
-            </a>
-            <a asp-controller="Reservations" asp-action="Calendar" class="btn btn-info ms-2">
-                <i class="fas fa-calendar-alt"></i> Vue calendrier
-            </a>
-        </div>
+<h1>Liste des Réservations</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div style="background-color: green; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+        @TempData["Success"]
     </div>
+}
 
-    @if (TempData["Success"] != null)
-    {
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <i class="fas fa-check-circle"></i> @TempData["Success"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    }
-
-    @if (TempData["Error"] != null)
-    {
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="fas fa-exclamation-triangle"></i> @TempData["Error"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    }
-
-    <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-            <h5 class="mb-0"><i class="fas fa-list"></i> Liste des réservations</h5>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>Date</th>
-                            <th>Horaire</th>
-                            <th>Salle</th>
-                            <th>Demandeur</th>
-                            <th>Club</th>
-                            <th>Motif</th>
-                            <th>Statut</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            var demandeurNom = item.Utilisateur?.Enseignant != null 
-                                ? $"{item.Utilisateur.Enseignant.PrenomEnseignant} {item.Utilisateur.Enseignant.NomEnseignant}"
-                                : item.Utilisateur?.Email ?? "Inconnu";
-                            
-                            <tr>
-                                <td>@item.IdReservation</td>
-                                <td>@item.DateReservation.ToString("dd/MM/yyyy")</td>
-                                <td>@item.HeureDebut.ToString(@"hh\:mm") - @item.HeureFin.ToString(@"hh\:mm")</td>
-                                <td>@item.Salle?.NomSalle</td>
-                                <td>@demandeurNom</td>
-                                <td>@(item.Club?.NomClub ?? "-")</td>
-                                <td>@(item.Motif?.Length > 30 ? item.Motif.Substring(0, 30) + "..." : item.Motif)</td>
-                                <td>
-                                    <span class="badge @(item.Statut == "validee" ? "bg-success" : item.Statut == "en_attente" ? "bg-warning" : "bg-danger")">
-                                        @(item.Statut == "validee" ? "✅ Validée" : item.Statut == "en_attente" ? "⏳ En attente" : "❌ Annulée")
-                                    </span>
-                                 </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm mb-1" role="group">
-                                        <a asp-action="Details" asp-route-id="@item.IdReservation" class="btn btn-info btn-sm" title="Détails">
-                                            <i class="fas fa-info-circle"></i>
-                                        </a>
-                                        <a asp-action="Edit" asp-route-id="@item.IdReservation" class="btn btn-warning btn-sm" title="Modifier">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        <a asp-action="Delete" asp-route-id="@item.IdReservation" class="btn btn-danger btn-sm" title="Supprimer">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                    </div>
-                                    
-                                    @* Boutons de changement de statut rapide *@
-                                    <div class="btn-group btn-group-sm" role="group">
-                                        @if (item.Statut == "en_attente")
-                                        {
-                                            <form asp-action="Valider" asp-route-id="@item.IdReservation" method="post" style="display: inline;" onsubmit="return confirm('Valider cette réservation ?')">
-                                                @Html.AntiForgeryToken()
-                                                <button type="submit" class="btn btn-success btn-sm" title="Valider">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                            </form>
-                                        }
-                                        
-                                        @if (item.Statut != "annulee")
-                                        {
-                                            <form asp-action="Annuler" asp-route-id="@item.IdReservation" method="post" style="display: inline;" onsubmit="return confirm('Annuler cette réservation ?')">
-                                                @Html.AntiForgeryToken()
-                                                <button type="submit" class="btn btn-secondary btn-sm" title="Annuler">
-                                                    <i class="fas fa-times"></i>
-                                                </button>
-                                            </form>
-                                        }
-                                        
-                                        @if (item.Statut == "annulee")
-                                        {
-                                            <button type="button" class="btn btn-secondary btn-sm" disabled title="Déjà annulée">
-                                                <i class="fas fa-ban"></i>
-                                            </button>
-                                        }
-                                    </div>
-                                 </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
+@if (TempData["Error"] != null)
+{
+    <div style="background-color: red; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+        @TempData["Error"]
     </div>
-</div>
+}
+
+<a href="/Reservations/Create">Nouvelle réservation</a>
+&nbsp;|&nbsp;
+<a href="/Reservations/Calendar">Vue calendrier</a>
+
+<br /><br />
+
+<table border="1" cellpadding="10" style="border-collapse: collapse;">
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Horaire</th>
+        <th>Salle</th>
+        <th>Demandeur</th>
+        <th>Club</th>
+        <th>Motif</th>
+        <th>Statut</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        var demandeurNom = item.Utilisateur?.Enseignant != null
+            ? $"{item.Utilisateur.Enseignant.PrenomEnseignant} {item.Utilisateur.Enseignant.NomEnseignant}"
+            : item.Utilisateur?.Email ?? "Inconnu";
+
+        <tr>
+            <td>@item.IdReservation</td>
+            <td>@item.DateReservation.ToString("dd/MM/yyyy")</td>
+            <td>@item.HeureDebut.ToString(@"hh\:mm") - @item.HeureFin.ToString(@"hh\:mm")</td>
+            <td>@item.Salle?.NomSalle</td>
+            <td>@demandeurNom</td>
+            <td>@(item.Club?.NomClub ?? "-")</td>
+            <td>@(item.Motif?.Length > 30 ? item.Motif.Substring(0, 30) + "..." : item.Motif)</td>
+            <td>@(item.Statut == "validee" ? "Validée" : item.Statut == "en_attente" ? "En attente" : "Annulée")</td>
+            <td>
+                <a href="/Reservations/Details/@item.IdReservation">Détails</a>
+                |
+                <a href="/Reservations/Edit/@item.IdReservation">Modifier</a>
+                |
+                <a href="/Reservations/Delete/@item.IdReservation">Supprimer</a>
+
+                @if (item.Statut == "en_attente")
+                {
+                    <text> | </text>
+                    <form asp-action="Valider" asp-route-id="@item.IdReservation" method="post" style="display: inline;" onsubmit="return confirm('Valider cette réservation ?')">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer; color: blue; text-decoration: underline;">Valider</button>
+                    </form>
+                }
+
+                @if (item.Statut != "annulee")
+                {
+                    <text> | </text>
+                    <form asp-action="Annuler" asp-route-id="@item.IdReservation" method="post" style="display: inline;" onsubmit="return confirm('Annuler cette réservation ?')">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer; color: blue; text-decoration: underline;">Annuler</button>
+                    </form>
+                }
+            </td>
+        </tr>
+    }
+</table>
