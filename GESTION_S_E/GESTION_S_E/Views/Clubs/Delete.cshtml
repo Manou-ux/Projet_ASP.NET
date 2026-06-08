@@ -2,41 +2,47 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    ViewData["Title"] = "Supprimer le Club";
+    ViewData["Title"] = "Supprimer un club";
 }
 
-<div class="container mt-4">
-    <div class="alert alert-warning">
-        <h3>Attention !</h3>
-        <p>Voulez-vous vraiment supprimer le club <strong>@Model.NomClub</strong> ?</p>
-    </div>
+<h1>🗑️ Supprimer @Model.NomClub</h1>
 
-    <div class="card p-3 shadow-sm">
+<div class="alert alert-danger">
+    ⚠️ Cette action est irréversible.
+</div>
+
+<div class="card">
+    <div class="card-body">
         <dl class="row">
             <dt class="col-sm-3">Nom</dt>
             <dd class="col-sm-9">@Model.NomClub</dd>
 
             <dt class="col-sm-3">Description</dt>
-            <dd class="col-sm-9">@(string.IsNullOrEmpty(Model.Description) ? "Non renseignée" : Model.Description)</dd>
+            <dd class="col-sm-9">@Model.Description</dd>
 
             <dt class="col-sm-3">Responsable</dt>
-            <dd class="col-sm-9">@(Model.Responsable != null ? Model.Responsable.Email : "Non assigné")</dd>
+            <dd class="col-sm-9">
+                @if (Model.Responsable != null)
+                {
+                    @Model.Responsable.Email
+                }
+                else
+                {
+                    <span class="text-muted">Aucun responsable</span>
+                }
+            </dd>
 
-            <dt class="col-sm-3">Date de création</dt>
-            <dd class="col-sm-9">@Model.DateCreation.ToString("dd/MM/yyyy HH:mm")</dd>
+            <dt class="col-sm-3">Date création</dt>
+            <dd class="col-sm-9">@Model.DateCreation.ToString("dd/MM/yyyy")</dd>
 
             <dt class="col-sm-3">Statut</dt>
-            <dd class="col-sm-9">
-                <span class="badge @(Model.Actif ? "bg-success" : "bg-secondary")">
-                    @(Model.Actif ? "Actif" : "Inactif")
-                </span>
-            </dd>
+            <dd class="col-sm-9">@(Model.Actif ? "Actif" : "Inactif")</dd>
         </dl>
-
-        <form asp-action="Delete" method="post">
-            <input type="hidden" name="id" value="@Model.IdClub" />
-            <button type="submit" class="btn btn-danger">Confirmer la suppression</button>
-            <a asp-action="Index" class="btn btn-secondary">Annuler</a>
-        </form>
     </div>
 </div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdClub" />
+    <button type="submit" class="btn btn-danger">Confirmer la suppression</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

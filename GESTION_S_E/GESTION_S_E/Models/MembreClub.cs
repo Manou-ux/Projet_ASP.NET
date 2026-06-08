@@ -7,6 +7,10 @@ namespace GESTION_S_E.Models
     [Table("membres_club")]
     public class MembreClub
     {
+        [Key]
+        [Column("id_membre")]
+        public int IdMembre { get; set; }
+
         [Column("id_utilisateur")]
         public int IdUtilisateur { get; set; }
 

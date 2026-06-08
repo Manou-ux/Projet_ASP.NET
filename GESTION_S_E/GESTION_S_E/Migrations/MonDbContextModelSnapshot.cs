@@ -448,6 +448,10 @@ namespace GESTION_S_E.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("date_adhesion");
 
+                    b.Property<int>("IdMembre")
+                        .HasColumnType("integer")
+                        .HasColumnName("id_membre");
+
                     b.Property<string>("RoleMembre")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -787,8 +791,8 @@ namespace GESTION_S_E.Migrations
             modelBuilder.Entity("GESTION_S_E.Models.Enseignant", b =>
                 {
                     b.HasOne("GESTION_S_E.Models.Utilisateur", "Utilisateur")
-                        .WithMany()
-                        .HasForeignKey("IdUtilisateur")
+                        .WithOne("Enseignant")
+                        .HasForeignKey("GESTION_S_E.Models.Enseignant", "IdUtilisateur")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -901,6 +905,11 @@ namespace GESTION_S_E.Migrations
                     b.Navigation("Groupes");
 
                     b.Navigation("MatiereClasses");
+                });
+
+            modelBuilder.Entity("GESTION_S_E.Models.Utilisateur", b =>
+                {
+                    b.Navigation("Enseignant");
                 });
 #pragma warning restore 612, 618
         }

@@ -2,64 +2,46 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    ViewData["Title"] = "Modifier le Club";
+    ViewData["Title"] = "Modifier le club";
 }
 
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-md-6 border p-4 shadow-sm bg-light">
-            <h4 class="mb-3">Modifier @Model.NomClub</h4>
-            
-            @if (!ViewData.ModelState.IsValid)
-            {
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach (var modelError in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-                        {
-                            <li>@modelError.ErrorMessage</li>
-                        }
-                    </ul>
-                </div>
-            }
+<h1>✏️ Modifier @Model.NomClub</h1>
 
-            <form asp-action="Edit" method="post">
-                <input type="hidden" asp-for="IdClub" />
-                <input type="hidden" asp-for="DateCreation" />
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <input type="hidden" asp-for="IdClub" />
 
-                <div class="form-group mb-3">
-                    <label asp-for="NomClub" class="control-label">Nom du Club</label>
-                    <input asp-for="NomClub" class="form-control" required />
-                    <span asp-validation-for="NomClub" class="text-danger"></span>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label asp-for="Description" class="control-label">Description</label>
-                    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
-                    <span asp-validation-for="Description" class="text-danger"></span>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label asp-for="IdResponsable" class="control-label">Responsable</label>
-                    <select asp-for="IdResponsable" class="form-control" asp-items="ViewBag.IdResponsable">
-                        <option value="">-- Sélectionner un responsable --</option>
-                    </select>
-                    <span asp-validation-for="IdResponsable" class="text-danger"></span>
-                </div>
-
-                <div class="form-check mb-3">
-                    <input asp-for="Actif" class="form-check-input" />
-                    <label asp-for="Actif" class="form-check-label">Club Actif</label>
-                </div>
-
-                <div class="form-group mt-4">
-                    <button type="submit" class="btn btn-warning w-100 text-white">Sauvegarder</button>
-                    <a asp-action="Index" class="btn btn-link w-100 mt-2 text-secondary">Retour</a>
-                </div>
-            </form>
-        </div>
+    <div class="mb-3">
+        <label asp-for="NomClub" class="form-label">Nom</label>
+        <input asp-for="NomClub" class="form-control" />
+        <span asp-validation-for="NomClub" class="text-danger"></span>
     </div>
-</div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description</label>
+        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="IdResponsable" class="form-label">Responsable</label>
+        <select asp-for="IdResponsable" class="form-select" asp-items="ViewBag.IdResponsable">
+            <option value="">-- Sélectionnez un responsable --</option>
+        </select>
+        <span asp-validation-for="IdResponsable" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-check">
+        <input asp-for="Actif" class="form-check-input" />
+        <label asp-for="Actif" class="form-check-label">Club actif</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

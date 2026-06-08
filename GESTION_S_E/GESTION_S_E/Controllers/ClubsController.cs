@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GESTION_S_E.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GESTION_S_E.Controllers
 {
@@ -14,32 +17,41 @@ namespace GESTION_S_E.Controllers
             _context = context;
         }
 
-        // GET: Clubs
+        // GET: Clubs (version modifiée pour afficher le nom complet du responsable)
         public async Task<IActionResult> Index()
         {
             var clubs = await _context.Clubs
                 .Include(c => c.Responsable)
                 .OrderByDescending(c => c.DateCreation)
+                .Select(c => new ClubWithResponsableName
+                {
+                    IdClub = c.IdClub,
+                    NomClub = c.NomClub,
+                    Description = c.Description,
+                    DateCreation = c.DateCreation,
+                    Actif = c.Actif,
+                    ResponsableId = c.IdResponsable,
+                    ResponsableNomComplet = c.Responsable == null ? "Non assigné" :
+                        (c.Responsable.Role == "eleve" ?
+                            _context.Eleves.Where(e => e.IdUtilisateur == c.Responsable.IdUtilisateur)
+                                .Select(e => e.PrenomEleve + " " + e.NomEleve).FirstOrDefault() :
+                         c.Responsable.Role == "enseignant" ?
+                            _context.Enseignants.Where(e => e.IdUtilisateur == c.Responsable.IdUtilisateur)
+                                .Select(e => e.PrenomEnseignant + " " + e.NomEnseignant).FirstOrDefault() :
+                         c.Responsable.Role == "scolarite" ?
+                            _context.Scolarites.Where(s => s.IdUtilisateur == c.Responsable.IdUtilisateur)
+                                .Select(s => s.PrenomScolarite + " " + s.NomScolarite).FirstOrDefault() :
+                         c.Responsable.Email)
+                })
                 .ToListAsync();
+
             return View(clubs);
         }
 
         // GET: Clubs/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            // Afficher le nom au lieu de l'email
-            var utilisateurs = _context.Utilisateurs
-                .Select(u => new
-                {
-                    u.IdUtilisateur,
-                    NomComplet = (u.Role == "eleve" ? _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEleve + " " + _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEleve :
-                                u.Role == "enseignant" ? _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEnseignant + " " + _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEnseignant :
-                                u.Role == "scolarite" ? _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).NomScolarite + " " + _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).PrenomScolarite :
-                                u.Email)
-                })
-                .ToList();
-
-            ViewBag.IdResponsable = new SelectList(utilisateurs, "IdUtilisateur", "NomComplet");
+            await LoadResponsablesList();
             return View();
         }
 
@@ -65,24 +77,11 @@ namespace GESTION_S_E.Controllers
                 }
                 catch (Exception ex)
                 {
-                    var innerException = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
-                    ModelState.AddModelError("", $"Erreur technique : {innerException}");
-                    System.Diagnostics.Debug.WriteLine($"Erreur complète: {ex.ToString()}");
+                    ModelState.AddModelError("", $"Erreur : {ex.InnerException?.Message ?? ex.Message}");
                 }
             }
 
-            var utilisateurs = _context.Utilisateurs
-                .Select(u => new
-                {
-                    u.IdUtilisateur,
-                    NomComplet = (u.Role == "eleve" ? _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEleve + " " + _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEleve :
-                                u.Role == "enseignant" ? _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEnseignant + " " + _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEnseignant :
-                                u.Role == "scolarite" ? _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).NomScolarite + " " + _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).PrenomScolarite :
-                                u.Email)
-                })
-                .ToList();
-
-            ViewBag.IdResponsable = new SelectList(utilisateurs, "IdUtilisateur", "NomComplet", club.IdResponsable);
+            await LoadResponsablesList(club.IdResponsable);
             return View(club);
         }
 
@@ -92,22 +91,11 @@ namespace GESTION_S_E.Controllers
             var club = await _context.Clubs.FindAsync(id);
             if (club == null)
             {
-                TempData["Error"] = $"Club avec ID {id} non trouvé";
+                TempData["Error"] = "Club non trouvé";
                 return RedirectToAction(nameof(Index));
             }
 
-            var utilisateurs = _context.Utilisateurs
-                .Select(u => new
-                {
-                    u.IdUtilisateur,
-                    NomComplet = (u.Role == "eleve" ? _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEleve + " " + _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEleve :
-                                u.Role == "enseignant" ? _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEnseignant + " " + _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEnseignant :
-                                u.Role == "scolarite" ? _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).NomScolarite + " " + _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).PrenomScolarite :
-                                u.Email)
-                })
-                .ToList();
-
-            ViewBag.IdResponsable = new SelectList(utilisateurs, "IdUtilisateur", "NomComplet", club.IdResponsable);
+            await LoadResponsablesList(club.IdResponsable);
             return View(club);
         }
 
@@ -116,12 +104,8 @@ namespace GESTION_S_E.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdClub,NomClub,Description,IdResponsable,Actif")] Club club)
         {
-            if (id != club.IdClub)
-            {
-                return NotFound();
-            }
+            if (id != club.IdClub) return NotFound();
 
-            // Retirer la validation de Responsable car c'est une propriété de navigation
             ModelState.Remove("Responsable");
             ModelState.Remove("DateCreation");
 
@@ -129,20 +113,14 @@ namespace GESTION_S_E.Controllers
             {
                 try
                 {
-                    // Récupérer le club existant pour conserver la date de création
                     var clubExistant = await _context.Clubs.FindAsync(id);
-                    if (clubExistant == null)
-                    {
-                        return NotFound();
-                    }
+                    if (clubExistant == null) return NotFound();
 
-                    // Mettre à jour uniquement les champs modifiables
                     clubExistant.NomClub = club.NomClub;
                     clubExistant.Description = club.Description;
                     clubExistant.IdResponsable = club.IdResponsable;
                     clubExistant.Actif = club.Actif;
 
-                    _context.Update(clubExistant);
                     await _context.SaveChangesAsync();
 
                     TempData["Success"] = "Club modifié avec succès !";
@@ -150,35 +128,16 @@ namespace GESTION_S_E.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClubExists(club.IdClub))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    if (!ClubExists(club.IdClub)) return NotFound();
+                    throw;
                 }
                 catch (Exception ex)
                 {
-                    ModelState.AddModelError("", $"Erreur lors de la modification : {ex.InnerException?.Message ?? ex.Message}");
-                    System.Diagnostics.Debug.WriteLine($"Erreur modification: {ex.ToString()}");
+                    ModelState.AddModelError("", $"Erreur : {ex.InnerException?.Message ?? ex.Message}");
                 }
             }
 
-            // Si on arrive ici, il y a une erreur de validation
-            var utilisateurs = _context.Utilisateurs
-                .Select(u => new
-                {
-                    u.IdUtilisateur,
-                    NomComplet = (u.Role == "eleve" ? _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEleve + " " + _context.Eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEleve :
-                                u.Role == "enseignant" ? _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).NomEnseignant + " " + _context.Enseignants.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur).PrenomEnseignant :
-                                u.Role == "scolarite" ? _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).NomScolarite + " " + _context.Scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur).PrenomScolarite :
-                                u.Email)
-                })
-                .ToList();
-
-            ViewBag.IdResponsable = new SelectList(utilisateurs, "IdUtilisateur", "NomComplet", club.IdResponsable);
+            await LoadResponsablesList(club.IdResponsable);
             return View(club);
         }
 
@@ -210,7 +169,7 @@ namespace GESTION_S_E.Controllers
                 {
                     _context.Clubs.Remove(club);
                     await _context.SaveChangesAsync();
-                    TempData["Success"] = $"Le club '{club.NomClub}' a été supprimé avec succès.";
+                    TempData["Success"] = $"Le club '{club.NomClub}' a été supprimé.";
                 }
                 else
                 {
@@ -219,16 +178,192 @@ namespace GESTION_S_E.Controllers
             }
             catch (Exception ex)
             {
-                TempData["Error"] = $"Erreur lors de la suppression : {ex.InnerException?.Message ?? ex.Message}";
-                System.Diagnostics.Debug.WriteLine($"Erreur suppression: {ex.ToString()}");
+                TempData["Error"] = $"Erreur : {ex.InnerException?.Message ?? ex.Message}";
             }
 
             return RedirectToAction(nameof(Index));
         }
 
+        // ============================================================
+        // GESTION DES MEMBRES
+        // ============================================================
+
+        // GET: Clubs/Members/5
+        public async Task<IActionResult> Members(int id)
+        {
+            var club = await _context.Clubs.FindAsync(id);
+            if (club == null)
+            {
+                TempData["Error"] = "Club non trouvé";
+                return RedirectToAction(nameof(Index));
+            }
+
+            // Récupérer les membres avec leur nom complet (calculé en SQL)
+            var membres = await _context.MembreClubs
+                .Include(m => m.Utilisateur)
+                .Where(m => m.IdClub == id)
+                .Select(m => new MembreViewModel
+                {
+                    IdMembre = m.IdMembre,
+                    RoleMembre = m.RoleMembre,
+                    DateAdhesion = m.DateAdhesion,
+                    NomComplet = (m.Utilisateur.Role == "eleve" ?
+                                    _context.Eleves.Where(e => e.IdUtilisateur == m.Utilisateur.IdUtilisateur)
+                                        .Select(e => e.PrenomEleve + " " + e.NomEleve).FirstOrDefault() :
+                                  m.Utilisateur.Role == "enseignant" ?
+                                    _context.Enseignants.Where(e => e.IdUtilisateur == m.Utilisateur.IdUtilisateur)
+                                        .Select(e => e.PrenomEnseignant + " " + e.NomEnseignant).FirstOrDefault() :
+                                  m.Utilisateur.Role == "scolarite" ?
+                                    _context.Scolarites.Where(s => s.IdUtilisateur == m.Utilisateur.IdUtilisateur)
+                                        .Select(s => s.PrenomScolarite + " " + s.NomScolarite).FirstOrDefault() :
+                                  m.Utilisateur.Email)
+                })
+                .ToListAsync();
+
+            // Liste des utilisateurs disponibles (non encore membres)
+            var utilisateursDisponibles = await _context.Utilisateurs
+                .Where(u => !_context.MembreClubs.Any(m => m.IdClub == id && m.IdUtilisateur == u.IdUtilisateur))
+                .Select(u => new
+                {
+                    u.IdUtilisateur,
+                    NomComplet = (u.Role == "eleve" ?
+                                    _context.Eleves.Where(e => e.IdUtilisateur == u.IdUtilisateur)
+                                        .Select(e => e.PrenomEleve + " " + e.NomEleve).FirstOrDefault() :
+                                  u.Role == "enseignant" ?
+                                    _context.Enseignants.Where(e => e.IdUtilisateur == u.IdUtilisateur)
+                                        .Select(e => e.PrenomEnseignant + " " + e.NomEnseignant).FirstOrDefault() :
+                                  u.Role == "scolarite" ?
+                                    _context.Scolarites.Where(s => s.IdUtilisateur == u.IdUtilisateur)
+                                        .Select(s => s.PrenomScolarite + " " + s.NomScolarite).FirstOrDefault() :
+                                  u.Email)
+                })
+                .ToListAsync();
+
+            ViewBag.Club = club;
+            ViewBag.UtilisateursDisponibles = utilisateursDisponibles;
+            return View(membres);
+        }
+
+        // POST: Clubs/AddMember
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddMember(int clubId, int idUtilisateur, string roleMembre)
+        {
+            try
+            {
+                var existe = await _context.MembreClubs
+                    .AnyAsync(m => m.IdClub == clubId && m.IdUtilisateur == idUtilisateur);
+                if (existe)
+                {
+                    TempData["Error"] = "Cet utilisateur est déjà membre.";
+                    return RedirectToAction(nameof(Members), new { id = clubId });
+                }
+
+                var membre = new MembreClub
+                {
+                    IdClub = clubId,
+                    IdUtilisateur = idUtilisateur,
+                    RoleMembre = string.IsNullOrWhiteSpace(roleMembre) ? "membre" : roleMembre,
+                    DateAdhesion = DateTime.Now
+                };
+
+                _context.MembreClubs.Add(membre);
+                await _context.SaveChangesAsync();
+                TempData["Success"] = "Membre ajouté avec succès.";
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Erreur : {ex.InnerException?.Message ?? ex.Message}";
+            }
+            return RedirectToAction(nameof(Members), new { id = clubId });
+        }
+
+        // POST: Clubs/RemoveMember
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoveMember(int idMembre, int clubId)
+        {
+            try
+            {
+                var membre = await _context.MembreClubs.FindAsync(idMembre);
+                if (membre != null)
+                {
+                    _context.MembreClubs.Remove(membre);
+                    await _context.SaveChangesAsync();
+                    TempData["Success"] = "Membre retiré du club.";
+                }
+                else
+                {
+                    TempData["Error"] = "Membre non trouvé.";
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Erreur : {ex.InnerException?.Message ?? ex.Message}";
+            }
+            return RedirectToAction(nameof(Members), new { id = clubId });
+        }
+
+        // ============================================================
+        // HELPERS
+        // ============================================================
+
         private bool ClubExists(int id)
         {
             return _context.Clubs.Any(e => e.IdClub == id);
+        }
+
+        private async Task LoadResponsablesList(object selectedValue = null)
+        {
+            var utilisateurs = await _context.Utilisateurs
+                .Select(u => new
+                {
+                    u.IdUtilisateur,
+                    u.Role,
+                    NomComplet = (u.Role == "eleve" ?
+                                    _context.Eleves.Where(e => e.IdUtilisateur == u.IdUtilisateur)
+                                        .Select(e => e.PrenomEleve + " " + e.NomEleve).FirstOrDefault() :
+                                  u.Role == "enseignant" ?
+                                    _context.Enseignants.Where(e => e.IdUtilisateur == u.IdUtilisateur)
+                                        .Select(e => e.PrenomEnseignant + " " + e.NomEnseignant).FirstOrDefault() :
+                                  u.Role == "scolarite" ?
+                                    _context.Scolarites.Where(s => s.IdUtilisateur == u.IdUtilisateur)
+                                        .Select(s => s.PrenomScolarite + " " + s.NomScolarite).FirstOrDefault() :
+                                  u.Email)
+                })
+                .ToListAsync();
+
+            var listeFinale = utilisateurs
+                .Select(u => new
+                {
+                    u.IdUtilisateur,
+                    NomComplet = string.IsNullOrWhiteSpace(u.NomComplet) ? u.Role : u.NomComplet
+                })
+                .OrderBy(u => u.NomComplet)
+                .ToList();
+
+            ViewBag.IdResponsable = new SelectList(listeFinale, "IdUtilisateur", "NomComplet", selectedValue);
+        }
+
+        // ViewModel pour l'affichage des membres
+        public class MembreViewModel
+        {
+            public int IdMembre { get; set; }
+            public string RoleMembre { get; set; }
+            public DateTime DateAdhesion { get; set; }
+            public string NomComplet { get; set; }
+        }
+
+        // ViewModel pour l'affichage des clubs avec le nom complet du responsable
+        public class ClubWithResponsableName
+        {
+            public int IdClub { get; set; }
+            public string NomClub { get; set; }
+            public string Description { get; set; }
+            public DateTime DateCreation { get; set; }
+            public bool Actif { get; set; }
+            public int ResponsableId { get; set; }
+            public string ResponsableNomComplet { get; set; }
         }
     }
 }

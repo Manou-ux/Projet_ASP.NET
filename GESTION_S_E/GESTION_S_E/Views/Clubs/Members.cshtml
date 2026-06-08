@@ -1,0 +1,80 @@
+@model IEnumerable<GESTION_S_E.Controllers.ClubsController.MembreViewModel>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using GESTION_S_E.Models
+
+@{
+    var club = ViewBag.Club as Club;
+    var utilisateursDisponibles = ViewBag.UtilisateursDisponibles as IEnumerable<dynamic>;
+    ViewData["Title"] = $"Membres du club - {club?.NomClub}";
+}
+
+<h1>👥 Membres du club : @club?.NomClub</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white">➕ Ajouter un membre</div>
+            <div class="card-body">
+                <form asp-action="AddMember" method="post">
+                    <input type="hidden" name="clubId" value="@club?.IdClub" />
+                    <div class="mb-2">
+                        <label class="form-label">Utilisateur</label>
+                        <select name="idUtilisateur" class="form-select" required>
+                            <option value="">-- Sélectionnez --</option>
+                            @if (utilisateursDisponibles != null)
+                            {
+                                foreach (var u in utilisateursDisponibles)
+                                {
+                                    <option value="@u.IdUtilisateur">@u.NomComplet</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Rôle dans le club</label>
+                        <input type="text" name="roleMembre" class="form-control" placeholder="membre, président, trésorier..." />
+                    </div>
+                    <button type="submit" class="btn btn-success">Ajouter</button>
+                    <a asp-action="Index" class="btn btn-secondary">Retour aux clubs</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-info text-white">📋 Liste des membres</div>
+            <div class="card-body">
+                @if (!Model.Any())
+                {
+                    <p>Aucun membre pour le moment.</p>
+                }
+                else
+                {
+                    <table class="table table-sm">
+                        <thead>
+                            <tr><th>Membre</th><th>Rôle</th><th>Date adhésion</th><th></th></tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var membre in Model)
+                            {
+                                <tr>
+                                    <td>@membre.NomComplet</td
+                                    <td>@membre.RoleMembre</td
+                                    <td>@membre.DateAdhesion.ToString("dd/MM/yyyy")</td
+                                    <td>
+                                        <form asp-action="RemoveMember" method="post" onsubmit="return confirm('Retirer ce membre ?')">
+                                            <input type="hidden" name="idMembre" value="@membre.IdMembre" />
+                                            <input type="hidden" name="clubId" value="@club.IdClub" />
+                                            <button type="submit" class="btn btn-sm btn-danger">❌ Retirer</button>
+                                        </form>
+                                    </td
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>
