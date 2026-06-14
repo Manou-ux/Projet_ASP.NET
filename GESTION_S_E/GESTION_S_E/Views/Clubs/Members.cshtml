@@ -10,71 +10,87 @@
 
 <h1>👥 Membres du club : @club?.NomClub</h1>
 
-<div class="row">
-    <div class="col-md-6">
-        <div class="card mb-3">
-            <div class="card-header bg-primary text-white">➕ Ajouter un membre</div>
-            <div class="card-body">
-                <form asp-action="AddMember" method="post">
-                    <input type="hidden" name="clubId" value="@club?.IdClub" />
-                    <div class="mb-2">
-                        <label class="form-label">Utilisateur</label>
-                        <select name="idUtilisateur" class="form-select" required>
-                            <option value="">-- Sélectionnez --</option>
-                            @if (utilisateursDisponibles != null)
-                            {
-                                foreach (var u in utilisateursDisponibles)
-                                {
-                                    <option value="@u.IdUtilisateur">@u.NomComplet</option>
-                                }
-                            }
-                        </select>
-                    </div>
-                    <div class="mb-2">
-                        <label class="form-label">Rôle dans le club</label>
-                        <input type="text" name="roleMembre" class="form-control" placeholder="membre, président, trésorier..." />
-                    </div>
-                    <button type="submit" class="btn btn-success">Ajouter</button>
-                    <a asp-action="Index" class="btn btn-secondary">Retour aux clubs</a>
-                </form>
-            </div>
-        </div>
-    </div>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
 
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-header bg-info text-white">📋 Liste des membres</div>
-            <div class="card-body">
-                @if (!Model.Any())
-                {
-                    <p>Aucun membre pour le moment.</p>
-                }
-                else
-                {
-                    <table class="table table-sm">
-                        <thead>
-                            <tr><th>Membre</th><th>Rôle</th><th>Date adhésion</th><th></th></tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var membre in Model)
+<!-- Formulaire d'ajout (pleine largeur) -->
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white">➕ Ajouter un membre</div>
+    <div class="card-body">
+        <form asp-action="AddMember" method="post">
+            <input type="hidden" name="clubId" value="@club?.IdClub" />
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <label class="form-label">Utilisateur</label>
+                    <select name="idUtilisateur" class="form-select" required>
+                        <option value="">-- Sélectionnez --</option>
+                        @if (utilisateursDisponibles != null)
+                        {
+                            foreach (var u in utilisateursDisponibles)
                             {
-                                <tr>
-                                    <td>@membre.NomComplet</td
-                                    <td>@membre.RoleMembre</td
-                                    <td>@membre.DateAdhesion.ToString("dd/MM/yyyy")</td
-                                    <td>
-                                        <form asp-action="RemoveMember" method="post" onsubmit="return confirm('Retirer ce membre ?')">
-                                            <input type="hidden" name="idMembre" value="@membre.IdMembre" />
-                                            <input type="hidden" name="clubId" value="@club.IdClub" />
-                                            <button type="submit" class="btn btn-sm btn-danger">❌ Retirer</button>
-                                        </form>
-                                    </td
-                                </tr>
+                                <option value="@u.IdUtilisateur">@u.NomComplet</option>
                             }
-                        </tbody>
-                    </table>
-                }
+                        }
+                    </select>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <label class="form-label">Rôle dans le club</label>
+                    <input type="text" name="roleMembre" class="form-control" placeholder="membre, président, trésorier..." />
+                </div>
+                <div class="col-md-2 mb-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-success w-100">Ajouter</button>
+                </div>
             </div>
-        </div>
+            <div class="mt-2">
+                <a asp-action="Index" class="btn btn-secondary">Retour aux clubs</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Liste des membres (pleine largeur) -->
+<div class="card">
+    <div class="card-header bg-info text-white">📋 Liste des membres</div>
+    <div class="card-body">
+        @if (!Model.Any())
+        {
+            <p>Aucun membre pour le moment.</p>
+        }
+        else
+        {
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Membre</th>
+                        <th>Rôle</th>
+                        <th>Date adhésion</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var membre in Model)
+                    {
+                        <tr>
+                            <td>@membre.NomComplet</td>
+                            <td>@membre.RoleMembre</td>
+                            <td>@membre.DateAdhesion.ToString("dd/MM/yyyy")</td>
+                            <td>
+                                <form asp-action="RemoveMember" method="post" onsubmit="return confirm('Retirer ce membre ?')">
+                                    <input type="hidden" name="idMembre" value="@membre.IdMembre" />
+                                    <input type="hidden" name="clubId" value="@club.IdClub" />
+                                    <button type="submit" class="btn btn-sm btn-danger">❌ Retirer</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
     </div>
 </div>

@@ -86,10 +86,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2x1YnNcTWVtYmVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Dashboard/AdminDashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkbWluRGFzaGJvYXJkLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Dashboard/EleveDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEVsZXZlRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -100,6 +96,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Dashboard/ScolariteDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFNjb2xhcml0ZURhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Disponibilites/Create.cshtml]
@@ -316,6 +316,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Scolarites/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NvbGFyaXRlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Shared/Components/ClubResponsable/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2x1YlJlc3BvbnNhYmxlXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MADISTOR/Documents/ProjetASP/GESTION_S_E/GESTION_S_E/Views/Shared/Error.cshtml]

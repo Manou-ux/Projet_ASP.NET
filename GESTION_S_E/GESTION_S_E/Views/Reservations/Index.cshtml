@@ -47,14 +47,14 @@
             : item.Utilisateur?.Email ?? "Inconnu";
 
         <tr>
-            <td>@item.IdReservation</td>
-            <td>@item.DateReservation.ToString("dd/MM/yyyy")</td>
-            <td>@item.HeureDebut.ToString(@"hh\:mm") - @item.HeureFin.ToString(@"hh\:mm")</td>
-            <td>@item.Salle?.NomSalle</td>
-            <td>@demandeurNom</td>
-            <td>@(item.Club?.NomClub ?? "-")</td>
-            <td>@(item.Motif?.Length > 30 ? item.Motif.Substring(0, 30) + "..." : item.Motif)</td>
-            <td>@(item.Statut == "validee" ? "Validée" : item.Statut == "en_attente" ? "En attente" : "Annulée")</td>
+            <td>@item.IdReservation</td
+            <td>@item.DateReservation.ToString("dd/MM/yyyy")</td
+            <td>@item.HeureDebut.ToString(@"hh\:mm") - @item.HeureFin.ToString(@"hh\:mm")</td
+            <td>@item.Salle?.NomSalle</td
+            <td>@demandeurNom</td
+            <td>@(item.Club?.NomClub ?? "-")</td
+            <td>@(item.Motif?.Length > 30 ? item.Motif.Substring(0, 30) + "..." : item.Motif)</td
+            <td>@(item.Statut == "validee" ? "Validée" : item.Statut == "en_attente" ? "En attente" : "Annulée")</td
             <td>
                 <a href="/Reservations/Details/@item.IdReservation">Détails</a>
                 |
@@ -62,24 +62,28 @@
                 |
                 <a href="/Reservations/Delete/@item.IdReservation">Supprimer</a>
 
-                @if (item.Statut == "en_attente")
+                @* BOUTONS RÉSERVÉS À LA SCOLARITÉ *@
+                @if (User.Identity.IsAuthenticated && User.IsInRole("scolarite"))
                 {
-                    <text> | </text>
-                    <form asp-action="Valider" asp-route-id="@item.IdReservation" method="post" style="display: inline;" onsubmit="return confirm('Valider cette réservation ?')">
-                        @Html.AntiForgeryToken()
-                        <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer; color: blue; text-decoration: underline;">Valider</button>
-                    </form>
-                }
+                    if (item.Statut == "en_attente")
+                    {
+                        <text> | </text>
+                        <form asp-action="Valider" asp-route-id="@item.IdReservation" method="post" style="display: inline;" onsubmit="return confirm('Valider cette réservation ?')">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer; color: blue; text-decoration: underline;">Valider</button>
+                        </form>
+                    }
 
-                @if (item.Statut != "annulee")
-                {
-                    <text> | </text>
-                    <form asp-action="Annuler" asp-route-id="@item.IdReservation" method="post" style="display: inline;" onsubmit="return confirm('Annuler cette réservation ?')">
-                        @Html.AntiForgeryToken()
-                        <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer; color: blue; text-decoration: underline;">Annuler</button>
-                    </form>
+                    if (item.Statut != "annulee")
+                    {
+                        <text> | </text>
+                        <form asp-action="Annuler" asp-route-id="@item.IdReservation" method="post" style="display: inline;" onsubmit="return confirm('Annuler cette réservation ?')">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer; color: blue; text-decoration: underline;">Annuler</button>
+                        </form>
+                    }
                 }
-            </td>
+             </td
         </tr>
     }
 </table>

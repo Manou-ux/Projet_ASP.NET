@@ -205,6 +205,7 @@ namespace GESTION_S_E.Controllers
                 .Select(m => new MembreViewModel
                 {
                     IdMembre = m.IdMembre,
+                    IdUtilisateur = m.IdUtilisateur,
                     RoleMembre = m.RoleMembre,
                     DateAdhesion = m.DateAdhesion,
                     NomComplet = (m.Utilisateur.Role == "eleve" ?
@@ -259,11 +260,19 @@ namespace GESTION_S_E.Controllers
                     return RedirectToAction(nameof(Members), new { id = clubId });
                 }
 
+                // Liste des rôles autorisés par la contrainte CK_Membre_Role
+                var rolesAutorises = new[] { "membre", "vice-president", "president", "secretaire", "tresorier" };
+                string roleFinal = string.IsNullOrWhiteSpace(roleMembre) ? "membre" : roleMembre.ToLower();
+                if (!rolesAutorises.Contains(roleFinal))
+                {
+                    roleFinal = "membre";  // valeur par défaut
+                }
+
                 var membre = new MembreClub
                 {
                     IdClub = clubId,
                     IdUtilisateur = idUtilisateur,
-                    RoleMembre = string.IsNullOrWhiteSpace(roleMembre) ? "membre" : roleMembre,
+                    RoleMembre = roleFinal,
                     DateAdhesion = DateTime.Now
                 };
 
@@ -285,7 +294,8 @@ namespace GESTION_S_E.Controllers
         {
             try
             {
-                var membre = await _context.MembreClubs.FindAsync(idMembre);
+                // Recherche par la colonne IdMembre (même si ce n'est pas la PK)
+                var membre = await _context.MembreClubs.FirstOrDefaultAsync(m => m.IdMembre == idMembre);
                 if (membre != null)
                 {
                     _context.MembreClubs.Remove(membre);
@@ -349,6 +359,7 @@ namespace GESTION_S_E.Controllers
         public class MembreViewModel
         {
             public int IdMembre { get; set; }
+            public int IdUtilisateur { get; set; }  // Ajouté pour la suppression
             public string RoleMembre { get; set; }
             public DateTime DateAdhesion { get; set; }
             public string NomComplet { get; set; }

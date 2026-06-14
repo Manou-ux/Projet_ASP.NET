@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Dashboard - Étudiant";
+}
+
+<style>
+    body { font-family: 'DM Sans', sans-serif; background-color: #ffffff; color: #0f172a; padding: 30px 20px; }
+    .welcome-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; margin-bottom: 30px; }
+    .feature-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center; text-decoration: none; color: inherit; transition: all 0.15s ease; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .feature-card:hover { border-color: #0f172a; transform: translateY(-2px); }
+    .feature-card i { font-size: 32px; color: #0f172a; }
+    .feature-card h5 { font-size: 16px; font-weight: 600; margin: 0; }
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<div class="container-fluid px-0">
+    <div class="d-flex align-items-center gap-3 border-bottom pb-4 mb-4">
+        <div class="text-dark" style="font-size: 28px;"><i class="fas fa-user-graduate"></i></div>
+        <div>
+            <h1 class="h4 fw-semibold m-0">Espace Étudiant</h1>
+            <p class="text-muted small m-0">Bienvenue, @User.Identity.Name</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <a href="/EmploiDuTemps/WeeklyView" class="feature-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h5>Mon emploi du temps</h5>
+                <p class="small text-muted">Consultez les cours de votre classe</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="alert alert-info mt-4 rounded-3">
+        <i class="fas fa-bell me-2"></i>
+        Pensez à vérifier régulièrement votre emploi du temps pour les éventuels changements.
+    </div>
+</div>
