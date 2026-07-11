@@ -1,0 +1,14 @@
+/* Styles pour l'emploi du temps */
+.timetable {
+    border-spacing: 0;
+}
+
+.timetable th,
+.timetable td {
+    padding: 0.8rem;
+}
+
+.timetable .table-bordered td,
+.timetable .table-bordered th {
+    border: 1px solid rgba(148, 163, 184, 0.18);
+}

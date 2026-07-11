@@ -1,0 +1,73 @@
+/* Styles pour les réservations */
+.reservation-card {
+    background: var(--surface);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.reservation-actions {
+    gap: 0.35rem;
+}
+
+.reservation-actions .btn-sm {
+    min-width: 2.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reservation-actions .btn-sm i {
+    width: 1rem;
+}
+
+.reservation-card .table {
+    margin-bottom: 0;
+}
+
+.reservation-card .table th,
+.reservation-card .table td {
+    vertical-align: middle;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-header .form-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Primary action group (Détails, Modifier, Supprimer) */
+.reservation-primary-actions .btn {
+    border-radius: 0.5rem;
+}
+
+/* Status action group (Valider/Annuler) séparée visuellement */
+.reservation-status-actions {
+    align-items: center;
+}
+
+.reservation-status-actions .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.82rem;
+    border-radius: 0.45rem;
+}
+
+.reservation-status-actions .btn-success {
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.18);
+    color: #065f46;
+}
+
+.reservation-status-actions .btn-secondary {
+    background: rgba(107, 114, 128, 0.06);
+    border-color: rgba(148, 163, 184, 0.12);
+    color: #334155;
+}

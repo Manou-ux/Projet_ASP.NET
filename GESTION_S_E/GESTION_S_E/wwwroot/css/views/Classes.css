@@ -1,0 +1,14 @@
+/* Styles pour les pages de classes */
+.class-table {
+    min-width: 100%;
+}
+
+.class-table td,
+.class-table th {
+    padding: 0.95rem 1rem;
+}
+
+.class-summary {
+    display: grid;
+    gap: 1rem;
+}

@@ -1,0 +1,6 @@
+/* Styles pour les enseignants */
+.teacher-card {
+    background: var(--surface-alt);
+    border-radius: 1rem;
+    padding: 1rem;
+}

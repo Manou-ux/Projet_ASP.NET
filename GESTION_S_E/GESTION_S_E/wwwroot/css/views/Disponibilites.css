@@ -1,0 +1,11 @@
+/* Styles pour les disponibilités */
+.dispo-card {
+    background: var(--surface);
+    border-radius: 1rem;
+    padding: 1.25rem;
+}
+
+.dispo-table th,
+.dispo-table td {
+    padding: 0.85rem 0.95rem;
+}

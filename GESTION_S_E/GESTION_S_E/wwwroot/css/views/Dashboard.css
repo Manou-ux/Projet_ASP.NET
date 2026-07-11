@@ -1,0 +1,10 @@
+/* Styles pour les dashboards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.dashboard-hero {
+    min-height: 240px;
+}

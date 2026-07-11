@@ -1,0 +1,345 @@
+:root {
+    --bg: #f4f7fb;
+    --surface: #ffffff;
+    --surface-alt: #f8fafc;
+    --surface-soft: #eff6ff;
+    --border: rgba(148, 163, 184, 0.26);
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --accent: #2563eb;
+    --accent-strong: #1d4ed8;
+    --accent-soft: rgba(37, 99, 235, 0.12);
+    --success: #10b981;
+    --danger: #f97316;
+    --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, #f8fbff 0%, #f4f7fb 100%);
+}
+
+img, svg {
+    max-width: 100%;
+}
+
+a {
+    color: var(--accent);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+a:hover {
+    color: var(--accent-strong);
+}
+
+.container {
+    max-width: 1180px;
+}
+
+.main-content {
+    margin: 1.75rem auto 6rem;
+    padding: 0 0.35rem;
+}
+
+footer.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
+    text-align: center;
+    padding: 0.95rem 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    z-index: 1000;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+.navbar .navbar-brand {
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #1f2937;
+}
+.navbar .nav-link {
+    color: #475569;
+    font-weight: 500;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--accent-strong);
+}
+.navbar .btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 14px 28px rgba(37, 99, 235, 0.18);
+}
+.navbar .btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+}
+
+.card,
+.table,
+.form-control,
+.dropdown-menu {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.card {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 50px rgba(15, 23, 42, 0.1);
+}
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title,
+.page-title {
+    color: #0f172a;
+}
+
+.card-subtitle,
+.text-muted,
+small {
+    color: var(--text-muted);
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.table thead th {
+    background: #f8fafc;
+    color: #334155;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.24);
+}
+.table tbody tr {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+}
+.table tbody tr:hover {
+    background: #eff6ff;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background: #f8fafc;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    border: none;
+    box-shadow: 0 14px 28px rgba(37, 99, 235, 0.16);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+}
+
+.btn-outline-secondary {
+    color: #475569;
+    border-color: rgba(148, 163, 184, 0.28);
+}
+.btn-outline-secondary:hover {
+    background: rgba(37, 99, 235, 0.06);
+}
+
+.form-control {
+    background: #f8fafc;
+    border-color: rgba(148, 163, 184, 0.24);
+    color: #0f172a;
+    min-height: 3rem;
+}
+.form-control:focus {
+    border-color: rgba(37, 99, 235, 0.6);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.15);
+    background: #ffffff;
+}
+
+.form-label {
+    color: #334155;
+    font-weight: 600;
+}
+
+.badge {
+    border-radius: 0.85rem;
+    padding: 0.45em 0.8em;
+}
+
+.badge-status-success {
+    background: rgba(16, 185, 129, 0.14);
+    color: #0f766e;
+}
+.badge-status-warning {
+    background: rgba(251, 191, 36, 0.14);
+    color: #b45309;
+}
+.badge-status-danger {
+    background: rgba(249, 115, 22, 0.14);
+    color: #c2410c;
+}
+
+.card .btn, .form-check-input {
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu {
+    border-radius: 0.9rem;
+    border-color: rgba(148, 163, 184, 0.22);
+}
+
+.dropdown-item {
+    color: #0f172a;
+}
+
+.dropdown-item:hover {
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--accent-strong);
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 0.2rem;
+    min-width: 180px;
+    border-radius: 0.9rem;
+    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
+    display: none;
+}
+
+.dropdown-submenu > .dropdown-menu.show {
+    display: block;
+}
+
+/* Force la petite flèche à droite pour le sous-menu "Gérer les utilisateurs" */
+.dropdown-submenu > .dropdown-toggle::after {
+    /* remplace le caret bootstrap par une flèche droite */
+    content: '';
+    display: inline-block;
+    vertical-align: 0.125em;
+    margin-left: 0.5rem;
+    width: 0;
+    height: 0;
+    border-top: 0.32em solid transparent;
+    border-bottom: 0.32em solid transparent;
+    border-left: 0.4em solid currentColor;
+}
+
+/* Empêche la flèche de basculer sur mobile (reste visible mais position relative) */
+@media (max-width: 992px) {
+    .dropdown-submenu > .dropdown-toggle::after {
+        transform: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .dropdown-submenu > .dropdown-menu {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-left: 0;
+        box-shadow: none;
+    }
+}
+
+/* Styles uniformes pour actions de tableau - ton soft et professionnel */
+.table-actions .btn {
+    min-width: 3.2rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 0.5rem;
+    font-size: 0.86rem;
+    color: #334155;
+    border-color: rgba(148, 163, 184, 0.18);
+    background: transparent;
+}
+.table-actions .btn:hover {
+    background: rgba(37, 99, 235, 0.06);
+    color: #0f172a;
+}
+.table-actions .btn-outline-primary {
+    color: #1f4db0;
+    border-color: rgba(37, 99, 235, 0.18);
+}
+.table-actions .btn-outline-secondary {
+    color: #475569;
+    border-color: rgba(148, 163, 184, 0.16);
+}
+.table-actions .btn-outline-danger {
+    color: #b45309;
+    border-color: rgba(196, 66, 12, 0.12);
+}
+
+
+.page-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+}
+
+.page-header .subtitle {
+    color: #64748b;
+    font-size: 0.98rem;
+}
+
+.hero-panel {
+    background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+    border: 1px solid rgba(37, 99, 235, 0.14);
+    padding: 1.4rem;
+    border-radius: 1.2rem;
+}
+
+.summary-card {
+    background: #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+}
+
+@media (max-width: 992px) {
+    .navbar .navbar-collapse {
+        background: #ffffff;
+        margin-top: 0.75rem;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+    .main-content {
+        margin-bottom: 8rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .footer {
+        position: static;
+    }
+}
+

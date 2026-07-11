@@ -1,0 +1,10 @@
+/* Styles pour les membres de club */
+.member-section {
+    display: grid;
+    gap: 1rem;
+}
+
+.member-card {
+    background: var(--surface-alt);
+    border-radius: 1rem;
+}

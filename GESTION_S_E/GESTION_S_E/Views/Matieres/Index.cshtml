@@ -16,43 +16,44 @@
     </div>
 }
 
-<a href="/Matieres/Create">Ajouter une matière</a>
-
-<br />
-<br />
+<p>
+    <a class="btn btn-primary" href="/Matieres/Create">Ajouter une matière</a>
+</p>
 
 @if (Model != null && Model.Any())
 {
-    <table border="1" cellpadding="10" style="border-collapse: collapse;">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Code</th>
-                <th>Nom de la matière</th>
-                <th>Volume horaire</th>
-                <th>Coefficient</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var matiere in Model)
-            {
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered align-middle">
+            <thead class="table-light">
                 <tr>
-                    <td>@matiere.IdMatiere</td>
-                    <td>@matiere.CodeMatiere</td>
-                    <td>@matiere.NomMatiere</td>
-                    <td>@(matiere.VolumeHoraire?.ToString() ?? "-")</td>
-                    <td>@matiere.Coefficient.ToString("0.00")</td>
-                    <td>
-                        <a href="/Matieres/Edit/@matiere.IdMatiere">Modifier</a>
-                        |
-                        <a href="/Matieres/Delete/@matiere.IdMatiere">Supprimer</a>
-                    </td>
-                
-                 </tr>
-            }
-        </tbody>
-    </table>
+                    <th>ID</th>
+                    <th>Code</th>
+                    <th>Nom de la matière</th>
+                    <th>Volume horaire</th>
+                    <th>Coefficient</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var matiere in Model)
+                {
+                    <tr>
+                        <td>@matiere.IdMatiere</td>
+                        <td>@matiere.CodeMatiere</td>
+                        <td>@matiere.NomMatiere</td>
+                        <td>@(matiere.VolumeHoraire?.ToString() ?? "-")</td>
+                        <td>@matiere.Coefficient.ToString("0.00")</td>
+                        <td class="text-end">
+                            <div class="table-actions d-inline-flex gap-1">
+                                <a class="btn btn-sm btn-outline-secondary" href="/Matieres/Edit/@matiere.IdMatiere">Modifier</a>
+                                <a class="btn btn-sm btn-outline-danger" href="/Matieres/Delete/@matiere.IdMatiere">Supprimer</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
 else
 {

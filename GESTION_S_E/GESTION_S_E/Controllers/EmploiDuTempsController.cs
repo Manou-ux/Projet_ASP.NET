@@ -204,7 +204,7 @@ namespace GESTION_S_E.Controllers
         {
             public DateTime Lundi { get; set; }
             public int ClasseId { get; set; }
-            public List<Classe> Classes { get; set; } // Ajout pour contourner le problème du SelectList
+            public List<Classe> Classes { get; set; }
             public Dictionary<DayOfWeek, Dictionary<TimeSpan, List<EmploiDuTemps>>> CoursParJourEtHeure { get; set; }
         }
 
@@ -221,6 +221,7 @@ namespace GESTION_S_E.Controllers
                 var emptyModel = new WeeklyTimetableViewModel
                 {
                     Lundi = GetStartOfWeek(DateTime.Today),
+                    ClasseId = 0,
                     Classes = new List<Classe>(),
                     CoursParJourEtHeure = new Dictionary<DayOfWeek, Dictionary<TimeSpan, List<EmploiDuTemps>>>()
                 };
@@ -233,10 +234,14 @@ namespace GESTION_S_E.Controllers
 
             // 3. Calcul de la semaine
             DateTime today = dateDebut ?? DateTime.Today;
+            if (dateDebut == null && (today.DayOfWeek == DayOfWeek.Saturday || today.DayOfWeek == DayOfWeek.Sunday))
+            {
+                today = today.AddDays(8 - (int)today.DayOfWeek);
+            }
             DateTime lundi = GetStartOfWeek(today);
             DateTime dimanche = lundi.AddDays(6);
 
-            // 4. Récupérer les cours pour cette classe et cette semaine
+            // 4. Récupérer les cours pour cette classe pour la semaine
             var cours = await _context.EmploisDuTemps
                 .Include(e => e.Matiere)
                 .Include(e => e.Enseignant)
@@ -256,7 +261,7 @@ namespace GESTION_S_E.Controllers
             {
                 Lundi = lundi,
                 ClasseId = classeId.Value,
-                Classes = toutesLesClasses, // Passage de la liste complète
+                Classes = toutesLesClasses,
                 CoursParJourEtHeure = OrganiserCoursParJourEtHeure(cours, lundi)
             };
             return View(model);

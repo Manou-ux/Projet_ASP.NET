@@ -1,0 +1,10 @@
+/* Styles pour les pages de clubs */
+.club-overview {
+    display: grid;
+    gap: 1rem;
+}
+
+.club-card {
+    border-radius: 1rem;
+    background: var(--surface-alt);
+}

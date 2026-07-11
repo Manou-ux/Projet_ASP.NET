@@ -1,0 +1,22 @@
+/* Styles pour les pages de compte */
+.auth-panel {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    background: #ffffff;
+}
+
+.auth-panel .card {
+    border-radius: 1.2rem;
+}
+
+.btn-dark {
+    background: #1f2937;
+    border: none;
+    color: #ffffff;
+}
+
+.btn-dark:hover {
+    background: #111827;
+}

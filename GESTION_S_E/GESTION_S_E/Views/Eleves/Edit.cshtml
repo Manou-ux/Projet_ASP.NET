@@ -1,4 +1,5 @@
 ﻿@model GESTION_S_E.Models.Eleve
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Modifier un élève";
@@ -13,9 +14,11 @@
     </div>
 }
 
-<form method="post">
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<form asp-action="Edit" asp-route-id="@Model.IdEleve" method="post">
     @Html.AntiForgeryToken()
-    <input type="hidden" name="IdEleve" value="@Model.IdEleve" />
+    <input type="hidden" asp-for="IdEleve" />
 
     <div>
         <label>Matricule</label>
@@ -52,9 +55,18 @@
         <select name="IdClasse" required>
             @foreach (SelectListItem item in ViewBag.Classes)
             {
-                <option value="@item.Value" @(item.Selected ? "selected" : "")>
-                    @item.Text
-                </option>
+                if (item.Selected)
+                {
+                    <option value="@item.Value" selected>
+                        @item.Text
+                    </option>
+                }
+                else
+                {
+                    <option value="@item.Value">
+                        @item.Text
+                    </option>
+                }
             }
         </select>
     </div>

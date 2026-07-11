@@ -76,21 +76,27 @@ namespace GESTION_S_E.Controllers
                 return NotFound();
             }
 
-            // Si une date de naissance est fournie, la convertir en UTC
-            if (eleve.DateNaissance.HasValue)
+            var existingEleve = await _context.Eleves.FindAsync(id);
+            if (existingEleve == null)
             {
-                eleve.DateNaissance = DateTime.SpecifyKind(eleve.DateNaissance.Value, DateTimeKind.Utc);
+                return NotFound();
             }
 
-            // Supprimer les erreurs de validation pour les propriétés de navigation
-            ModelState.Remove("Classe");
-            ModelState.Remove("Utilisateur");
-
-            if (ModelState.IsValid)
+            if (await TryUpdateModelAsync(existingEleve, "",
+                e => e.NomEleve,
+                e => e.PrenomEleve,
+                e => e.DateNaissance,
+                e => e.Telephone,
+                e => e.IdClasse,
+                e => e.IdUtilisateur))
             {
+                if (existingEleve.DateNaissance.HasValue)
+                {
+                    existingEleve.DateNaissance = DateTime.SpecifyKind(existingEleve.DateNaissance.Value, DateTimeKind.Utc);
+                }
+
                 try
                 {
-                    _context.Update(eleve);
                     await _context.SaveChangesAsync();
                     TempData["Success"] = "Élève modifié avec succès !";
                     return RedirectToAction(nameof(Index));
@@ -100,8 +106,9 @@ namespace GESTION_S_E.Controllers
                     ModelState.AddModelError("", $"Erreur: {ex.Message}");
                 }
             }
-            ViewBag.Classes = new SelectList(_context.Classes, "IdClasse", "NomClasse", eleve.IdClasse);
-            return View(eleve);
+
+            ViewBag.Classes = new SelectList(_context.Classes, "IdClasse", "NomClasse", existingEleve.IdClasse);
+            return View(existingEleve);
         }
         // GET: Eleves/Delete/5
         public async Task<IActionResult> Delete(int id)

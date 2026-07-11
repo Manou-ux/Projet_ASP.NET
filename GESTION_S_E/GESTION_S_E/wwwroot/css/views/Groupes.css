@@ -1,0 +1,10 @@
+/* Styles pour les groupes */
+.group-summary {
+    display: grid;
+    gap: 1rem;
+}
+
+.group-card {
+    background: var(--surface-alt);
+    border-radius: 1rem;
+}

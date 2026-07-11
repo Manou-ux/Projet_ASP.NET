@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Modifier une réservation";
+    bool isEnseignant = User.Identity.IsAuthenticated && User.IsInRole("enseignant");
 }
 
 <div class="container mt-4">
@@ -81,11 +82,19 @@
 
                 <div class="form-group mb-3">
                     <label asp-for="Statut" class="control-label">Statut</label>
-                    <select asp-for="Statut" class="form-control">
-                        <option value="en_attente">⏳ En attente</option>
-                        <option value="validee">✅ Validée</option>
-                        <option value="annulee">❌ Annulée</option>
-                    </select>
+                    @if (isEnseignant)
+                    {
+                        <input type="hidden" asp-for="Statut" />
+                        <div class="form-control-plaintext">@Model.Statut</div>
+                    }
+                    else
+                    {
+                        <select asp-for="Statut" class="form-control">
+                            <option value="en_attente">⏳ En attente</option>
+                            <option value="validee">✅ Validée</option>
+                            <option value="annulee">❌ Annulée</option>
+                        </select>
+                    }
                     <span asp-validation-for="Statut" class="text-danger"></span>
                 </div>
 

@@ -1,0 +1,19 @@
+/* CSS de surcharge personnalisé.
+   Utilisez ce fichier pour ajouter des styles spécifiques par page ou par dossier.
+   Il est chargé après site.css et importe les fichiers de chaque dossier de vues.
+*/
+@import url("/css/views/common.css");
+@import url("/css/views/Account.css");
+@import url("/css/views/Classes.css");
+@import url("/css/views/Clubs.css");
+@import url("/css/views/Dashboard.css");
+@import url("/css/views/Disponibilites.css");
+@import url("/css/views/Eleves.css");
+@import url("/css/views/EmploiDuTemps.css");
+@import url("/css/views/Enseignants.css");
+@import url("/css/views/Groupes.css");
+@import url("/css/views/Matieres.css");
+@import url("/css/views/MembresClubs.css");
+@import url("/css/views/Reservations.css");
+@import url("/css/views/Salles.css");
+@import url("/css/views/Scolarites.css");

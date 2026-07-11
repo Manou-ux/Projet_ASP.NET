@@ -72,28 +72,35 @@ namespace GESTION_S_E.Controllers
                 return NotFound();
             }
 
-            // Ignorer les erreurs de validation pour Utilisateur
-            ModelState.Remove("Utilisateur");
-
-            if (ModelState.IsValid)
+            var existingEnseignant = await _context.Enseignants.FindAsync(id);
+            if (existingEnseignant == null)
             {
-                try
-                {
-                    _context.Update(enseignant);
-                    await _context.SaveChangesAsync();
-                    TempData["Success"] = "Enseignant modifié avec succès !";
-                    return RedirectToAction(nameof(Index));
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!_context.Enseignants.Any(e => e.IdEnseignant == id))
-                    {
-                        return NotFound();
-                    }
-                    throw;
-                }
+                return NotFound();
             }
-            return View(enseignant);
+
+            // Copier explicitement les valeurs reçues depuis le formulaire
+            existingEnseignant.NomEnseignant = enseignant.NomEnseignant?.Trim() ?? "";
+            existingEnseignant.PrenomEnseignant = enseignant.PrenomEnseignant?.Trim() ?? "";
+            existingEnseignant.Specialite = enseignant.Specialite?.Trim() ?? "";
+            // La colonne 'telephone_enseignant' est NOT NULL en base : éviter d'écrire null
+            existingEnseignant.TelephoneEnseignant = enseignant.TelephoneEnseignant?.Trim() ?? "";
+            existingEnseignant.EmailPro = enseignant.EmailPro?.Trim() ?? "";
+            existingEnseignant.IdUtilisateur = enseignant.IdUtilisateur;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+                TempData["Success"] = "Enseignant modifié avec succès !";
+                return RedirectToAction(nameof(Index));
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Enseignants.Any(e => e.IdEnseignant == id))
+                {
+                    return NotFound();
+                }
+                throw;
+            }
         }
 
         // GET: Enseignants/Delete/5

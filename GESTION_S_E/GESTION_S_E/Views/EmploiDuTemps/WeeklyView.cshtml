@@ -7,11 +7,36 @@
     var jours = new[] { DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday };
     var libelles = new[] { "LUNDI", "MARDI", "MERCREDI", "JEUDI", "VENDREDI" };
     var heures = Enumerable.Range(7, 12).Select(h => TimeSpan.FromHours(h));
+    var subjectColors = new[] { "#0d6efd", "#d63384", "#198754", "#fd7e14", "#6610f2", "#20c997", "#0dcaf0", "#6f42c1", "#e83e8c", "#f59f00" };
+    var subjectColorMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+    string GetSubjectColor(string input)
+    {
+        var key = (input ?? string.Empty).Trim();
+        if (string.IsNullOrWhiteSpace(key))
+        {
+            return subjectColors[0];
+        }
+
+        if (subjectColorMap.TryGetValue(key, out var color))
+        {
+            return color;
+        }
+
+        var usedColors = new HashSet<string>(subjectColorMap.Values, StringComparer.OrdinalIgnoreCase);
+        var availableColor = subjectColors.FirstOrDefault(c => !usedColors.Contains(c));
+        if (availableColor == null)
+        {
+            availableColor = subjectColors[subjectColorMap.Count % subjectColors.Length];
+        }
+
+        subjectColorMap[key] = availableColor;
+        return availableColor;
+    }
 }
 
 <div class="container-fluid mt-3">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2>📅 Emploi du temps – Semaine du @Model.Lundi.ToString("dd/MM/yyyy")</h2>
+        <h2>Emploi du temps – Semaine du @Model.Lundi.ToString("dd/MM/yyyy")</h2>
         <a href="/EmploiDuTemps/Index" class="btn btn-outline-secondary">← Retour à la liste des séances</a>
     </div>
 
@@ -30,7 +55,7 @@
             <select name="classeId" class="form-select" onchange="this.form.submit()">
                 @foreach (var c in Model.Classes)
                 {
-                    <option value="@c.IdClasse" selected="@(c.IdClasse == Model.ClasseId)">
+                    <option value="@c.IdClasse" @(c.IdClasse == Model.ClasseId ? "selected" : "")>
                         @c.NomClasse
                     </option>
                 }
@@ -54,15 +79,20 @@
                 </tr>
             </thead>
             <tbody>
+                @{ var skipCounts = jours.ToDictionary(j => j, j => 0); }
                 @foreach (var heure in heures)
                 {
-                    bool skip = false;
-                    string afficheHeure = $"{heure.Hours:D2}:{heure.Minutes:D2}";
+                    string afficheHeure = $"{heure.Hours:D2}:00 - {heure.Add(TimeSpan.FromHours(1)).Hours:D2}:00";
                     <tr>
                         <td class="heure-colonne text-center fw-bold">@afficheHeure</td>
                         @foreach (var jour in jours)
                         {
-                            if (skip) { skip = false; continue; }
+                            if (skipCounts[jour] > 0)
+                            {
+                                skipCounts[jour]--;
+                                continue;
+                            }
+
                             var coursListe = Model.CoursParJourEtHeure.ContainsKey(jour) &&
                                               Model.CoursParJourEtHeure[jour].ContainsKey(heure)
                                               ? Model.CoursParJourEtHeure[jour][heure]
@@ -71,17 +101,17 @@
                             if (coursListe.Any())
                             {
                                 var cours = coursListe.First();
-                                int duree = (int)(cours.HeureFin - cours.HeureDebut).TotalHours;
-                                int rowspan = duree > 1 ? duree : 1;
-                                if (duree > 1 && heure != new TimeSpan(cours.HeureDebut.Hours, 0, 0))
+                                int duree = Math.Max(1, (int)Math.Ceiling((cours.HeureFin - cours.HeureDebut).TotalMinutes / 60.0));
+                                int rowspan = duree;
+                                if (rowspan > 1)
                                 {
-                                    skip = true;
-                                    continue;
+                                    skipCounts[jour] = rowspan - 1;
                                 }
-                                <td rowspan="@rowspan" class="cours-cell">
+
+                                <td rowspan="@rowspan" class="cours-cell" style="border-left-color:@GetSubjectColor(cours.Matiere?.NomMatiere);">
                                     <strong>@cours.Matiere?.NomMatiere</strong><br />
                                     <span class="prof">@cours.Enseignant?.NomEnseignant @cours.Enseignant?.PrenomEnseignant</span><br />
-                                    <span class="salle">📍 @cours.Salle?.NomSalle</span>
+                                    <span class="salle">📍 @cours.Salle?.NomSalle</span><br />
                                     @if (cours.Groupe != null)
                                     {
                                         <br /><span class="groupe">👥 @cours.Groupe.NomGroupe</span>
@@ -101,10 +131,16 @@
 </div>
 
 <style>
+    .timetable {
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
     .timetable td, .timetable th {
         vertical-align: middle;
         padding: 10px;
         min-width: 130px;
+        border: 1px solid #dee2e6;
     }
 
     .heure-colonne {
@@ -114,6 +150,7 @@
 
     .cours-cell {
         background-color: #e7f3ff;
+        border: 1px solid #dee2e6;
         border-left: 4px solid #0d6efd;
         text-align: left;
     }

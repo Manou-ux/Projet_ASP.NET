@@ -1,0 +1,10 @@
+/* Styles pour les élèves */
+.student-summary {
+    display: grid;
+    gap: 1rem;
+}
+
+.student-card {
+    background: var(--surface-alt);
+    border-radius: 1rem;
+}

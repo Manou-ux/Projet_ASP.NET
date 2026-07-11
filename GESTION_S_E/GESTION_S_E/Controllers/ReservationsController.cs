@@ -37,12 +37,19 @@ namespace GESTION_S_E.Controllers
                 .OrderBy(r => r.DateReservation)
                 .ToListAsync();
 
-            // Calculer la date de début de semaine en fonction du décalage
             var today = DateTime.Today;
-            var startOfWeek = GetStartOfWeek(today).AddDays(weekOffset * 7);
-            
+            var referenceDate = today;
+
+            if (weekOffset == 0 && (today.DayOfWeek == DayOfWeek.Saturday || today.DayOfWeek == DayOfWeek.Sunday))
+            {
+                // Si nous sommes le week-end, afficher le lundi de la semaine suivante
+                referenceDate = today.AddDays(8 - (int)today.DayOfWeek);
+            }
+
+            var startOfWeek = GetStartOfWeek(referenceDate).AddDays(weekOffset * 7);
+
             ViewBag.StartOfWeek = startOfWeek;
-            
+
             return View(reservations);
         }
 
@@ -167,6 +174,11 @@ namespace GESTION_S_E.Controllers
                     reservationExistante.HeureFin = reservation.HeureFin;
                     reservationExistante.Motif = reservation.Motif;
 
+                    if (!User.IsInRole("enseignant"))
+                    {
+                        reservationExistante.Statut = reservation.Statut;
+                    }
+
                     await _context.SaveChangesAsync();
 
                     TempData["Success"] = "Réservation modifiée avec succès !";
@@ -269,17 +281,39 @@ namespace GESTION_S_E.Controllers
 
             var utilisateurs = await _context.Utilisateurs
                 .Include(u => u.Enseignant)
-                .Select(u => new
-                {
-                    u.IdUtilisateur,
-                    NomComplet = u.Enseignant != null 
-                        ? $"{u.Enseignant.PrenomEnseignant} {u.Enseignant.NomEnseignant}"
-                        : u.Email
-                })
                 .ToListAsync();
 
+            var eleves = await _context.Eleves.ToListAsync();
+            var scolarites = await _context.Scolarites.ToListAsync();
+
+            var utilisateursDisplay = utilisateurs.Select(u =>
+            {
+                var eleve = eleves.FirstOrDefault(e => e.IdUtilisateur == u.IdUtilisateur);
+                var scolarite = scolarites.FirstOrDefault(s => s.IdUtilisateur == u.IdUtilisateur);
+
+                string nomComplet;
+                if (u.Enseignant != null)
+                {
+                    nomComplet = $"{u.Enseignant.PrenomEnseignant} {u.Enseignant.NomEnseignant} (enseignant)";
+                }
+                else if (eleve != null)
+                {
+                    nomComplet = $"{eleve.PrenomEleve} {eleve.NomEleve} (élève)";
+                }
+                else if (scolarite != null)
+                {
+                    nomComplet = $"{scolarite.PrenomScolarite} {scolarite.NomScolarite} (scolarité)";
+                }
+                else
+                {
+                    nomComplet = u.Email;
+                }
+
+                return new { u.IdUtilisateur, NomComplet = nomComplet };
+            }).ToList();
+
             ViewBag.Utilisateurs = new SelectList(
-                utilisateurs,
+                utilisateursDisplay,
                 "IdUtilisateur",
                 "NomComplet",
                 selectedUtilisateur

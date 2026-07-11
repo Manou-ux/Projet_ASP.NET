@@ -16,44 +16,45 @@
     </div>
 }
 
-<a href="/Groupes/Create">Ajouter un groupe</a>
-
-<br />
-<br />
+<p>
+    <a class="btn btn-primary" href="/Groupes/Create">Ajouter un groupe</a>
+</p>
 
 @if (Model != null && Model.Any())
 {
-    <table border="1" cellpadding="10" style="border-collapse: collapse;">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nom du groupe</th>
-                <th>Classe</th>
-                <th>Niveau</th>
-                <th>Filière</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var groupe in Model)
-            {
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered align-middle">
+            <thead class="table-light">
                 <tr>
-                    <td>@groupe.IdGroupe</td>
-                    <td>@groupe.NomGroupe</td>
-                    <td>@groupe.Classe?.NomClasse</td>
-                    <td>@groupe.Classe?.Niveau</td>
-                    <td>@groupe.Classe?.Filiere</td>
-                    <td>
-                        <a href="/Groupes/Edit/@groupe.IdGroupe">Modifier</a>
-                        |
-                        <a href="/Groupes/Delete/@groupe.IdGroupe">Supprimer</a>
-                        |
-                        <a href="/Groupes/Details/@groupe.IdGroupe">Détails</a>
-                    </td>
+                    <th>ID</th>
+                    <th>Nom du groupe</th>
+                    <th>Classe</th>
+                    <th>Niveau</th>
+                    <th>Filière</th>
+                    <th class="text-end">Actions</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var groupe in Model)
+                {
+                    <tr>
+                        <td>@groupe.IdGroupe</td>
+                        <td>@groupe.NomGroupe</td>
+                        <td>@groupe.Classe?.NomClasse</td>
+                        <td>@groupe.Classe?.Niveau</td>
+                        <td>@groupe.Classe?.Filiere</td>
+                        <td class="text-end">
+                            <div class="table-actions d-inline-flex gap-1">
+                                <a class="btn btn-sm btn-outline-primary" href="/Groupes/Details/@groupe.IdGroupe">Détails</a>
+                                <a class="btn btn-sm btn-outline-secondary" href="/Groupes/Edit/@groupe.IdGroupe">Modifier</a>
+                                <a class="btn btn-sm btn-outline-danger" href="/Groupes/Delete/@groupe.IdGroupe">Supprimer</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
 else
 {

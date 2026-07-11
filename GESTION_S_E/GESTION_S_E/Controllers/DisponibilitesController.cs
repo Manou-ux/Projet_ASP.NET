@@ -137,6 +137,48 @@ namespace GESTION_S_E.Controllers
             return View(disponibilite);
         }
 
+        public async Task<IActionResult> Delete(int id)
+        {
+            var disponibilite = await _context.DisponibilitesEnseignants
+                .Include(d => d.Enseignant)
+                .FirstOrDefaultAsync(d => d.IdDispo == id);
+
+            if (disponibilite == null)
+            {
+                TempData["Error"] = "Disponibilité introuvable.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(disponibilite);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            try
+            {
+                var disponibilite = await _context.DisponibilitesEnseignants.FindAsync(id);
+
+                if (disponibilite != null)
+                {
+                    _context.DisponibilitesEnseignants.Remove(disponibilite);
+                    await _context.SaveChangesAsync();
+                    TempData["Success"] = "Disponibilité supprimée avec succès !";
+                }
+                else
+                {
+                    TempData["Error"] = "Disponibilité introuvable.";
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = "Erreur lors de la suppression : " + ex.Message;
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
         private async Task LoadEnseignantsSelectList(int? selectedId = null)
         {
             var enseignants = await _context.Enseignants
@@ -149,9 +191,6 @@ namespace GESTION_S_E.Controllers
 
             ViewBag.Enseignants = new SelectList(enseignants, "IdEnseignant", "NomComplet", selectedId);
         }
-
-        // Les autres actions (Delete, Details...) restent presque identiques
-        // Je te les garde si tu veux, mais pour l'instant je me concentre sur le Create/Edit qui posaient problème.
 
         private bool DisponibiliteExists(int id)
         {

@@ -1,4 +1,5 @@
 @model GESTION_S_E.Models.Enseignant
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Modifier un enseignant";
@@ -13,9 +14,11 @@
     </div>
 }
 
-<form method="post">
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<form asp-action="Edit" asp-route-id="@Model.IdEnseignant" method="post">
     @Html.AntiForgeryToken()
-    <input type="hidden" name="IdEnseignant" value="@Model.IdEnseignant" />
+    <input type="hidden" asp-for="IdEnseignant" />
 
     <div>
         <label>Nom *</label><br />

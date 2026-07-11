@@ -95,13 +95,14 @@ namespace GESTION_S_E.Controllers
 
             if (user != null && BCrypt.Net.BCrypt.Verify(password, user.MotDePasse))
             {
+                var fullName = await GetUserFullNameAsync(user);
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Email, user.Email),
                     new Claim(ClaimTypes.Name, user.Email),
                     new Claim(ClaimTypes.Role, user.Role),
                     new Claim("UserId", user.IdUtilisateur.ToString()),
-                    new Claim("FullName", user.Email)
+                    new Claim("FullName", fullName)
                 };
 
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -254,11 +255,52 @@ namespace GESTION_S_E.Controllers
             if (user == null)
                 return RedirectToAction("Login");
 
+            var fullName = await GetUserFullNameAsync(user);
+
             ViewBag.Email = user.Email;
             ViewBag.Role = user.Role;
+            ViewBag.FullName = fullName;
+            ViewBag.Nom = fullName.Split(' ').Length > 1 ? fullName.Split(' ')[^1] : "";
+            ViewBag.Prenom = fullName.Split(' ').Length > 1 ? string.Join(" ", fullName.Split(' ')[..^1]) : fullName;
             ViewBag.DateCreation = user.DateCreation;
 
             return View();
+        }
+
+        private async Task<string> GetUserFullNameAsync(Utilisateur user)
+        {
+            return user.Role switch
+            {
+                "eleve" => await GetFullNameFromEleveAsync(user.IdUtilisateur),
+                "enseignant" => await GetFullNameFromEnseignantAsync(user.IdUtilisateur),
+                "scolarite" => await GetFullNameFromScolariteAsync(user.IdUtilisateur),
+                _ => user.Email
+            };
+        }
+
+        private async Task<string> GetFullNameFromEleveAsync(int userId)
+        {
+            var eleve = await _context.Eleves.AsNoTracking().FirstOrDefaultAsync(e => e.IdUtilisateur == userId);
+            return BuildFullName(eleve?.PrenomEleve, eleve?.NomEleve);
+        }
+
+        private async Task<string> GetFullNameFromEnseignantAsync(int userId)
+        {
+            var enseignant = await _context.Enseignants.AsNoTracking().FirstOrDefaultAsync(e => e.IdUtilisateur == userId);
+            return BuildFullName(enseignant?.PrenomEnseignant, enseignant?.NomEnseignant);
+        }
+
+        private async Task<string> GetFullNameFromScolariteAsync(int userId)
+        {
+            var scolarite = await _context.Scolarites.AsNoTracking().FirstOrDefaultAsync(s => s.IdUtilisateur == userId);
+            return BuildFullName(scolarite?.PrenomScolarite, scolarite?.NomScolarite);
+        }
+
+        private static string BuildFullName(string? prenom, string? nom)
+        {
+            var parts = new List<string?> { prenom, nom };
+            var fullName = string.Join(" ", parts.Where(p => !string.IsNullOrWhiteSpace(p)));
+            return string.IsNullOrWhiteSpace(fullName) ? string.Empty : fullName;
         }
 
         // ==================== LOGOUT ====================
