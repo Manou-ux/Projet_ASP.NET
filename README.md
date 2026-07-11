@@ -25,6 +25,7 @@ L'objectif principal est de proposer une solution métier cohérente pour la sco
 - affichage personnalisé selon l'utilisateur
 - vue hebdomadaire pour les enseignants et élèves
 - emploi du temps global accessible à la scolarité
+- Gestion maintenu par la Scolarité
 
 ### Gestion des salles et des réservations
 - gestion des salles disponibles
@@ -221,5 +222,3 @@ Ce README est conçu pour une présentation claire et complète du projet sur Gi
 - app prête à être déployée ou démo pour un établissement scolaire
 
 ---
-
-Bonne présentation du projet !
