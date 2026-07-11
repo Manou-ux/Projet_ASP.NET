@@ -169,15 +169,15 @@ erDiagram
         int id_reservation PK
         int id_utilisateur FK
         int id_salle FK
-        int? id_club FK
-        timestamp with time zone date_reservation
+        int id_club FK
+        DateTime date_reservation
     }
     DISPONIBILITE_ENSEIGNANT {
         int id_dispo PK
         int id_enseignant FK
         string jour
-        interval heure_debut
-        interval heure_fin
+        string heure_debut
+        string heure_fin
     }
     CLUB {
         int id_club PK
@@ -188,7 +188,7 @@ erDiagram
         int id_utilisateur FK
         int id_club FK
         string role_membre
-        timestamp with time zone date_adhesion
+        DateTime date_adhesion
     }
 
     UTILISATEUR ||--o{ ELEVE : "détient"
