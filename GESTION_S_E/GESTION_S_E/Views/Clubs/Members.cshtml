@@ -26,10 +26,9 @@
         <form asp-action="AddMember" method="post">
             <input type="hidden" name="clubId" value="@club?.IdClub" />
             <div class="row">
-                <div class="col-md-6 mb-2">
-                    <label class="form-label">Utilisateur</label>
-                    <select name="idUtilisateur" class="form-select" required>
-                        <option value="">-- Sélectionnez --</option>
+                <div class="col-md-10 mb-2">
+                    <label class="form-label">Utilisateurs à ajouter</label>
+                    <select name="idUtilisateurs" class="form-select" multiple size="10" required>
                         @if (utilisateursDisponibles != null)
                         {
                             foreach (var u in utilisateursDisponibles)
@@ -38,10 +37,7 @@
                             }
                         }
                     </select>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <label class="form-label">Rôle dans le club</label>
-                    <input type="text" name="roleMembre" class="form-control" placeholder="membre, président, trésorier..." />
+                    <small class="text-muted">Maintenez Ctrl/Cmd pour sélectionner plusieurs utilisateurs.</small>
                 </div>
                 <div class="col-md-2 mb-2 d-flex align-items-end">
                     <button type="submit" class="btn btn-success w-100">Ajouter</button>
@@ -82,7 +78,7 @@
                             <td>@membre.DateAdhesion.ToString("dd/MM/yyyy")</td>
                             <td>
                                 <form asp-action="RemoveMember" method="post" onsubmit="return confirm('Retirer ce membre ?')">
-                                    <input type="hidden" name="idMembre" value="@membre.IdMembre" />
+                                    <input type="hidden" name="idUtilisateur" value="@membre.IdUtilisateur" />
                                     <input type="hidden" name="clubId" value="@club.IdClub" />
                                     <button type="submit" class="btn btn-sm btn-danger">❌ Retirer</button>
                                 </form>

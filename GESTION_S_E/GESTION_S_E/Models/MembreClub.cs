@@ -8,7 +8,7 @@ namespace GESTION_S_E.Models
     public class MembreClub
     {
         [Key]
-        [Column("id_membre")]
+        [NotMapped]
         public int IdMembre { get; set; }
 
         [Column("id_utilisateur")]

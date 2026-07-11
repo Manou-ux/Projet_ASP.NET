@@ -202,23 +202,22 @@ namespace GESTION_S_E.Controllers
             var membres = await _context.MembreClubs
                 .Include(m => m.Utilisateur)
                 .Where(m => m.IdClub == id)
-                .Select(m => new MembreViewModel
-                {
-                    IdMembre = m.IdMembre,
-                    IdUtilisateur = m.IdUtilisateur,
-                    RoleMembre = m.RoleMembre,
-                    DateAdhesion = m.DateAdhesion,
-                    NomComplet = (m.Utilisateur.Role == "eleve" ?
-                                    _context.Eleves.Where(e => e.IdUtilisateur == m.Utilisateur.IdUtilisateur)
-                                        .Select(e => e.PrenomEleve + " " + e.NomEleve).FirstOrDefault() :
-                                  m.Utilisateur.Role == "enseignant" ?
-                                    _context.Enseignants.Where(e => e.IdUtilisateur == m.Utilisateur.IdUtilisateur)
-                                        .Select(e => e.PrenomEnseignant + " " + e.NomEnseignant).FirstOrDefault() :
-                                  m.Utilisateur.Role == "scolarite" ?
-                                    _context.Scolarites.Where(s => s.IdUtilisateur == m.Utilisateur.IdUtilisateur)
-                                        .Select(s => s.PrenomScolarite + " " + s.NomScolarite).FirstOrDefault() :
-                                  m.Utilisateur.Email)
-                })
+                                .Select(m => new MembreViewModel
+                                {
+                                        IdUtilisateur = m.IdUtilisateur,
+                                        RoleMembre = m.RoleMembre,
+                                        DateAdhesion = m.DateAdhesion,
+                                        NomComplet = (m.Utilisateur.Role == "eleve" ?
+                                                                        _context.Eleves.Where(e => e.IdUtilisateur == m.Utilisateur.IdUtilisateur)
+                                                                                .Select(e => e.PrenomEleve + " " + e.NomEleve).FirstOrDefault() :
+                                                                    m.Utilisateur.Role == "enseignant" ?
+                                                                        _context.Enseignants.Where(e => e.IdUtilisateur == m.Utilisateur.IdUtilisateur)
+                                                                                .Select(e => e.PrenomEnseignant + " " + e.NomEnseignant).FirstOrDefault() :
+                                                                    m.Utilisateur.Role == "scolarite" ?
+                                                                        _context.Scolarites.Where(s => s.IdUtilisateur == m.Utilisateur.IdUtilisateur)
+                                                                                .Select(s => s.PrenomScolarite + " " + s.NomScolarite).FirstOrDefault() :
+                                                                    m.Utilisateur.Email)
+                                })
                 .ToListAsync();
 
             // Liste des utilisateurs disponibles (non encore membres)
@@ -248,37 +247,51 @@ namespace GESTION_S_E.Controllers
         // POST: Clubs/AddMember
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddMember(int clubId, int idUtilisateur, string roleMembre)
+        public async Task<IActionResult> AddMember(int clubId, int[] idUtilisateurs)
         {
             try
             {
-                var existe = await _context.MembreClubs
-                    .AnyAsync(m => m.IdClub == clubId && m.IdUtilisateur == idUtilisateur);
-                if (existe)
+                var idsSelectionnes = (idUtilisateurs ?? Array.Empty<int>())
+                    .Where(id => id > 0)
+                    .Distinct()
+                    .ToArray();
+
+                if (idsSelectionnes.Length == 0)
                 {
-                    TempData["Error"] = "Cet utilisateur est déjà membre.";
+                    TempData["Error"] = "Veuillez sélectionner au moins un utilisateur.";
                     return RedirectToAction(nameof(Members), new { id = clubId });
                 }
 
-                // Liste des rôles autorisés par la contrainte CK_Membre_Role
-                var rolesAutorises = new[] { "membre", "vice-president", "president", "secretaire", "tresorier" };
-                string roleFinal = string.IsNullOrWhiteSpace(roleMembre) ? "membre" : roleMembre.ToLower();
-                if (!rolesAutorises.Contains(roleFinal))
+                var membresExistants = await _context.MembreClubs
+                    .Where(m => m.IdClub == clubId && idsSelectionnes.Contains(m.IdUtilisateur))
+                    .Select(m => m.IdUtilisateur)
+                    .ToListAsync();
+
+                var nouveauxMembres = idsSelectionnes
+                    .Where(id => !membresExistants.Contains(id))
+                    .ToList();
+
+                if (nouveauxMembres.Count == 0)
                 {
-                    roleFinal = "membre";  // valeur par défaut
+                    TempData["Error"] = "Tous les utilisateurs sélectionnés sont déjà membres de ce club.";
+                    return RedirectToAction(nameof(Members), new { id = clubId });
                 }
 
-                var membre = new MembreClub
+                foreach (var idUtilisateur in nouveauxMembres)
                 {
-                    IdClub = clubId,
-                    IdUtilisateur = idUtilisateur,
-                    RoleMembre = roleFinal,
-                    DateAdhesion = DateTime.Now
-                };
+                    var membre = new MembreClub
+                    {
+                        IdClub = clubId,
+                        IdUtilisateur = idUtilisateur,
+                        RoleMembre = "membre",
+                        DateAdhesion = DateTime.UtcNow
+                    };
 
-                _context.MembreClubs.Add(membre);
+                    _context.MembreClubs.Add(membre);
+                }
+
                 await _context.SaveChangesAsync();
-                TempData["Success"] = "Membre ajouté avec succès.";
+                TempData["Success"] = $"{nouveauxMembres.Count} utilisateur(s) ajouté(s) au club avec succès.";
             }
             catch (Exception ex)
             {
@@ -290,12 +303,12 @@ namespace GESTION_S_E.Controllers
         // POST: Clubs/RemoveMember
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> RemoveMember(int idMembre, int clubId)
+        public async Task<IActionResult> RemoveMember(int idUtilisateur, int clubId)
         {
             try
             {
-                // Recherche par la colonne IdMembre (même si ce n'est pas la PK)
-                var membre = await _context.MembreClubs.FirstOrDefaultAsync(m => m.IdMembre == idMembre);
+                // Recherche par la clé composite (IdUtilisateur + IdClub)
+                var membre = await _context.MembreClubs.FirstOrDefaultAsync(m => m.IdUtilisateur == idUtilisateur && m.IdClub == clubId);
                 if (membre != null)
                 {
                     _context.MembreClubs.Remove(membre);
@@ -358,8 +371,7 @@ namespace GESTION_S_E.Controllers
         // ViewModel pour l'affichage des membres
         public class MembreViewModel
         {
-            public int IdMembre { get; set; }
-            public int IdUtilisateur { get; set; }  // Ajouté pour la suppression
+            public int IdUtilisateur { get; set; }  // Utilisé comme identifiant pour les actions
             public string RoleMembre { get; set; }
             public DateTime DateAdhesion { get; set; }
             public string NomComplet { get; set; }
