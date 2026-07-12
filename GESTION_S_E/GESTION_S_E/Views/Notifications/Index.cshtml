@@ -1,0 +1,59 @@
+﻿@model IEnumerable<GESTION_S_E.Models.Notification>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Mes notifications";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>🔔 Mes notifications</h1>
+    <form asp-action="MarkAllAsRead" method="post">
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-secondary">✓ Tout marquer comme lu</button>
+    </form>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Aucune notification.</div>
+}
+else
+{
+    <div class="list-group">
+        @foreach (var item in Model)
+        {
+            <div class="list-group-item @(item.Lu ? "list-group-item-light" : "list-group-item-primary")">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="flex-grow-1">
+                        <strong>@item.DateEnvoi.ToString("dd/MM/yyyy HH:mm")</strong>
+                        <p class="mb-1">@item.Message</p>
+                        @if (!string.IsNullOrEmpty(item.UrlLien))
+                        {
+                            <a href="@item.UrlLien" class="small">Voir le détail</a>
+                        }
+                    </div>
+                    <div>
+                        @if (!item.Lu)
+                        {
+                            <form asp-action="MarkAsRead" asp-route-id="@item.IdNotification" method="post" class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-sm btn-success">Marquer lu</button>
+                            </form>
+                        }
+                        <a asp-action="Details" asp-route-id="@item.IdNotification" class="btn btn-sm btn-info">Détails</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdNotification" class="btn btn-sm btn-danger">Supprimer</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

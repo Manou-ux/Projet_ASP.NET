@@ -26,5 +26,9 @@ namespace GESTION_S_E.Models
 
         [Column("lu")]
         public bool Lu { get; set; } = false;
+
+        // Nouvelle propriété
+        [Column("url_lien")]
+        public string UrlLien { get; set; }
     }
 }

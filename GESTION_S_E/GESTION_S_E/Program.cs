@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using GESTION_S_E.Models;
+using GESTION_S_E.Services;  // ← Ajout pour IEmailSender et EmailSettings
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,12 +26,16 @@ builder.Services.AddAuthorization();
 builder.Services.AddDbContext<MonDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("MaConnexion")));
 
+// 5. Enregistrement des services email
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddScoped<IEmailSender, EmailSender>();
+
 var app = builder.Build();
 
 // Pour bien gérer les types PostgreSQL (interval + timestamp with time zone)
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
-// 5. Middleware (ordre important)
+// 6. Middleware (ordre important)
 app.UseStaticFiles();
 app.UseRouting();
 
@@ -38,7 +43,7 @@ app.UseRouting();
 app.UseAuthentication();  // ← Doit être avant UseAuthorization
 app.UseAuthorization();   // ← Doit être après UseAuthentication
 
-// 6. Routes
+// 7. Routes
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Login}/{id?}");

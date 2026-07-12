@@ -1,0 +1,29 @@
+﻿@model GESTION_S_E.Models.Notification
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Détail de la notification";
+}
+
+<h1>🔔 Détail de la notification</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Date d'envoi</dt>
+            <dd class="col-sm-9">@Model.DateEnvoi.ToString("dd/MM/yyyy HH:mm")</dd>
+
+            <dt class="col-sm-3">Message</dt>
+            <dd class="col-sm-9">@Model.Message</dd>
+
+            <dt class="col-sm-3">Statut</dt>
+            <dd class="col-sm-9">@(Model.Lu ? "Lu" : "Non lu")</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>
+    <a asp-action="Edit" asp-route-id="@Model.IdNotification" class="btn btn-warning">Modifier</a>
+    <a asp-action="Delete" asp-route-id="@Model.IdNotification" class="btn btn-danger">Supprimer</a>
+</div>

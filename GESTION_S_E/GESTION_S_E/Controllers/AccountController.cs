@@ -1,5 +1,6 @@
 using BCrypt.Net;
 using GESTION_S_E.Models;
+using GESTION_S_E.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -13,14 +14,15 @@ namespace GESTION_S_E.Controllers
     public class AccountController : Controller
     {
         private readonly MonDbContext _context;
+        private readonly IEmailSender _emailSender;
 
-        public AccountController(MonDbContext context)
+        public AccountController(MonDbContext context, IEmailSender emailSender)
         {
             _context = context;
+            _emailSender = emailSender;
         }
 
         // ==================== LOGIN ====================
-
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Login()
@@ -118,7 +120,6 @@ namespace GESTION_S_E.Controllers
         }
 
         // ==================== REGISTER ====================
-
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Register()
@@ -155,7 +156,6 @@ namespace GESTION_S_E.Controllers
                 return View();
             }
 
-            // Vérifier si l'email existe déjà
             if (await _context.Utilisateurs.AnyAsync(u => u.Email == email))
             {
                 ViewBag.Error = "Cet email est déjà utilisé";
@@ -167,7 +167,6 @@ namespace GESTION_S_E.Controllers
 
             try
             {
-                // Créer l'utilisateur
                 var utilisateur = new Utilisateur
                 {
                     Email = email,
@@ -180,7 +179,6 @@ namespace GESTION_S_E.Controllers
                 _context.Utilisateurs.Add(utilisateur);
                 await _context.SaveChangesAsync();
 
-                // Créer l'entité spécifique selon le rôle
                 switch (role)
                 {
                     case "eleve":
@@ -243,8 +241,8 @@ namespace GESTION_S_E.Controllers
                 return View();
             }
         }
-        // ==================== PROFILE ====================
 
+        // ==================== PROFILE ====================
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> Profile()
@@ -267,6 +265,177 @@ namespace GESTION_S_E.Controllers
             return View();
         }
 
+        // ==================== MOT DE PASSE OUBLIÉ (avec logs détaillés) ====================
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        {
+            Console.WriteLine("=== FORGOT PASSWORD POST ===");
+
+            // Log toutes les clés du formulaire
+            Console.WriteLine("=== TOUTES LES CLÉS DU FORMULAIRE ===");
+            foreach (var key in Request.Form.Keys)
+            {
+                Console.WriteLine($"Clé : {key} = {Request.Form[key]}");
+            }
+
+            // Log des différentes sources de l'email
+            var emailFromForm = Request.Form["Email"].ToString();
+            var emailFromModel = model.Email;
+            Console.WriteLine($"Email reçu (Request.Form) : {emailFromForm}");
+            Console.WriteLine($"Email reçu (model) : {emailFromModel}");
+
+            // Utiliser la première valeur non vide
+            var email = !string.IsNullOrEmpty(emailFromForm) ? emailFromForm : emailFromModel;
+            Console.WriteLine($"Email utilisé : {email}");
+
+            if (string.IsNullOrEmpty(email))
+            {
+                Console.WriteLine("ERREUR : Email vide");
+                ModelState.AddModelError("Email", "L'adresse email est requise.");
+                return View(new ForgotPasswordViewModel());
+            }
+
+            // Rechercher l'utilisateur
+            Console.WriteLine($"Recherche de l'utilisateur avec email : {email}");
+            var user = await _context.Utilisateurs.FirstOrDefaultAsync(u => u.Email == email);
+            if (user == null)
+            {
+                Console.WriteLine($"Utilisateur non trouvé pour {email}");
+                TempData["Success"] = "Si cet email existe, un lien de réinitialisation vous a été envoyé.";
+                return RedirectToAction(nameof(Login));
+            }
+            Console.WriteLine($"Utilisateur trouvé : {user.Email} (ID: {user.IdUtilisateur})");
+
+            // Générer le token
+            var token = Guid.NewGuid().ToString();
+            Console.WriteLine($"Token généré : {token}");
+
+            var resetToken = new PasswordResetToken
+            {
+                IdUtilisateur = user.IdUtilisateur,
+                Token = token,
+                ExpirationDate = DateTime.UtcNow.AddHours(24),
+                Used = false
+            };
+            _context.PasswordResetTokens.Add(resetToken);
+            await _context.SaveChangesAsync();
+            Console.WriteLine("Token sauvegardé en base.");
+
+            // Construire le lien
+            var resetLink = Url.Action("ResetPassword", "Account", new { token }, Request.Scheme);
+            Console.WriteLine($"Lien de réinitialisation : {resetLink}");
+
+            var subject = "Réinitialisation de votre mot de passe";
+            var body = $"<p>Bonjour,</p><p>Cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe :</p><p><a href='{resetLink}'>{resetLink}</a></p><p>Ce lien est valable 24h.</p>";
+
+            // Envoyer l'email
+            try
+            {
+                Console.WriteLine($"Tentative d'envoi d'email à {user.Email}");
+                await _emailSender.SendEmailAsync(user.Email, subject, body);
+                Console.WriteLine($"Email envoyé avec succès à {user.Email}");
+                TempData["Success"] = "Un lien de réinitialisation a été envoyé à votre adresse email.";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de l'envoi de l'email : {ex.Message}");
+                TempData["Error"] = "Une erreur est survenue lors de l'envoi de l'email. Veuillez réessayer.";
+                return View(new ForgotPasswordViewModel());
+            }
+
+            return RedirectToAction(nameof(Login));
+        }
+
+        // ==================== RESET PASSWORD ====================
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult ResetPassword([FromQuery] string token)
+        {
+            if (string.IsNullOrEmpty(token))
+            {
+                TempData["Error"] = "Token manquant.";
+                return RedirectToAction(nameof(Login));
+            }
+
+            var resetToken = _context.PasswordResetTokens
+                .Include(t => t.Utilisateur)
+                .FirstOrDefault(t => t.Token == token && !t.Used && t.ExpirationDate > DateTime.UtcNow);
+
+            if (resetToken == null)
+            {
+                TempData["Error"] = "Lien invalide ou expiré.";
+                return RedirectToAction(nameof(Login));
+            }
+
+            var model = new ResetPasswordViewModel { Token = token };
+            return View(model);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var resetToken = await _context.PasswordResetTokens
+                .Include(t => t.Utilisateur)
+                .FirstOrDefaultAsync(t => t.Token == model.Token && !t.Used && t.ExpirationDate > DateTime.UtcNow);
+
+            if (resetToken == null)
+            {
+                TempData["Error"] = "Lien invalide ou expiré.";
+                return RedirectToAction(nameof(Login));
+            }
+
+            var user = resetToken.Utilisateur;
+            user.MotDePasse = BCrypt.Net.BCrypt.HashPassword(model.NewPassword);
+            resetToken.Used = true;
+
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Votre mot de passe a été réinitialisé avec succès.";
+            return RedirectToAction(nameof(Login));
+        }
+
+        // ==================== LOGOUT ====================
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login");
+        }
+
+        // ==================== TEST EMAIL (temporaire) ====================
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> TestEmail()
+        {
+            try
+            {
+                await _emailSender.SendEmailAsync(
+                    "votre.email.pour.test@gmail.com",  // remplacez par votre adresse email
+                    "Test SMTP",
+                    "<p>Ceci est un email de test</p>"
+                );
+                return Content("✅ Email envoyé avec succès !");
+            }
+            catch (Exception ex)
+            {
+                return Content($"❌ Erreur : {ex.Message}");
+            }
+        }
+
+        // ==================== MÉTHODES PRIVÉES ====================
         private async Task<string> GetUserFullNameAsync(Utilisateur user)
         {
             return user.Role switch
@@ -301,15 +470,6 @@ namespace GESTION_S_E.Controllers
             var parts = new List<string?> { prenom, nom };
             var fullName = string.Join(" ", parts.Where(p => !string.IsNullOrWhiteSpace(p)));
             return string.IsNullOrWhiteSpace(fullName) ? string.Empty : fullName;
-        }
-
-        // ==================== LOGOUT ====================
-
-        [HttpGet]
-        public async Task<IActionResult> Logout()
-        {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login");
         }
     }
 }

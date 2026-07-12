@@ -1,0 +1,134 @@
+﻿@{
+    var unreadCount = ViewBag.UnreadCount as int? ?? 0;
+    var notifications = ViewBag.RecentNotifications as List<dynamic> ?? new List<dynamic>();
+
+    // Fonction pour formater le temps relatif
+    string GetRelativeTime(DateTime date)
+    {
+        var diff = DateTime.Now - date;
+        if (diff.TotalSeconds < 60) return "à l'instant";
+        if (diff.TotalMinutes < 60) return $"il y a {(int)diff.TotalMinutes} min";
+        if (diff.TotalHours < 24) return $"il y a {(int)diff.TotalHours} h";
+        if (diff.TotalDays < 7) return $"il y a {(int)diff.TotalDays} j";
+        return date.ToString("dd/MM/yyyy");
+    }
+}
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-bell"></i>
+        @if (unreadCount > 0)
+        {
+            <span class="badge bg-danger rounded-pill notification-badge">@unreadCount</span>
+        }
+    </a>
+    <div class="dropdown-menu dropdown-menu-end shadow-lg border-0" aria-labelledby="notificationsDropdown" style="min-width: 380px; max-height: 500px; overflow-y: auto;">
+        <div class="dropdown-header d-flex justify-content-between align-items-center sticky-top bg-white">
+            <span class="fw-bold">Notifications</span>
+            @if (unreadCount > 0)
+            {
+                <form asp-controller="Notifications" asp-action="MarkAllAsRead" method="post" class="d-inline">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-sm btn-link text-decoration-none text-secondary">Tout marquer comme lu</button>
+                </form>
+            }
+        </div>
+        <div class="dropdown-divider"></div>
+
+        @if (unreadCount == 0 && !notifications.Any())
+        {
+            <div class="dropdown-item text-muted text-center py-3">Aucune notification</div>
+        }
+        else
+        {
+            @foreach (var notif in notifications)
+            {
+                var relativeTime = GetRelativeTime(notif.DateEnvoi);
+                <div class="notification-item @(notif.Lu == false ? "unread" : "")">
+                    <div class="d-flex align-items-start p-3">
+                        <!-- Avatar (icône par défaut) -->
+                        <div class="flex-shrink-0 me-3">
+                            <div class="rounded-circle bg-secondary bg-opacity-10 p-2">
+                                <i class="fas fa-bell text-secondary"></i>
+                            </div>
+                        </div>
+                        <!-- Contenu -->
+                        <div class="flex-grow-1">
+                            <a href="@(string.IsNullOrEmpty(notif.UrlLien) ? Url.Action("Details", "Notifications", new { id = notif.IdNotification }) : notif.UrlLien)" class="text-decoration-none text-dark">
+                                <div class="notification-message">
+                                    <span>@notif.Message</span>
+                                </div>
+                                <small class="text-muted">@relativeTime</small>
+                            </a>
+                        </div>
+                        <!-- Bouton trois points (actions) -->
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-link text-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                @if (!notif.Lu)
+                                {
+                                    <li>
+                                        <form asp-controller="Notifications" asp-action="MarkAsRead" asp-route-id="@notif.IdNotification" method="post">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="dropdown-item">Marquer comme lue</button>
+                                        </form>
+                                    </li>
+                                }
+                                <li>
+                                    <form asp-controller="Notifications" asp-action="DeleteConfirmed" asp-route-id="@notif.IdNotification" method="post">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="dropdown-item text-danger" onclick="return confirm('Supprimer cette notification ?')">Supprimer</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider m-0"></div>
+                </div>
+            }
+            <div class="dropdown-footer text-center py-2">
+                <a href="@Url.Action("Index", "Notifications")" class="dropdown-item text-primary">Voir toutes les notifications</a>
+            </div>
+        }
+    </div>
+</li>
+
+<style>
+    .notification-badge {
+        position: relative;
+        top: -8px;
+        left: -5px;
+        font-size: 0.7rem;
+    }
+
+    .notification-item.unread {
+        background-color: #f0f8ff;
+    }
+
+    .notification-item:hover {
+        background-color: #f8f9fa;
+    }
+
+    .notification-item .dropdown-menu {
+        min-width: 160px;
+    }
+
+    .notification-item .dropdown-item {
+        font-size: 0.85rem;
+        cursor: pointer;
+    }
+
+    .dropdown-header {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: white;
+        padding: 12px 16px;
+    }
+
+    .dropdown-footer {
+        border-top: 1px solid #e9ecef;
+    }
+</style>

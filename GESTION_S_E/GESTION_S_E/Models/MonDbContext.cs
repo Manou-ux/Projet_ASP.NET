@@ -26,9 +26,36 @@ namespace GESTION_S_E.Models
         public DbSet<ReservationSalle> ReservationsSalles { get; set; }
         public DbSet<Notification> Notifications { get; set; }
 
+        // ⭐ NOUVEAU : pour les tokens de réinitialisation
+        public DbSet<PasswordResetToken> PasswordResetTokens { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // ==================== CONFIGURATION DE PasswordResetToken ====================
+            modelBuilder.Entity<PasswordResetToken>(entity =>
+            {
+                entity.HasKey(t => t.Id);
+
+                entity.HasOne(t => t.Utilisateur)
+                      .WithMany()
+                      .HasForeignKey(t => t.IdUtilisateur)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.Property(t => t.Token)
+                      .IsRequired()
+                      .HasMaxLength(255);
+
+                entity.Property(t => t.ExpirationDate)
+                      .HasColumnType("timestamp with time zone");
+
+                entity.HasIndex(t => t.Token)
+                      .IsUnique();
+
+                // Optionnel : index pour les tokens non utilisés et non expirés
+                entity.HasIndex(t => new { t.Token, t.Used, t.ExpirationDate });
+            });
 
             // ==================== DISPONIBILITÉS ENSEIGNANTS ====================
             modelBuilder.Entity<DisponibiliteEnseignant>(entity =>
@@ -36,7 +63,7 @@ namespace GESTION_S_E.Models
                 entity.HasKey(d => d.IdDispo);
 
                 entity.HasOne(d => d.Enseignant)
-                      .WithMany() 
+                      .WithMany()
                       .HasForeignKey(d => d.IdEnseignant)
                       .OnDelete(DeleteBehavior.Cascade);
 

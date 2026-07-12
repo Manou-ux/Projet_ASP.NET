@@ -448,10 +448,6 @@ namespace GESTION_S_E.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("date_adhesion");
 
-                    b.Property<int>("IdMembre")
-                        .HasColumnType("integer")
-                        .HasColumnName("id_membre");
-
                     b.Property<string>("RoleMembre")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -494,11 +490,55 @@ namespace GESTION_S_E.Migrations
                         .HasColumnType("text")
                         .HasColumnName("message");
 
+                    b.Property<string>("UrlLien")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("url_lien");
+
                     b.HasKey("IdNotification");
 
                     b.HasIndex("IdUtilisateur");
 
                     b.ToTable("notifications");
+                });
+
+            modelBuilder.Entity("GESTION_S_E.Models.PasswordResetToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("ExpirationDate")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("date_expiration");
+
+                    b.Property<int>("IdUtilisateur")
+                        .HasColumnType("integer")
+                        .HasColumnName("id_utilisateur");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("token");
+
+                    b.Property<bool>("Used")
+                        .HasColumnType("boolean")
+                        .HasColumnName("utilise");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdUtilisateur");
+
+                    b.HasIndex("Token")
+                        .IsUnique();
+
+                    b.HasIndex("Token", "Used", "ExpirationDate");
+
+                    b.ToTable("password_reset_tokens");
                 });
 
             modelBuilder.Entity("GESTION_S_E.Models.ReservationSalle", b =>
@@ -849,6 +889,17 @@ namespace GESTION_S_E.Migrations
                 });
 
             modelBuilder.Entity("GESTION_S_E.Models.Notification", b =>
+                {
+                    b.HasOne("GESTION_S_E.Models.Utilisateur", "Utilisateur")
+                        .WithMany()
+                        .HasForeignKey("IdUtilisateur")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Utilisateur");
+                });
+
+            modelBuilder.Entity("GESTION_S_E.Models.PasswordResetToken", b =>
                 {
                     b.HasOne("GESTION_S_E.Models.Utilisateur", "Utilisateur")
                         .WithMany()
